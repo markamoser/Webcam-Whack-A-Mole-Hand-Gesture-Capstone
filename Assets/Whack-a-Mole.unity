@@ -1323,7 +1323,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f64fc354fbc8d4d4ea3e3ce44a29818c, type: 3}
       propertyPath: m_Name
-      value: Mole
+      value: Mole3D
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f64fc354fbc8d4d4ea3e3ce44a29818c, type: 3}

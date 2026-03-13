@@ -24,6 +24,7 @@ public class MoleLogic : MonoBehaviour
         wait = 180;
         down = false;
         hits = 0;
+        Application.targetFrameRate = 60;
     }
 
     // Update is called once per frame
