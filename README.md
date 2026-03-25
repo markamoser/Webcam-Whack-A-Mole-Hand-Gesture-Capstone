@@ -11,6 +11,7 @@ John and Hunter are currently working full effort towards the depth tracking fea
 
 ## Branches
 The functional game is on Ben's branch.
+Mark's milestone 2 demonstration is on the dual-hand-feature branch.
 
 ## Release Notes: 2/28/2027
 Milestone 1 - we have a couple of libraries which capture the up, down, left, and right movements including MediaPipe Hands and a existing project template of the same library with modifications.
