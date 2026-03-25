@@ -15,5 +15,5 @@ Mark's milestone 2 demonstration is on the dual-hand-feature branch.
 
 ## Release Notes: 2/28/2027
 Milestone 1 - we have a couple of libraries which capture the up, down, left, and right movements including MediaPipe Hands and a existing project template of the same library with modifications.
-Milestone 2 - Partially complete now. We have partially built the whack-a-mole game but have more features, animations, and art to implement. We will finish by 3/12/2026
+Milestone 2 - Complete now. We have built the whack-a-mole game and incorporated two hands from the MediaPipe Library into Unity.
 Milestone 3 - Upcoming, we will fully integrate our gameplay with the hand gestures.
