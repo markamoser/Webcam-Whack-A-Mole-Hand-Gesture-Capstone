@@ -20,8 +20,8 @@ public sealed class HandAnimator : MonoBehaviour
     [Space]
     [SerializeField] RawImage _monitorUI = null;
     [Space]
-    [SerializeField] float _neutralHandSize = 0.2f;
-    [SerializeField] float _depthStrength = 5.0f;
+    [SerializeField] float _neutralHandSize = 0.2f; // Set neutral hand size relative to input image.
+    [SerializeField] float _depthStrength = 5.0f;   // Strength of depth effect.
 
     #endregion
 
@@ -36,7 +36,7 @@ public sealed class HandAnimator : MonoBehaviour
         (9, 10), (10, 11), (11, 12),                // Middle finger
         (13, 14), (14, 15), (15, 16),               // Ring finger
         (17, 18), (18, 19), (19, 20),               // Pinky
-        (0, 5), (5, 17), (0, 17),                   // Palm Triangle
+        (0, 5), (5, 17), (0, 17),                   // Palm Triangle, Key points for calculating hand size and depth adjustment
         (2, 5), (5, 9), (9, 13), (13, 17)           // Rest of Palm
     };
 
@@ -78,7 +78,7 @@ public sealed class HandAnimator : MonoBehaviour
         float d05 = Vector3.Distance(p0, p5);
         float d517 = Vector3.Distance(p5, p17);
         float d170 = Vector3.Distance(p17, p0);
-        float maxDist = Mathf.Max(d05, d517, d170);
+        float maxDist = Mathf.Max(d05, d517, d170);     // Find the maximum distance between the three key points to determine hand size
         float scale = _neutralHandSize / maxDist;
         float depthOffset = - (maxDist - _neutralHandSize) * _depthStrength;
 
@@ -89,8 +89,8 @@ public sealed class HandAnimator : MonoBehaviour
         {
             Vector3 localPos = _pipeline.GetKeyPoint(i) - p0;
             Vector3 scaledPos = localPos * scale;
-            Vector3 worldPos = p0 + scaledPos;
-            worldPos.z += depthOffset;
+            Vector3 worldPos = p0 + scaledPos;          // Apply scaling to the joint position to maintain consistent hand size
+            worldPos.z += depthOffset;                  // Apply depth offset to nodes
             var xform = CalculateJointXform(worldPos);
             Graphics.DrawMesh(_jointMesh, xform, _jointMaterial, layer);
         }
@@ -100,9 +100,9 @@ public sealed class HandAnimator : MonoBehaviour
         {
             Vector3 p1_local = _pipeline.GetKeyPoint(pair.Item1) - p0;
             Vector3 p2_local = _pipeline.GetKeyPoint(pair.Item2) - p0;
-            Vector3 p1_world = p0 + p1_local * scale;
+            Vector3 p1_world = p0 + p1_local * scale;   // Apply scaling to the bone endpoints to maintain consistent hand size
             Vector3 p2_world = p0 + p2_local * scale;
-            p1_world.z += depthOffset;
+            p1_world.z += depthOffset;                  // Apply depth offset to endpoints of bones
             p2_world.z += depthOffset;
             var xform = CalculateBoneXform(p1_world, p2_world);
             Graphics.DrawMesh(_boneMesh, xform, _boneMaterial, layer);
