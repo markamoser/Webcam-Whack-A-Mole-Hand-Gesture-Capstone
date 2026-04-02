@@ -22,6 +22,8 @@ public sealed class HandAnimator : MonoBehaviour
     [Space]
     [SerializeField] float _neutralHandSize = 0.2f; // Set neutral hand size relative to input image.
     [SerializeField] float _depthStrength = 5.0f;   // Strength of depth effect.
+    [SerializeField] float _clampDepthBackwards = 1.0f;      // Maximum depth offset.
+    [SerializeField] float _clampDepthForwards = 1.0f;      // Maximum depth offset.
 
     #endregion
 
@@ -80,7 +82,7 @@ public sealed class HandAnimator : MonoBehaviour
         float d170 = Vector3.Distance(p17, p0);
         float maxDist = Mathf.Max(d05, d517, d170);     // Find the maximum distance between the three key points to determine hand size
         float scale = _neutralHandSize / maxDist;
-        float depthOffset = - (maxDist - _neutralHandSize) * _depthStrength;
+        float depthOffset = Mathf.Clamp( (1/maxDist - 1/_neutralHandSize) * _depthStrength, -_clampDepthForwards, _clampDepthBackwards); // Calculate depth offset based on hand size, and clamp it to prevent excessive depth changes
 
         var layer = gameObject.layer;
 
