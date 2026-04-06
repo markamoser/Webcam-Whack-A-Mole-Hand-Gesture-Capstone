@@ -5,18 +5,26 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 639077476739171110
-    m_Hash: 725663017
+      ticks: 639108926342068804
+    m_Hash: 1361714760
   m_LockFileStatus:
     m_FilePath: C:/Users/bdlau/OneDrive/Desktop/Unity Projects/Team-15-Gesture-based-Interactive-Game-John/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 639077478186807221
-    m_Hash: 3683208182
+      ticks: 639108926448634559
+    m_Hash: 3667054482
 m_EmbeddedPackageManifests:
-  m_ManifestsStatus: {}
+  m_ManifestsStatus:
+    C:/Users/bdlau/OneDrive/Desktop/Unity Projects/Team-15-Gesture-based-Interactive-Game-John/Packages/HolisticBarracuda/package.json:
+      m_FilePath: C:/Users/bdlau/OneDrive/Desktop/Unity Projects/Team-15-Gesture-based-Interactive-Game-John/Packages/HolisticBarracuda/package.json
+      m_PathExists: 1
+      m_ContentTrackingEnabled: 1
+      m_ModificationDate:
+        serializedVersion: 2
+        ticks: 639107280370560347
+      m_Hash: 1777344148
 m_LocalPackages:
   m_LocalFileStatus: []
 m_ProjectPath: C:/Users/bdlau/OneDrive/Desktop/Unity Projects/Team-15-Gesture-based-Interactive-Game-John/Packages
@@ -161,6 +169,9 @@ m_ResolvedPackages:
   versions:
     all:
     - 1.0.0
+    - 3.0.0-exp.1
+    - 3.0.0-exp.3
+    - 3.0.0-exp.4
     compatible:
     - 1.0.0
     verified: 1.0.0
@@ -366,12 +377,12 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 
     nextVersion: 
-- packageId: jp.keijiro.mediapipe.handlandmark@2.1.1
+- packageId: jp.keijiro.mediapipe.handlandmark@1.0.1
   testable: 0
   isDirectDependency: 1
-  version: 2.1.1
+  version: 1.0.1
   source: 1
-  resolvedPath: C:\Users\bdlau\OneDrive\Desktop\Unity Projects\Team-15-Gesture-based-Interactive-Game-John\Library\PackageCache\jp.keijiro.mediapipe.handlandmark@2.1.1
+  resolvedPath: C:\Users\bdlau\OneDrive\Desktop\Unity Projects\Team-15-Gesture-based-Interactive-Game-John\Library\PackageCache\jp.keijiro.mediapipe.handlandmark@1.0.1
   assetPath: Packages/jp.keijiro.mediapipe.handlandmark
   name: jp.keijiro.mediapipe.handlandmark
   displayName: MediaPipe Hand Landmark
@@ -402,9 +413,7 @@ m_ResolvedPackages:
     verified: 
   dependencies:
   - name: com.unity.barracuda
-    version: 3.0.0
-  - name: jp.keijiro.klak.nnutils
-    version: 1.3.0
+    version: 1.4.0-preview
   resolvedDependencies:
   - name: com.unity.barracuda
     version: 3.0.0
@@ -416,8 +425,6 @@ m_ResolvedPackages:
     version: 1.0.0
   - name: com.unity.modules.imageconversion
     version: 1.0.0
-  - name: jp.keijiro.klak.nnutils
-    version: 1.3.0
   keywords:
   - unity
   registry:
@@ -431,7 +438,7 @@ m_ResolvedPackages:
     configSource: 4
   hideInEditor: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 638120239481540000
+  datePublishedTicks: 637551921639830000
   documentationUrl: 
   hasRepository: 1
   repository:
@@ -489,6 +496,455 @@ m_ResolvedPackages:
   repository:
     type: git
     url: git+https://github.com/keijiro/jp.keijiro.test-assets.git
+    revision: 
+    path: 
+  unityLifecycle:
+    version: 
+    nextVersion: 
+- packageId: jp.ikep.mediapipe.holistic@file:C:\Users\bdlau\OneDrive\Desktop\Unity
+    Projects\Team-15-Gesture-based-Interactive-Game-John\Packages\HolisticBarracuda
+  testable: 1
+  isDirectDependency: 1
+  version: 1.1.0
+  source: 3
+  resolvedPath: C:\Users\bdlau\OneDrive\Desktop\Unity Projects\Team-15-Gesture-based-Interactive-Game-John\Packages\HolisticBarracuda
+  assetPath: Packages/jp.ikep.mediapipe.holistic
+  name: jp.ikep.mediapipe.holistic
+  displayName: HolisticBarracuda
+  author:
+    name: IKEP
+    email: 
+    url: https://ikep.jp
+  category: 
+  type: 
+  description: Mediapipe Holistic for Unity Barracuda.
+  status: 0
+  errors: []
+  versions:
+    all:
+    - 1.0.1
+    - 1.1.0
+    compatible:
+    - 1.0.1
+    - 1.1.0
+    verified: 
+  dependencies:
+  - name: com.unity.mathematics
+    version: 1.2.1
+  - name: jp.keijiro.mediapipe.blazeface
+    version: 1.1.1
+  - name: jp.keijiro.mediapipe.facelandmark
+    version: 1.0.0
+  - name: jp.keijiro.mediapipe.iris
+    version: 1.1.0
+  - name: jp.keijiro.mediapipe.blazepalm
+    version: 1.0.2
+  - name: jp.keijiro.mediapipe.handlandmark
+    version: 1.0.1
+  - name: jp.ikep.mediapipe.blazepose
+    version: 1.3.0
+  resolvedDependencies:
+  - name: com.unity.mathematics
+    version: 1.2.6
+  - name: jp.keijiro.mediapipe.blazeface
+    version: 1.1.1
+  - name: com.unity.barracuda
+    version: 3.0.0
+  - name: com.unity.burst
+    version: 1.6.6
+  - name: com.unity.modules.jsonserialize
+    version: 1.0.0
+  - name: com.unity.modules.imageconversion
+    version: 1.0.0
+  - name: jp.keijiro.mediapipe.facelandmark
+    version: 1.0.0
+  - name: jp.keijiro.mediapipe.iris
+    version: 1.1.0
+  - name: jp.keijiro.mediapipe.blazepalm
+    version: 2.1.1
+  - name: jp.keijiro.klak.nnutils
+    version: 1.3.0
+  - name: jp.keijiro.mediapipe.handlandmark
+    version: 1.0.1
+  - name: jp.ikep.mediapipe.blazepose
+    version: 1.3.0
+  - name: jp.ikep.mediapipe.posedetection
+    version: 1.0.1
+  - name: jp.ikep.mediapipe.poselandmark
+    version: 1.1.1
+  keywords:
+  - unity
+  - Barracuda
+  - Mediapipe
+  - Holistic
+  - Pose
+  - Face
+  - Iris
+  - Hand
+  registry:
+    id: scoped:project:creativeikep
+    name: creativeikep
+    url: https://registry.npmjs.com
+    scopes:
+    - jp.ikep
+    isDefault: 0
+    capabilities: 0
+    configSource: 4
+  hideInEditor: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 0
+  documentationUrl: 
+  hasRepository: 0
+  repository:
+    type: 
+    url: 
+    revision: 
+    path: 
+  unityLifecycle:
+    version: 
+    nextVersion: 
+- packageId: com.unity.mathematics@1.2.6
+  testable: 0
+  isDirectDependency: 0
+  version: 1.2.6
+  source: 1
+  resolvedPath: C:\Users\bdlau\OneDrive\Desktop\Unity Projects\Team-15-Gesture-based-Interactive-Game-John\Library\PackageCache\com.unity.mathematics@1.2.6
+  assetPath: Packages/com.unity.mathematics
+  name: com.unity.mathematics
+  displayName: Mathematics
+  author:
+    name: 
+    email: 
+    url: 
+  category: 
+  type: asset
+  description: Unity's C# SIMD math library providing vector types and math functions
+    with a shader like syntax.
+  status: 0
+  errors: []
+  versions:
+    all:
+    - 0.0.12-preview.2
+    - 0.0.12-preview.5
+    - 0.0.12-preview.8
+    - 0.0.12-preview.10
+    - 0.0.12-preview.11
+    - 0.0.12-preview.13
+    - 0.0.12-preview.17
+    - 0.0.12-preview.19
+    - 0.0.12-preview.20
+    - 1.0.0-preview.1
+    - 1.0.1
+    - 1.1.0-preview.1
+    - 1.1.0
+    - 1.2.1
+    - 1.2.4
+    - 1.2.5
+    - 1.2.6
+    - 1.3.1
+    - 1.3.2
+    - 1.3.3
+    compatible:
+    - 1.2.6
+    - 1.3.1
+    - 1.3.2
+    - 1.3.3
+    verified: 1.2.6
+  dependencies: []
+  resolvedDependencies: []
+  keywords:
+  - unity
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+  hideInEditor: 0
+  isAssetStorePackage: 0
+  datePublishedTicks: 637841876140000000
+  documentationUrl: 
+  hasRepository: 1
+  repository:
+    type: git
+    url: https://github.com/Unity-Technologies/Unity.Mathematics.git
+    revision: f110c8c230d253654afed153569030a587cc7557
+    path: 
+  unityLifecycle:
+    version: 1.2.6
+    nextVersion: 
+- packageId: jp.keijiro.mediapipe.blazeface@1.1.1
+  testable: 0
+  isDirectDependency: 0
+  version: 1.1.1
+  source: 1
+  resolvedPath: C:\Users\bdlau\OneDrive\Desktop\Unity Projects\Team-15-Gesture-based-Interactive-Game-John\Library\PackageCache\jp.keijiro.mediapipe.blazeface@1.1.1
+  assetPath: Packages/jp.keijiro.mediapipe.blazeface
+  name: jp.keijiro.mediapipe.blazeface
+  displayName: BlazeFace
+  author:
+    name: Keijiro Takahashi
+    email: 
+    url: 
+  category: 
+  type: 
+  description: MediaPipe BlazeFace face detection neural network model for Unity
+    Barracuda
+  status: 0
+  errors: []
+  versions:
+    all:
+    - 1.0.0
+    - 1.1.0
+    - 1.1.1
+    - 1.2.0
+    compatible:
+    - 1.0.0
+    - 1.1.0
+    - 1.1.1
+    - 1.2.0
+    verified: 
+  dependencies:
+  - name: com.unity.barracuda
+    version: 1.3.3-preview
+  resolvedDependencies:
+  - name: com.unity.barracuda
+    version: 3.0.0
+  - name: com.unity.burst
+    version: 1.6.6
+  - name: com.unity.mathematics
+    version: 1.2.6
+  - name: com.unity.modules.jsonserialize
+    version: 1.0.0
+  - name: com.unity.modules.imageconversion
+    version: 1.0.0
+  keywords:
+  - unity
+  registry:
+    id: scoped:project:Keijiro
+    name: Keijiro
+    url: https://registry.npmjs.com
+    scopes:
+    - jp.keijiro
+    isDefault: 0
+    capabilities: 0
+    configSource: 4
+  hideInEditor: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 637542338636370000
+  documentationUrl: 
+  hasRepository: 1
+  repository:
+    type: git
+    url: git+https://github.com/keijiro/BlazeFaceBarracuda.git
+    revision: 
+    path: 
+  unityLifecycle:
+    version: 
+    nextVersion: 
+- packageId: jp.keijiro.mediapipe.facelandmark@1.0.0
+  testable: 0
+  isDirectDependency: 0
+  version: 1.0.0
+  source: 1
+  resolvedPath: C:\Users\bdlau\OneDrive\Desktop\Unity Projects\Team-15-Gesture-based-Interactive-Game-John\Library\PackageCache\jp.keijiro.mediapipe.facelandmark@1.0.0
+  assetPath: Packages/jp.keijiro.mediapipe.facelandmark
+  name: jp.keijiro.mediapipe.facelandmark
+  displayName: MediaPipe Face Landmark Detector
+  author:
+    name: Keijiro Takahashi
+    email: 
+    url: 
+  category: 
+  type: 
+  description: MediaPipe face landmark detection neural network model for Unity Barracuda
+  status: 0
+  errors: []
+  versions:
+    all:
+    - 1.0.0
+    - 1.1.0
+    compatible:
+    - 1.0.0
+    - 1.1.0
+    verified: 
+  dependencies:
+  - name: com.unity.barracuda
+    version: 1.3.3-preview
+  resolvedDependencies:
+  - name: com.unity.barracuda
+    version: 3.0.0
+  - name: com.unity.burst
+    version: 1.6.6
+  - name: com.unity.mathematics
+    version: 1.2.6
+  - name: com.unity.modules.jsonserialize
+    version: 1.0.0
+  - name: com.unity.modules.imageconversion
+    version: 1.0.0
+  keywords:
+  - unity
+  registry:
+    id: scoped:project:Keijiro
+    name: Keijiro
+    url: https://registry.npmjs.com
+    scopes:
+    - jp.keijiro
+    isDefault: 0
+    capabilities: 0
+    configSource: 4
+  hideInEditor: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 637545873692940000
+  documentationUrl: 
+  hasRepository: 1
+  repository:
+    type: git
+    url: git+https://github.com/keijiro/FaceLandmarkBarracuda.git
+    revision: 
+    path: 
+  unityLifecycle:
+    version: 
+    nextVersion: 
+- packageId: jp.keijiro.mediapipe.iris@1.1.0
+  testable: 0
+  isDirectDependency: 0
+  version: 1.1.0
+  source: 1
+  resolvedPath: C:\Users\bdlau\OneDrive\Desktop\Unity Projects\Team-15-Gesture-based-Interactive-Game-John\Library\PackageCache\jp.keijiro.mediapipe.iris@1.1.0
+  assetPath: Packages/jp.keijiro.mediapipe.iris
+  name: jp.keijiro.mediapipe.iris
+  displayName: MediaPipe Iris
+  author:
+    name: Keijiro Takahashi
+    email: 
+    url: 
+  category: 
+  type: 
+  description: MediaPipe iris landmark detection neural network model for Unity Barracuda
+  status: 0
+  errors: []
+  versions:
+    all:
+    - 1.0.0
+    - 1.1.0
+    - 1.2.0
+    compatible:
+    - 1.0.0
+    - 1.1.0
+    - 1.2.0
+    verified: 
+  dependencies:
+  - name: com.unity.barracuda
+    version: 1.3.3-preview
+  resolvedDependencies:
+  - name: com.unity.barracuda
+    version: 3.0.0
+  - name: com.unity.burst
+    version: 1.6.6
+  - name: com.unity.mathematics
+    version: 1.2.6
+  - name: com.unity.modules.jsonserialize
+    version: 1.0.0
+  - name: com.unity.modules.imageconversion
+    version: 1.0.0
+  keywords:
+  - unity
+  registry:
+    id: scoped:project:Keijiro
+    name: Keijiro
+    url: https://registry.npmjs.com
+    scopes:
+    - jp.keijiro
+    isDefault: 0
+    capabilities: 0
+    configSource: 4
+  hideInEditor: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 637541612563330000
+  documentationUrl: 
+  hasRepository: 1
+  repository:
+    type: git
+    url: git+https://github.com/keijiro/IrisBarracuda.git
+    revision: 
+    path: 
+  unityLifecycle:
+    version: 
+    nextVersion: 
+- packageId: jp.ikep.mediapipe.blazepose@1.3.0
+  testable: 0
+  isDirectDependency: 0
+  version: 1.3.0
+  source: 1
+  resolvedPath: C:\Users\bdlau\OneDrive\Desktop\Unity Projects\Team-15-Gesture-based-Interactive-Game-John\Library\PackageCache\jp.ikep.mediapipe.blazepose@1.3.0
+  assetPath: Packages/jp.ikep.mediapipe.blazepose
+  name: jp.ikep.mediapipe.blazepose
+  displayName: BlazePoseBarracuda
+  author:
+    name: IKEP
+    email: 
+    url: https://ikep.jp
+  category: 
+  type: 
+  description: BlazePose (Mediapipe Pose) for Unity Barracuda.
+  status: 0
+  errors: []
+  versions:
+    all:
+    - 1.1.1
+    - 1.2.0
+    - 1.3.0
+    compatible:
+    - 1.1.1
+    - 1.2.0
+    - 1.3.0
+    verified: 
+  dependencies:
+  - name: jp.ikep.mediapipe.posedetection
+    version: 1.0.1
+  - name: jp.ikep.mediapipe.poselandmark
+    version: 1.1.1
+  resolvedDependencies:
+  - name: jp.ikep.mediapipe.posedetection
+    version: 1.0.1
+  - name: com.unity.barracuda
+    version: 3.0.0
+  - name: com.unity.burst
+    version: 1.6.6
+  - name: com.unity.mathematics
+    version: 1.2.6
+  - name: com.unity.modules.jsonserialize
+    version: 1.0.0
+  - name: com.unity.modules.imageconversion
+    version: 1.0.0
+  - name: jp.ikep.mediapipe.poselandmark
+    version: 1.1.1
+  keywords:
+  - unity
+  - Barracuda
+  - Mediapipe
+  - Pose
+  - BlazePose
+  registry:
+    id: scoped:project:creativeikep
+    name: creativeikep
+    url: https://registry.npmjs.com
+    scopes:
+    - jp.ikep
+    isDefault: 0
+    capabilities: 0
+    configSource: 4
+  hideInEditor: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 637996663450370000
+  documentationUrl: 
+  hasRepository: 1
+  repository:
+    type: git
+    url: git+https://github.com/creativeIKEP/BlazePoseBarracuda.git
     revision: 
     path: 
   unityLifecycle:
@@ -635,6 +1091,7 @@ m_ResolvedPackages:
     - 2.0.0
     - 3.0.0
     - 3.0.1
+    - 3.0.2
     compatible:
     - 1.0.0
     - 1.0.1
@@ -1182,6 +1639,140 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 
     nextVersion: 
+- packageId: jp.ikep.mediapipe.posedetection@1.0.1
+  testable: 0
+  isDirectDependency: 0
+  version: 1.0.1
+  source: 1
+  resolvedPath: C:\Users\bdlau\OneDrive\Desktop\Unity Projects\Team-15-Gesture-based-Interactive-Game-John\Library\PackageCache\jp.ikep.mediapipe.posedetection@1.0.1
+  assetPath: Packages/jp.ikep.mediapipe.posedetection
+  name: jp.ikep.mediapipe.posedetection
+  displayName: PoseDetectionBarracuda
+  author:
+    name: IKEP
+    email: 
+    url: https://ikep.jp
+  category: 
+  type: 
+  description: Mediapipe pose detection for Unity Barracuda
+  status: 0
+  errors: []
+  versions:
+    all:
+    - 1.0.0
+    - 1.0.1
+    compatible:
+    - 1.0.0
+    - 1.0.1
+    verified: 
+  dependencies:
+  - name: com.unity.barracuda
+    version: 2.0.0-pre.3
+  resolvedDependencies:
+  - name: com.unity.barracuda
+    version: 3.0.0
+  - name: com.unity.burst
+    version: 1.6.6
+  - name: com.unity.mathematics
+    version: 1.2.6
+  - name: com.unity.modules.jsonserialize
+    version: 1.0.0
+  - name: com.unity.modules.imageconversion
+    version: 1.0.0
+  keywords:
+  - unity
+  - Barracuda
+  - Mediapipe
+  - PoseDetection
+  registry:
+    id: scoped:project:creativeikep
+    name: creativeikep
+    url: https://registry.npmjs.com
+    scopes:
+    - jp.ikep
+    isDefault: 0
+    capabilities: 0
+    configSource: 4
+  hideInEditor: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 637773273986270000
+  documentationUrl: 
+  hasRepository: 1
+  repository:
+    type: git
+    url: git+https://github.com/creativeIKEP/PoseDetectionBarracuda.git
+    revision: 
+    path: 
+  unityLifecycle:
+    version: 
+    nextVersion: 
+- packageId: jp.ikep.mediapipe.poselandmark@1.1.1
+  testable: 0
+  isDirectDependency: 0
+  version: 1.1.1
+  source: 1
+  resolvedPath: C:\Users\bdlau\OneDrive\Desktop\Unity Projects\Team-15-Gesture-based-Interactive-Game-John\Library\PackageCache\jp.ikep.mediapipe.poselandmark@1.1.1
+  assetPath: Packages/jp.ikep.mediapipe.poselandmark
+  name: jp.ikep.mediapipe.poselandmark
+  displayName: PoseLandmarkBarracuda
+  author:
+    name: IKEP
+    email: 
+    url: https://ikep.jp
+  category: 
+  type: 
+  description: Mediapipe pose landmark for Unity Barracuda
+  status: 0
+  errors: []
+  versions:
+    all:
+    - 1.1.0
+    - 1.1.1
+    compatible:
+    - 1.1.0
+    - 1.1.1
+    verified: 
+  dependencies:
+  - name: com.unity.barracuda
+    version: 2.0.0-pre.3
+  resolvedDependencies:
+  - name: com.unity.barracuda
+    version: 3.0.0
+  - name: com.unity.burst
+    version: 1.6.6
+  - name: com.unity.mathematics
+    version: 1.2.6
+  - name: com.unity.modules.jsonserialize
+    version: 1.0.0
+  - name: com.unity.modules.imageconversion
+    version: 1.0.0
+  keywords:
+  - unity
+  - Barracuda
+  - Mediapipe
+  - PoseLandmark
+  registry:
+    id: scoped:project:creativeikep
+    name: creativeikep
+    url: https://registry.npmjs.com
+    scopes:
+    - jp.ikep
+    isDefault: 0
+    capabilities: 0
+    configSource: 4
+  hideInEditor: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 637773287409980000
+  documentationUrl: 
+  hasRepository: 1
+  repository:
+    type: git
+    url: git+https://github.com/creativeIKEP/PoseLandmarkBarracuda.git
+    revision: 
+    path: 
+  unityLifecycle:
+    version: 
+    nextVersion: 
 - packageId: com.unity.burst@1.6.6
   testable: 0
   isDirectDependency: 0
@@ -1196,16 +1787,192 @@ m_ResolvedPackages:
     email: 
     url: 
   category: 
-  type: 
+  type: asset
   description: Burst is a compiler that translates from IL/.NET bytecode to highly
     optimized native code using LLVM.
   status: 0
   errors: []
   versions:
     all:
+    - 0.2.4-preview.5
+    - 0.2.4-preview.7
+    - 0.2.4-preview.11
+    - 0.2.4-preview.12
+    - 0.2.4-preview.13
+    - 0.2.4-preview.14
+    - 0.2.4-preview.15
+    - 0.2.4-preview.16
+    - 0.2.4-preview.17
+    - 0.2.4-preview.18
+    - 0.2.4-preview.19
+    - 0.2.4-preview.20
+    - 0.2.4-preview.21
+    - 0.2.4-preview.22
+    - 0.2.4-preview.23
+    - 0.2.4-preview.24
+    - 0.2.4-preview.25
+    - 0.2.4-preview.30
+    - 0.2.4-preview.31
+    - 0.2.4-preview.33
+    - 0.2.4-preview.34
+    - 0.2.4-preview.37
+    - 0.2.4-preview.41
+    - 0.2.4-preview.45
+    - 0.2.4-preview.48
+    - 0.2.4-preview.50
+    - 1.1.0-preview.2
+    - 1.1.0-preview.3
+    - 1.1.0-preview.4
+    - 1.1.1
+    - 1.1.2
+    - 1.1.3-preview.3
+    - 1.2.0-preview.1
+    - 1.2.0-preview.5
+    - 1.2.0-preview.6
+    - 1.2.0-preview.8
+    - 1.2.0-preview.9
+    - 1.2.0-preview.10
+    - 1.2.0-preview.11
+    - 1.2.0-preview.12
+    - 1.2.0
+    - 1.2.1
+    - 1.2.2
+    - 1.2.3
+    - 1.3.0-preview.1
+    - 1.3.0-preview.2
+    - 1.3.0-preview.3
+    - 1.3.0-preview.4
+    - 1.3.0-preview.5
+    - 1.3.0-preview.6
+    - 1.3.0-preview.7
+    - 1.3.0-preview.8
+    - 1.3.0-preview.9
+    - 1.3.0-preview.10
+    - 1.3.0-preview.11
+    - 1.3.0-preview.12
+    - 1.3.0-preview.13
+    - 1.3.0
+    - 1.3.1
+    - 1.3.2
+    - 1.3.3
+    - 1.3.4
+    - 1.3.5
+    - 1.3.6
+    - 1.3.7
+    - 1.3.8
+    - 1.3.9
+    - 1.4.0-pre.1
+    - 1.4.0-preview.1
+    - 1.4.0-preview.2
+    - 1.4.0-preview.3
+    - 1.4.0-preview.4
+    - 1.4.0-preview.5
+    - 1.4.1-pre.1
+    - 1.4.1-pre.2
+    - 1.4.1
+    - 1.4.2
+    - 1.4.3
+    - 1.4.4-preview.1
+    - 1.4.4-preview.2
+    - 1.4.4
+    - 1.4.5
+    - 1.4.6
+    - 1.4.7
+    - 1.4.8
+    - 1.4.9
+    - 1.4.11
+    - 1.5.0-pre.3
+    - 1.5.0-pre.4
+    - 1.5.0-pre.5
+    - 1.5.0
+    - 1.5.1
+    - 1.5.2
+    - 1.5.3
+    - 1.5.4
+    - 1.5.5
+    - 1.5.6-preview.1
+    - 1.5.6
+    - 1.6.0-pre.2
+    - 1.6.0-pre.3
+    - 1.6.0-pre.4
+    - 1.6.0
+    - 1.6.1
+    - 1.6.2
+    - 1.6.3
+    - 1.6.4
+    - 1.6.5
     - 1.6.6
+    - 1.7.0-pre.1
+    - 1.7.0
+    - 1.7.1
+    - 1.7.2
+    - 1.7.3
+    - 1.7.4
+    - 1.8.0-pre.1
+    - 1.8.0-pre.2
+    - 1.8.0
+    - 1.8.1
+    - 1.8.2
+    - 1.8.3
+    - 1.8.4
+    - 1.8.7
+    - 1.8.8
+    - 1.8.9
+    - 1.8.10
+    - 1.8.11
+    - 1.8.12
+    - 1.8.13
+    - 1.8.14
+    - 1.8.15
+    - 1.8.16
+    - 1.8.17
+    - 1.8.18
+    - 1.8.19
+    - 1.8.20
+    - 1.8.21
+    - 1.8.22
+    - 1.8.23
+    - 1.8.24
+    - 1.8.25
+    - 1.8.26
+    - 1.8.27
+    - 1.8.28
+    - 1.8.29
     compatible:
     - 1.6.6
+    - 1.7.0-pre.1
+    - 1.7.0
+    - 1.7.1
+    - 1.7.2
+    - 1.7.3
+    - 1.7.4
+    - 1.8.0-pre.1
+    - 1.8.0-pre.2
+    - 1.8.0
+    - 1.8.1
+    - 1.8.2
+    - 1.8.3
+    - 1.8.4
+    - 1.8.7
+    - 1.8.8
+    - 1.8.9
+    - 1.8.10
+    - 1.8.11
+    - 1.8.12
+    - 1.8.13
+    - 1.8.14
+    - 1.8.15
+    - 1.8.16
+    - 1.8.17
+    - 1.8.18
+    - 1.8.19
+    - 1.8.20
+    - 1.8.21
+    - 1.8.22
+    - 1.8.23
+    - 1.8.24
+    - 1.8.25
+    - 1.8.26
     verified: 1.6.6
   dependencies:
   - name: com.unity.mathematics
@@ -1222,9 +1989,9 @@ m_ResolvedPackages:
     isDefault: 1
     capabilities: 7
     configSource: 0
-  hideInEditor: 1
+  hideInEditor: 0
   isAssetStorePackage: 0
-  datePublishedTicks: 0
+  datePublishedTicks: 637902875830000000
   documentationUrl: 
   hasRepository: 1
   repository:
@@ -1333,54 +2100,4 @@ m_ResolvedPackages:
     path: 
   unityLifecycle:
     version: 1.0.0
-    nextVersion: 
-- packageId: com.unity.mathematics@1.2.6
-  testable: 0
-  isDirectDependency: 0
-  version: 1.2.6
-  source: 1
-  resolvedPath: C:\Users\bdlau\OneDrive\Desktop\Unity Projects\Team-15-Gesture-based-Interactive-Game-John\Library\PackageCache\com.unity.mathematics@1.2.6
-  assetPath: Packages/com.unity.mathematics
-  name: com.unity.mathematics
-  displayName: Mathematics
-  author:
-    name: 
-    email: 
-    url: 
-  category: 
-  type: 
-  description: Unity's C# SIMD math library providing vector types and math functions
-    with a shader like syntax.
-  status: 0
-  errors: []
-  versions:
-    all:
-    - 1.2.6
-    compatible:
-    - 1.2.6
-    verified: 1.2.6
-  dependencies: []
-  resolvedDependencies: []
-  keywords:
-  - unity
-  registry:
-    id: main
-    name: 
-    url: https://packages.unity.com
-    scopes: []
-    isDefault: 1
-    capabilities: 7
-    configSource: 0
-  hideInEditor: 1
-  isAssetStorePackage: 0
-  datePublishedTicks: 0
-  documentationUrl: 
-  hasRepository: 1
-  repository:
-    type: git
-    url: https://github.com/Unity-Technologies/Unity.Mathematics.git
-    revision: f110c8c230d253654afed153569030a587cc7557
-    path: 
-  unityLifecycle:
-    version: 1.2.6
     nextVersion: 

@@ -305,13 +305,13 @@
 -r:"C:/Users/bdlau/OneDrive/Desktop/Unity Projects/Team-15-Gesture-based-Interactive-Game-John/Library/PackageCache/com.unity.burst@1.6.6/Unity.Burst.CodeGen/Unity.Burst.Cecil.Pdb.dll"
 -r:"C:/Users/bdlau/OneDrive/Desktop/Unity Projects/Team-15-Gesture-based-Interactive-Game-John/Library/PackageCache/com.unity.burst@1.6.6/Unity.Burst.CodeGen/Unity.Burst.Cecil.Rocks.dll"
 -r:"C:/Users/bdlau/OneDrive/Desktop/Unity Projects/Team-15-Gesture-based-Interactive-Game-John/Library/PackageCache/com.unity.burst@1.6.6/Unity.Burst.Unsafe.dll"
--r:"Library/Bee/artifacts/1900b0aE.dag/Klak.NNUtils.Runtime.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Barracuda.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
-"Library/PackageCache/jp.keijiro.mediapipe.handlandmark@2.1.1/Script/HandLandmarkDetector.cs"
-"Library/PackageCache/jp.keijiro.mediapipe.handlandmark@2.1.1/Script/HandLandmarkDetectorPublic.cs"
-"Library/PackageCache/jp.keijiro.mediapipe.handlandmark@2.1.1/Script/ResourceSet.cs"
+"Library/PackageCache/jp.keijiro.mediapipe.handlandmark@1.0.1/Script/HandLandmarkDetector.cs"
+"Library/PackageCache/jp.keijiro.mediapipe.handlandmark@1.0.1/Script/HandLandmarkDetectorPublic.cs"
+"Library/PackageCache/jp.keijiro.mediapipe.handlandmark@1.0.1/Script/Internal/Utilities.cs"
+"Library/PackageCache/jp.keijiro.mediapipe.handlandmark@1.0.1/Script/ResourceSet.cs"
 -langversion:9.0
 
 /deterministic
