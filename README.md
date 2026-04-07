@@ -11,9 +11,12 @@ John and Hunter are currently working full effort towards the depth tracking fea
 
 ## Branches
 The functional game is on Ben's branch.
-Mark's milestone 2 demonstration is on the dual-hand-feature branch.
+Mark's milestone 3 demonstration is from the Mark Branch.
+John's milestone 3 demonstration is from the John branch.
+Ben's milestone 3 demonstration is from the main branch.
 
-## Release Notes: 2/28/2027
+## Release Notes: 4/2/2026
 Milestone 1 - we have a couple of libraries which capture the up, down, left, and right movements including MediaPipe Hands and a existing project template of the same library with modifications.
 Milestone 2 - Complete now. We have built the whack-a-mole game and incorporated two hands from the MediaPipe Library into Unity.
-Milestone 3 - Upcoming, we will fully integrate our gameplay with the hand gestures.
+Milestone 3 - The game now fully works but without the depth tracking capture. We have also demonstrated our depth capture features.
+Milestone 4 - upcoming - fully functional depth tracking.
