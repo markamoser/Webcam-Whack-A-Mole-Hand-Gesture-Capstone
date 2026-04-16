@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 639108926342068804
+      ticks: 639119795902907104
     m_Hash: 1361714760
   m_LockFileStatus:
     m_FilePath: C:/Users/bdlau/OneDrive/Desktop/Unity Projects/Team-15-Gesture-based-Interactive-Game-John/Packages/packages-lock.json
@@ -13,8 +13,8 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 639108926448634559
-    m_Hash: 3667054482
+      ticks: 639119796072095731
+    m_Hash: 3505941595
 m_EmbeddedPackageManifests:
   m_ManifestsStatus:
     C:/Users/bdlau/OneDrive/Desktop/Unity Projects/Team-15-Gesture-based-Interactive-Game-John/Packages/HolisticBarracuda/package.json:
@@ -28,7 +28,7 @@ m_EmbeddedPackageManifests:
 m_LocalPackages:
   m_LocalFileStatus: []
 m_ProjectPath: C:/Users/bdlau/OneDrive/Desktop/Unity Projects/Team-15-Gesture-based-Interactive-Game-John/Packages
-m_EditorVersion: 2021.3.18f1 (3129e69bc0c7)
+m_EditorVersion: 2021.3.45f2 (88f88f591b2e)
 m_ResolvedPackages:
 - packageId: com.unity.toolchain.win-x86_64-linux-x86_64@2.0.11
   testable: 0
@@ -80,35 +80,13 @@ m_ResolvedPackages:
     - 2.0.10
     - 2.0.11
     compatible:
-    - 0.1.4-preview
-    - 0.1.5-preview
-    - 0.1.6-preview
-    - 0.1.7-preview
-    - 0.1.8-preview
-    - 0.1.9-preview
-    - 0.1.10-preview
-    - 0.1.11-preview
-    - 0.1.13-preview
-    - 0.1.14-preview
-    - 0.1.15-preview
-    - 0.1.16-preview
-    - 0.1.17-preview
-    - 0.1.18-preview
-    - 0.1.19-preview
-    - 0.1.20-preview
-    - 0.1.21-preview
-    - 1.0.0
-    - 2.0.0
-    - 2.0.1
-    - 2.0.2
-    - 2.0.3
     - 2.0.4
     - 2.0.5
     - 2.0.6
     - 2.0.9
     - 2.0.10
     - 2.0.11
-    verified: 
+    verified: 2.0.11
   dependencies:
   - name: com.unity.sysroot
     version: 2.0.10
@@ -143,8 +121,9 @@ m_ResolvedPackages:
     revision: c5a32c15f32b7de0b0aa81c256ea52b322478b15
     path: 
   unityLifecycle:
-    version: 
+    version: 2.0.4
     nextVersion: 
+    recommendedVersion: 
 - packageId: com.unity.ugui@1.0.0
   testable: 0
   isDirectDependency: 1
@@ -211,6 +190,7 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 1.0.0
     nextVersion: 
+    recommendedVersion: 
 - packageId: jp.keijiro.klak.testtools@1.0.4
   testable: 0
   isDirectDependency: 1
@@ -300,6 +280,7 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 
     nextVersion: 
+    recommendedVersion: 
 - packageId: jp.keijiro.mediapipe.blazepalm@2.1.1
   testable: 0
   isDirectDependency: 1
@@ -344,7 +325,7 @@ m_ResolvedPackages:
   - name: com.unity.barracuda
     version: 3.0.0
   - name: com.unity.burst
-    version: 1.6.6
+    version: 1.8.18
   - name: com.unity.mathematics
     version: 1.2.6
   - name: com.unity.modules.jsonserialize
@@ -377,6 +358,7 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 
     nextVersion: 
+    recommendedVersion: 
 - packageId: jp.keijiro.mediapipe.handlandmark@1.0.1
   testable: 0
   isDirectDependency: 1
@@ -418,7 +400,7 @@ m_ResolvedPackages:
   - name: com.unity.barracuda
     version: 3.0.0
   - name: com.unity.burst
-    version: 1.6.6
+    version: 1.8.18
   - name: com.unity.mathematics
     version: 1.2.6
   - name: com.unity.modules.jsonserialize
@@ -449,6 +431,7 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 
     nextVersion: 
+    recommendedVersion: 
 - packageId: jp.keijiro.test-assets@1.0.1
   testable: 0
   isDirectDependency: 1
@@ -501,6 +484,7 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 
     nextVersion: 
+    recommendedVersion: 
 - packageId: jp.ikep.mediapipe.holistic@file:C:\Users\bdlau\OneDrive\Desktop\Unity
     Projects\Team-15-Gesture-based-Interactive-Game-John\Packages\HolisticBarracuda
   testable: 1
@@ -551,7 +535,7 @@ m_ResolvedPackages:
   - name: com.unity.barracuda
     version: 3.0.0
   - name: com.unity.burst
-    version: 1.6.6
+    version: 1.8.18
   - name: com.unity.modules.jsonserialize
     version: 1.0.0
   - name: com.unity.modules.imageconversion
@@ -603,6 +587,7 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 
     nextVersion: 
+    recommendedVersion: 
 - packageId: com.unity.mathematics@1.2.6
   testable: 0
   isDirectDependency: 0
@@ -662,7 +647,7 @@ m_ResolvedPackages:
     isDefault: 1
     capabilities: 7
     configSource: 0
-  hideInEditor: 0
+  hideInEditor: 1
   isAssetStorePackage: 0
   datePublishedTicks: 637841876140000000
   documentationUrl: 
@@ -675,6 +660,7 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 1.2.6
     nextVersion: 
+    recommendedVersion: 
 - packageId: jp.keijiro.mediapipe.blazeface@1.1.1
   testable: 0
   isDirectDependency: 0
@@ -713,7 +699,7 @@ m_ResolvedPackages:
   - name: com.unity.barracuda
     version: 3.0.0
   - name: com.unity.burst
-    version: 1.6.6
+    version: 1.8.18
   - name: com.unity.mathematics
     version: 1.2.6
   - name: com.unity.modules.jsonserialize
@@ -744,6 +730,7 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 
     nextVersion: 
+    recommendedVersion: 
 - packageId: jp.keijiro.mediapipe.facelandmark@1.0.0
   testable: 0
   isDirectDependency: 0
@@ -777,7 +764,7 @@ m_ResolvedPackages:
   - name: com.unity.barracuda
     version: 3.0.0
   - name: com.unity.burst
-    version: 1.6.6
+    version: 1.8.18
   - name: com.unity.mathematics
     version: 1.2.6
   - name: com.unity.modules.jsonserialize
@@ -808,6 +795,7 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 
     nextVersion: 
+    recommendedVersion: 
 - packageId: jp.keijiro.mediapipe.iris@1.1.0
   testable: 0
   isDirectDependency: 0
@@ -843,7 +831,7 @@ m_ResolvedPackages:
   - name: com.unity.barracuda
     version: 3.0.0
   - name: com.unity.burst
-    version: 1.6.6
+    version: 1.8.18
   - name: com.unity.mathematics
     version: 1.2.6
   - name: com.unity.modules.jsonserialize
@@ -874,6 +862,7 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 
     nextVersion: 
+    recommendedVersion: 
 - packageId: jp.ikep.mediapipe.blazepose@1.3.0
   testable: 0
   isDirectDependency: 0
@@ -913,7 +902,7 @@ m_ResolvedPackages:
   - name: com.unity.barracuda
     version: 3.0.0
   - name: com.unity.burst
-    version: 1.6.6
+    version: 1.8.18
   - name: com.unity.mathematics
     version: 1.2.6
   - name: com.unity.modules.jsonserialize
@@ -950,6 +939,7 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 
     nextVersion: 
+    recommendedVersion: 
 - packageId: com.unity.barracuda@3.0.0
   testable: 0
   isDirectDependency: 0
@@ -1033,7 +1023,7 @@ m_ResolvedPackages:
     version: 1.0.0
   resolvedDependencies:
   - name: com.unity.burst
-    version: 1.6.6
+    version: 1.8.18
   - name: com.unity.mathematics
     version: 1.2.6
   - name: com.unity.modules.jsonserialize
@@ -1049,7 +1039,7 @@ m_ResolvedPackages:
     isDefault: 1
     capabilities: 7
     configSource: 0
-  hideInEditor: 0
+  hideInEditor: 1
   isAssetStorePackage: 0
   datePublishedTicks: 637817245160000000
   documentationUrl: 
@@ -1062,6 +1052,7 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 2.0.0
     nextVersion: 
+    recommendedVersion: 
 - packageId: jp.keijiro.klak.nnutils@1.3.0
   testable: 0
   isDirectDependency: 0
@@ -1107,7 +1098,7 @@ m_ResolvedPackages:
   - name: com.unity.barracuda
     version: 3.0.0
   - name: com.unity.burst
-    version: 1.6.6
+    version: 1.8.18
   - name: com.unity.mathematics
     version: 1.2.6
   - name: com.unity.modules.jsonserialize
@@ -1138,6 +1129,7 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 
     nextVersion: 
+    recommendedVersion: 
 - packageId: com.unity.modules.audio@1.0.0
   testable: 0
   isDirectDependency: 0
@@ -1187,6 +1179,7 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 1.0.0
     nextVersion: 
+    recommendedVersion: 
 - packageId: com.unity.modules.video@1.0.0
   testable: 0
   isDirectDependency: 0
@@ -1248,6 +1241,7 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 1.0.0
     nextVersion: 
+    recommendedVersion: 
 - packageId: com.unity.modules.unitywebrequest@1.0.0
   testable: 0
   isDirectDependency: 0
@@ -1297,6 +1291,7 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 1.0.0
     nextVersion: 
+    recommendedVersion: 
 - packageId: com.unity.modules.unitywebrequesttexture@1.0.0
   testable: 0
   isDirectDependency: 0
@@ -1354,6 +1349,7 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 1.0.0
     nextVersion: 
+    recommendedVersion: 
 - packageId: com.unity.modules.ui@1.0.0
   testable: 0
   isDirectDependency: 0
@@ -1403,6 +1399,7 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 1.0.0
     nextVersion: 
+    recommendedVersion: 
 - packageId: com.unity.modules.imgui@1.0.0
   testable: 0
   isDirectDependency: 0
@@ -1452,6 +1449,7 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 1.0.0
     nextVersion: 
+    recommendedVersion: 
 - packageId: com.unity.sysroot@2.0.10
   testable: 0
   isDirectDependency: 0
@@ -1496,29 +1494,12 @@ m_ResolvedPackages:
     - 2.0.10
     - 2.0.11
     compatible:
-    - 0.1.7-preview
-    - 0.1.8-preview
-    - 0.1.9-preview
-    - 0.1.10-preview
-    - 0.1.11-preview
-    - 0.1.12-preview
-    - 0.1.14-preview
-    - 0.1.15-preview
-    - 0.1.16-preview
-    - 0.1.17-preview
-    - 0.1.18-preview
-    - 0.1.19-preview
-    - 1.0.0
-    - 2.0.0
-    - 2.0.2
-    - 2.0.3
-    - 2.0.4
     - 2.0.5
     - 2.0.6
     - 2.0.7
     - 2.0.10
     - 2.0.11
-    verified: 
+    verified: 2.0.11
   dependencies: []
   resolvedDependencies: []
   keywords:
@@ -1533,7 +1514,7 @@ m_ResolvedPackages:
     isDefault: 1
     capabilities: 7
     configSource: 0
-  hideInEditor: 0
+  hideInEditor: 1
   isAssetStorePackage: 0
   datePublishedTicks: 638500638510000000
   documentationUrl: https://docs.unity3d.com/Packages/com.unity.sysroot@2.0/manual/index.html
@@ -1544,8 +1525,9 @@ m_ResolvedPackages:
     revision: 48e503c8f30007e813fbcec90dc84795285406b4
     path: 
   unityLifecycle:
-    version: 
+    version: 2.0.5
     nextVersion: 
+    recommendedVersion: 
 - packageId: com.unity.sysroot.linux-x86_64@2.0.9
   testable: 0
   isDirectDependency: 0
@@ -1587,27 +1569,12 @@ m_ResolvedPackages:
     - 2.0.9
     - 2.0.10
     compatible:
-    - 0.1.6-preview
-    - 0.1.7-preview
-    - 0.1.8-preview
-    - 0.1.9-preview
-    - 0.1.10-preview
-    - 0.1.11-preview
-    - 0.1.12-preview
-    - 0.1.13-preview
-    - 0.1.14-preview
-    - 0.1.15-preview
-    - 1.0.0
-    - 2.0.0
-    - 2.0.1
-    - 2.0.2
-    - 2.0.3
     - 2.0.4
     - 2.0.5
     - 2.0.6
     - 2.0.9
     - 2.0.10
-    verified: 
+    verified: 2.0.10
   dependencies:
   - name: com.unity.sysroot
     version: 2.0.10
@@ -1626,7 +1593,7 @@ m_ResolvedPackages:
     isDefault: 1
     capabilities: 7
     configSource: 0
-  hideInEditor: 0
+  hideInEditor: 1
   isAssetStorePackage: 0
   datePublishedTicks: 638500638600000000
   documentationUrl: https://docs.unity3d.com/Packages/com.unity.sysroot.linux-x86_64@2.0/manual/index.html
@@ -1637,8 +1604,9 @@ m_ResolvedPackages:
     revision: bf7a008256a1175e0f8a0d7d26d6826cbfbe1bb2
     path: 
   unityLifecycle:
-    version: 
+    version: 2.0.4
     nextVersion: 
+    recommendedVersion: 
 - packageId: jp.ikep.mediapipe.posedetection@1.0.1
   testable: 0
   isDirectDependency: 0
@@ -1672,7 +1640,7 @@ m_ResolvedPackages:
   - name: com.unity.barracuda
     version: 3.0.0
   - name: com.unity.burst
-    version: 1.6.6
+    version: 1.8.18
   - name: com.unity.mathematics
     version: 1.2.6
   - name: com.unity.modules.jsonserialize
@@ -1706,6 +1674,7 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 
     nextVersion: 
+    recommendedVersion: 
 - packageId: jp.ikep.mediapipe.poselandmark@1.1.1
   testable: 0
   isDirectDependency: 0
@@ -1739,7 +1708,7 @@ m_ResolvedPackages:
   - name: com.unity.barracuda
     version: 3.0.0
   - name: com.unity.burst
-    version: 1.6.6
+    version: 1.8.18
   - name: com.unity.mathematics
     version: 1.2.6
   - name: com.unity.modules.jsonserialize
@@ -1773,12 +1742,13 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 
     nextVersion: 
-- packageId: com.unity.burst@1.6.6
+    recommendedVersion: 
+- packageId: com.unity.burst@1.8.18
   testable: 0
   isDirectDependency: 0
-  version: 1.6.6
+  version: 1.8.18
   source: 1
-  resolvedPath: C:\Users\bdlau\OneDrive\Desktop\Unity Projects\Team-15-Gesture-based-Interactive-Game-John\Library\PackageCache\com.unity.burst@1.6.6
+  resolvedPath: C:\Users\bdlau\OneDrive\Desktop\Unity Projects\Team-15-Gesture-based-Interactive-Game-John\Library\PackageCache\com.unity.burst@1.8.18
   assetPath: Packages/com.unity.burst
   name: com.unity.burst
   displayName: Burst
@@ -1787,7 +1757,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: 
-  type: asset
+  type: 
   description: Burst is a compiler that translates from IL/.NET bytecode to highly
     optimized native code using LLVM.
   status: 0
@@ -1939,31 +1909,6 @@ m_ResolvedPackages:
     - 1.8.28
     - 1.8.29
     compatible:
-    - 1.6.6
-    - 1.7.0-pre.1
-    - 1.7.0
-    - 1.7.1
-    - 1.7.2
-    - 1.7.3
-    - 1.7.4
-    - 1.8.0-pre.1
-    - 1.8.0-pre.2
-    - 1.8.0
-    - 1.8.1
-    - 1.8.2
-    - 1.8.3
-    - 1.8.4
-    - 1.8.7
-    - 1.8.8
-    - 1.8.9
-    - 1.8.10
-    - 1.8.11
-    - 1.8.12
-    - 1.8.13
-    - 1.8.14
-    - 1.8.15
-    - 1.8.16
-    - 1.8.17
     - 1.8.18
     - 1.8.19
     - 1.8.20
@@ -1973,13 +1918,17 @@ m_ResolvedPackages:
     - 1.8.24
     - 1.8.25
     - 1.8.26
-    verified: 1.6.6
+    verified: 1.8.26
   dependencies:
   - name: com.unity.mathematics
     version: 1.2.1
+  - name: com.unity.modules.jsonserialize
+    version: 1.0.0
   resolvedDependencies:
   - name: com.unity.mathematics
     version: 1.2.6
+  - name: com.unity.modules.jsonserialize
+    version: 1.0.0
   keywords: []
   registry:
     id: main
@@ -1989,19 +1938,20 @@ m_ResolvedPackages:
     isDefault: 1
     capabilities: 7
     configSource: 0
-  hideInEditor: 0
+  hideInEditor: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 637902875830000000
-  documentationUrl: 
+  datePublishedTicks: 638622972693870000
+  documentationUrl: https://docs.unity3d.com/Packages/com.unity.burst@1.8/manual/index.html
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/burst.git
-    revision: 21ee3d01c6a374f6b01106f9eb6f1b43e113b1a3
+    revision: 594a8d8794083be96fa510b2deea0954f971ecc9
     path: 
   unityLifecycle:
-    version: 1.6.6
+    version: 1.8.18
     nextVersion: 
+    recommendedVersion: 
 - packageId: com.unity.modules.jsonserialize@1.0.0
   testable: 0
   isDirectDependency: 0
@@ -2051,6 +2001,7 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 1.0.0
     nextVersion: 
+    recommendedVersion: 
 - packageId: com.unity.modules.imageconversion@1.0.0
   testable: 0
   isDirectDependency: 0
@@ -2101,3 +2052,4 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 1.0.0
     nextVersion: 
+    recommendedVersion: 
