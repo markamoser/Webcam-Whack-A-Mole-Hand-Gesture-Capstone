@@ -16,12 +16,13 @@
     }
   ],
   "dependencies": {
+    "com.unity.test-framework": "1.1.33",
     "com.unity.toolchain.win-x86_64-linux-x86_64": "2.0.11",
     "com.unity.ugui": "1.0.0",
+    "jp.ikep.mediapipe.holistic": "1.1.0",
     "jp.keijiro.klak.testtools": "1.0.4",
     "jp.keijiro.mediapipe.blazepalm": "2.1.1",
     "jp.keijiro.mediapipe.handlandmark": "1.0.1",
-    "jp.keijiro.test-assets": "1.0.1",
-    "jp.ikep.mediapipe.holistic": "1.1.0"
+    "jp.keijiro.test-assets": "1.0.1"
   }
 }

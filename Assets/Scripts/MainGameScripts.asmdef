@@ -1,0 +1,21 @@
+{
+    "name": "MainGameScripts",
+    "rootNamespace": "",
+    "references": [
+        "GUID:b718bcda8ad24455abb829e253fbd60d",
+        "GUID:5c2b5ba89f9e74e418232e154bc5cc7a",
+        "GUID:e6bb58bc80c8b425bb15645c26cfcb7a",
+        "GUID:b97ad341f54c71b499afc79c05bc428c",
+        "GUID:9054d6e0d0c694d44a0d05e070ae54f9",
+        "GUID:3da4836269f54a14fae4f2dc4d8a73ae"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
