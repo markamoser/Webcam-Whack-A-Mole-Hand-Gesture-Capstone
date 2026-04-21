@@ -1,33 +1,33 @@
 m_ProjectFiles:
   m_ManifestFileStatus:
-    m_FilePath: C:/Users/bdlau/OneDrive/Desktop/Unity Projects/Team-15-Gesture-based-Interactive-Game-John/Packages/manifest.json
+    m_FilePath: C:/Users/xxjkl/Unity Projects/Capstone/Webcam-Whack-A-Mole-Hand-Gesture-Capstone/Packages/manifest.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 639119795902907104
+      ticks: 639124002130147127
     m_Hash: 1361714760
   m_LockFileStatus:
-    m_FilePath: C:/Users/bdlau/OneDrive/Desktop/Unity Projects/Team-15-Gesture-based-Interactive-Game-John/Packages/packages-lock.json
+    m_FilePath: C:/Users/xxjkl/Unity Projects/Capstone/Webcam-Whack-A-Mole-Hand-Gesture-Capstone/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 639119796072095731
+      ticks: 639124002130147127
     m_Hash: 3505941595
 m_EmbeddedPackageManifests:
   m_ManifestsStatus:
-    C:/Users/bdlau/OneDrive/Desktop/Unity Projects/Team-15-Gesture-based-Interactive-Game-John/Packages/HolisticBarracuda/package.json:
-      m_FilePath: C:/Users/bdlau/OneDrive/Desktop/Unity Projects/Team-15-Gesture-based-Interactive-Game-John/Packages/HolisticBarracuda/package.json
+    C:/Users/xxjkl/Unity Projects/Capstone/Webcam-Whack-A-Mole-Hand-Gesture-Capstone/Packages/HolisticBarracuda/package.json:
+      m_FilePath: C:/Users/xxjkl/Unity Projects/Capstone/Webcam-Whack-A-Mole-Hand-Gesture-Capstone/Packages/HolisticBarracuda/package.json
       m_PathExists: 1
       m_ContentTrackingEnabled: 1
       m_ModificationDate:
         serializedVersion: 2
-        ticks: 639107280370560347
+        ticks: 639124002130137107
       m_Hash: 1777344148
 m_LocalPackages:
   m_LocalFileStatus: []
-m_ProjectPath: C:/Users/bdlau/OneDrive/Desktop/Unity Projects/Team-15-Gesture-based-Interactive-Game-John/Packages
+m_ProjectPath: C:/Users/xxjkl/Unity Projects/Capstone/Webcam-Whack-A-Mole-Hand-Gesture-Capstone/Packages
 m_EditorVersion: 2021.3.45f2 (88f88f591b2e)
 m_ResolvedPackages:
 - packageId: com.unity.toolchain.win-x86_64-linux-x86_64@2.0.11
@@ -35,7 +35,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 2.0.11
   source: 1
-  resolvedPath: C:\Users\bdlau\OneDrive\Desktop\Unity Projects\Team-15-Gesture-based-Interactive-Game-John\Library\PackageCache\com.unity.toolchain.win-x86_64-linux-x86_64@2.0.11
+  resolvedPath: C:\Users\xxjkl\Unity Projects\Capstone\Webcam-Whack-A-Mole-Hand-Gesture-Capstone\Library\PackageCache\com.unity.toolchain.win-x86_64-linux-x86_64@2.0.11
   assetPath: Packages/com.unity.toolchain.win-x86_64-linux-x86_64
   name: com.unity.toolchain.win-x86_64-linux-x86_64
   displayName: Toolchain Win Linux x64
@@ -129,7 +129,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\bdlau\OneDrive\Desktop\Unity Projects\Team-15-Gesture-based-Interactive-Game-John\Library\PackageCache\com.unity.ugui@1.0.0
+  resolvedPath: C:\Users\xxjkl\Unity Projects\Capstone\Webcam-Whack-A-Mole-Hand-Gesture-Capstone\Library\PackageCache\com.unity.ugui@1.0.0
   assetPath: Packages/com.unity.ugui
   name: com.unity.ugui
   displayName: Unity UI
@@ -196,7 +196,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.4
   source: 1
-  resolvedPath: C:\Users\bdlau\OneDrive\Desktop\Unity Projects\Team-15-Gesture-based-Interactive-Game-John\Library\PackageCache\jp.keijiro.klak.testtools@1.0.4
+  resolvedPath: C:\Users\xxjkl\Unity Projects\Capstone\Webcam-Whack-A-Mole-Hand-Gesture-Capstone\Library\PackageCache\jp.keijiro.klak.testtools@1.0.4
   assetPath: Packages/jp.keijiro.klak.testtools
   name: jp.keijiro.klak.testtools
   displayName: Test Tools
@@ -286,7 +286,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 2.1.1
   source: 1
-  resolvedPath: C:\Users\bdlau\OneDrive\Desktop\Unity Projects\Team-15-Gesture-based-Interactive-Game-John\Library\PackageCache\jp.keijiro.mediapipe.blazepalm@2.1.1
+  resolvedPath: C:\Users\xxjkl\Unity Projects\Capstone\Webcam-Whack-A-Mole-Hand-Gesture-Capstone\Library\PackageCache\jp.keijiro.mediapipe.blazepalm@2.1.1
   assetPath: Packages/jp.keijiro.mediapipe.blazepalm
   name: jp.keijiro.mediapipe.blazepalm
   displayName: BlazePalm
@@ -364,7 +364,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.1
   source: 1
-  resolvedPath: C:\Users\bdlau\OneDrive\Desktop\Unity Projects\Team-15-Gesture-based-Interactive-Game-John\Library\PackageCache\jp.keijiro.mediapipe.handlandmark@1.0.1
+  resolvedPath: C:\Users\xxjkl\Unity Projects\Capstone\Webcam-Whack-A-Mole-Hand-Gesture-Capstone\Library\PackageCache\jp.keijiro.mediapipe.handlandmark@1.0.1
   assetPath: Packages/jp.keijiro.mediapipe.handlandmark
   name: jp.keijiro.mediapipe.handlandmark
   displayName: MediaPipe Hand Landmark
@@ -437,7 +437,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.1
   source: 1
-  resolvedPath: C:\Users\bdlau\OneDrive\Desktop\Unity Projects\Team-15-Gesture-based-Interactive-Game-John\Library\PackageCache\jp.keijiro.test-assets@1.0.1
+  resolvedPath: C:\Users\xxjkl\Unity Projects\Capstone\Webcam-Whack-A-Mole-Hand-Gesture-Capstone\Library\PackageCache\jp.keijiro.test-assets@1.0.1
   assetPath: Packages/jp.keijiro.test-assets
   name: jp.keijiro.test-assets
   displayName: Test Assets
@@ -485,13 +485,12 @@ m_ResolvedPackages:
     version: 
     nextVersion: 
     recommendedVersion: 
-- packageId: jp.ikep.mediapipe.holistic@file:C:\Users\bdlau\OneDrive\Desktop\Unity
-    Projects\Team-15-Gesture-based-Interactive-Game-John\Packages\HolisticBarracuda
+- packageId: jp.ikep.mediapipe.holistic@file:C:\Users\xxjkl\Unity Projects\Capstone\Webcam-Whack-A-Mole-Hand-Gesture-Capstone\Packages\HolisticBarracuda
   testable: 1
   isDirectDependency: 1
   version: 1.1.0
   source: 3
-  resolvedPath: C:\Users\bdlau\OneDrive\Desktop\Unity Projects\Team-15-Gesture-based-Interactive-Game-John\Packages\HolisticBarracuda
+  resolvedPath: C:\Users\xxjkl\Unity Projects\Capstone\Webcam-Whack-A-Mole-Hand-Gesture-Capstone\Packages\HolisticBarracuda
   assetPath: Packages/jp.ikep.mediapipe.holistic
   name: jp.ikep.mediapipe.holistic
   displayName: HolisticBarracuda
@@ -593,7 +592,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.2.6
   source: 1
-  resolvedPath: C:\Users\bdlau\OneDrive\Desktop\Unity Projects\Team-15-Gesture-based-Interactive-Game-John\Library\PackageCache\com.unity.mathematics@1.2.6
+  resolvedPath: C:\Users\xxjkl\Unity Projects\Capstone\Webcam-Whack-A-Mole-Hand-Gesture-Capstone\Library\PackageCache\com.unity.mathematics@1.2.6
   assetPath: Packages/com.unity.mathematics
   name: com.unity.mathematics
   displayName: Mathematics
@@ -666,7 +665,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.1.1
   source: 1
-  resolvedPath: C:\Users\bdlau\OneDrive\Desktop\Unity Projects\Team-15-Gesture-based-Interactive-Game-John\Library\PackageCache\jp.keijiro.mediapipe.blazeface@1.1.1
+  resolvedPath: C:\Users\xxjkl\Unity Projects\Capstone\Webcam-Whack-A-Mole-Hand-Gesture-Capstone\Library\PackageCache\jp.keijiro.mediapipe.blazeface@1.1.1
   assetPath: Packages/jp.keijiro.mediapipe.blazeface
   name: jp.keijiro.mediapipe.blazeface
   displayName: BlazeFace
@@ -736,7 +735,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.0.0
   source: 1
-  resolvedPath: C:\Users\bdlau\OneDrive\Desktop\Unity Projects\Team-15-Gesture-based-Interactive-Game-John\Library\PackageCache\jp.keijiro.mediapipe.facelandmark@1.0.0
+  resolvedPath: C:\Users\xxjkl\Unity Projects\Capstone\Webcam-Whack-A-Mole-Hand-Gesture-Capstone\Library\PackageCache\jp.keijiro.mediapipe.facelandmark@1.0.0
   assetPath: Packages/jp.keijiro.mediapipe.facelandmark
   name: jp.keijiro.mediapipe.facelandmark
   displayName: MediaPipe Face Landmark Detector
@@ -801,7 +800,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.1.0
   source: 1
-  resolvedPath: C:\Users\bdlau\OneDrive\Desktop\Unity Projects\Team-15-Gesture-based-Interactive-Game-John\Library\PackageCache\jp.keijiro.mediapipe.iris@1.1.0
+  resolvedPath: C:\Users\xxjkl\Unity Projects\Capstone\Webcam-Whack-A-Mole-Hand-Gesture-Capstone\Library\PackageCache\jp.keijiro.mediapipe.iris@1.1.0
   assetPath: Packages/jp.keijiro.mediapipe.iris
   name: jp.keijiro.mediapipe.iris
   displayName: MediaPipe Iris
@@ -868,7 +867,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.3.0
   source: 1
-  resolvedPath: C:\Users\bdlau\OneDrive\Desktop\Unity Projects\Team-15-Gesture-based-Interactive-Game-John\Library\PackageCache\jp.ikep.mediapipe.blazepose@1.3.0
+  resolvedPath: C:\Users\xxjkl\Unity Projects\Capstone\Webcam-Whack-A-Mole-Hand-Gesture-Capstone\Library\PackageCache\jp.ikep.mediapipe.blazepose@1.3.0
   assetPath: Packages/jp.ikep.mediapipe.blazepose
   name: jp.ikep.mediapipe.blazepose
   displayName: BlazePoseBarracuda
@@ -945,7 +944,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 3.0.0
   source: 1
-  resolvedPath: C:\Users\bdlau\OneDrive\Desktop\Unity Projects\Team-15-Gesture-based-Interactive-Game-John\Library\PackageCache\com.unity.barracuda@3.0.0
+  resolvedPath: C:\Users\xxjkl\Unity Projects\Capstone\Webcam-Whack-A-Mole-Hand-Gesture-Capstone\Library\PackageCache\com.unity.barracuda@3.0.0
   assetPath: Packages/com.unity.barracuda
   name: com.unity.barracuda
   displayName: Barracuda
@@ -1058,7 +1057,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.3.0
   source: 1
-  resolvedPath: C:\Users\bdlau\OneDrive\Desktop\Unity Projects\Team-15-Gesture-based-Interactive-Game-John\Library\PackageCache\jp.keijiro.klak.nnutils@1.3.0
+  resolvedPath: C:\Users\xxjkl\Unity Projects\Capstone\Webcam-Whack-A-Mole-Hand-Gesture-Capstone\Library\PackageCache\jp.keijiro.klak.nnutils@1.3.0
   assetPath: Packages/jp.keijiro.klak.nnutils
   name: jp.keijiro.klak.nnutils
   displayName: NNUtils
@@ -1135,7 +1134,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\bdlau\OneDrive\Desktop\Unity Projects\Team-15-Gesture-based-Interactive-Game-John\Library\PackageCache\com.unity.modules.audio@1.0.0
+  resolvedPath: C:\Users\xxjkl\Unity Projects\Capstone\Webcam-Whack-A-Mole-Hand-Gesture-Capstone\Library\PackageCache\com.unity.modules.audio@1.0.0
   assetPath: Packages/com.unity.modules.audio
   name: com.unity.modules.audio
   displayName: Audio
@@ -1185,7 +1184,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\bdlau\OneDrive\Desktop\Unity Projects\Team-15-Gesture-based-Interactive-Game-John\Library\PackageCache\com.unity.modules.video@1.0.0
+  resolvedPath: C:\Users\xxjkl\Unity Projects\Capstone\Webcam-Whack-A-Mole-Hand-Gesture-Capstone\Library\PackageCache\com.unity.modules.video@1.0.0
   assetPath: Packages/com.unity.modules.video
   name: com.unity.modules.video
   displayName: Video
@@ -1247,7 +1246,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\bdlau\OneDrive\Desktop\Unity Projects\Team-15-Gesture-based-Interactive-Game-John\Library\PackageCache\com.unity.modules.unitywebrequest@1.0.0
+  resolvedPath: C:\Users\xxjkl\Unity Projects\Capstone\Webcam-Whack-A-Mole-Hand-Gesture-Capstone\Library\PackageCache\com.unity.modules.unitywebrequest@1.0.0
   assetPath: Packages/com.unity.modules.unitywebrequest
   name: com.unity.modules.unitywebrequest
   displayName: Unity Web Request
@@ -1297,7 +1296,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\bdlau\OneDrive\Desktop\Unity Projects\Team-15-Gesture-based-Interactive-Game-John\Library\PackageCache\com.unity.modules.unitywebrequesttexture@1.0.0
+  resolvedPath: C:\Users\xxjkl\Unity Projects\Capstone\Webcam-Whack-A-Mole-Hand-Gesture-Capstone\Library\PackageCache\com.unity.modules.unitywebrequesttexture@1.0.0
   assetPath: Packages/com.unity.modules.unitywebrequesttexture
   name: com.unity.modules.unitywebrequesttexture
   displayName: Unity Web Request Texture
@@ -1355,7 +1354,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\bdlau\OneDrive\Desktop\Unity Projects\Team-15-Gesture-based-Interactive-Game-John\Library\PackageCache\com.unity.modules.ui@1.0.0
+  resolvedPath: C:\Users\xxjkl\Unity Projects\Capstone\Webcam-Whack-A-Mole-Hand-Gesture-Capstone\Library\PackageCache\com.unity.modules.ui@1.0.0
   assetPath: Packages/com.unity.modules.ui
   name: com.unity.modules.ui
   displayName: UI
@@ -1405,7 +1404,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\bdlau\OneDrive\Desktop\Unity Projects\Team-15-Gesture-based-Interactive-Game-John\Library\PackageCache\com.unity.modules.imgui@1.0.0
+  resolvedPath: C:\Users\xxjkl\Unity Projects\Capstone\Webcam-Whack-A-Mole-Hand-Gesture-Capstone\Library\PackageCache\com.unity.modules.imgui@1.0.0
   assetPath: Packages/com.unity.modules.imgui
   name: com.unity.modules.imgui
   displayName: IMGUI
@@ -1455,7 +1454,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 2.0.10
   source: 1
-  resolvedPath: C:\Users\bdlau\OneDrive\Desktop\Unity Projects\Team-15-Gesture-based-Interactive-Game-John\Library\PackageCache\com.unity.sysroot@2.0.10
+  resolvedPath: C:\Users\xxjkl\Unity Projects\Capstone\Webcam-Whack-A-Mole-Hand-Gesture-Capstone\Library\PackageCache\com.unity.sysroot@2.0.10
   assetPath: Packages/com.unity.sysroot
   name: com.unity.sysroot
   displayName: Sysroot Base
@@ -1533,7 +1532,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 2.0.9
   source: 1
-  resolvedPath: C:\Users\bdlau\OneDrive\Desktop\Unity Projects\Team-15-Gesture-based-Interactive-Game-John\Library\PackageCache\com.unity.sysroot.linux-x86_64@2.0.9
+  resolvedPath: C:\Users\xxjkl\Unity Projects\Capstone\Webcam-Whack-A-Mole-Hand-Gesture-Capstone\Library\PackageCache\com.unity.sysroot.linux-x86_64@2.0.9
   assetPath: Packages/com.unity.sysroot.linux-x86_64
   name: com.unity.sysroot.linux-x86_64
   displayName: Sysroot Linux x64
@@ -1612,7 +1611,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.0.1
   source: 1
-  resolvedPath: C:\Users\bdlau\OneDrive\Desktop\Unity Projects\Team-15-Gesture-based-Interactive-Game-John\Library\PackageCache\jp.ikep.mediapipe.posedetection@1.0.1
+  resolvedPath: C:\Users\xxjkl\Unity Projects\Capstone\Webcam-Whack-A-Mole-Hand-Gesture-Capstone\Library\PackageCache\jp.ikep.mediapipe.posedetection@1.0.1
   assetPath: Packages/jp.ikep.mediapipe.posedetection
   name: jp.ikep.mediapipe.posedetection
   displayName: PoseDetectionBarracuda
@@ -1680,7 +1679,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.1.1
   source: 1
-  resolvedPath: C:\Users\bdlau\OneDrive\Desktop\Unity Projects\Team-15-Gesture-based-Interactive-Game-John\Library\PackageCache\jp.ikep.mediapipe.poselandmark@1.1.1
+  resolvedPath: C:\Users\xxjkl\Unity Projects\Capstone\Webcam-Whack-A-Mole-Hand-Gesture-Capstone\Library\PackageCache\jp.ikep.mediapipe.poselandmark@1.1.1
   assetPath: Packages/jp.ikep.mediapipe.poselandmark
   name: jp.ikep.mediapipe.poselandmark
   displayName: PoseLandmarkBarracuda
@@ -1748,7 +1747,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.8.18
   source: 1
-  resolvedPath: C:\Users\bdlau\OneDrive\Desktop\Unity Projects\Team-15-Gesture-based-Interactive-Game-John\Library\PackageCache\com.unity.burst@1.8.18
+  resolvedPath: C:\Users\xxjkl\Unity Projects\Capstone\Webcam-Whack-A-Mole-Hand-Gesture-Capstone\Library\PackageCache\com.unity.burst@1.8.18
   assetPath: Packages/com.unity.burst
   name: com.unity.burst
   displayName: Burst
@@ -1957,7 +1956,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\bdlau\OneDrive\Desktop\Unity Projects\Team-15-Gesture-based-Interactive-Game-John\Library\PackageCache\com.unity.modules.jsonserialize@1.0.0
+  resolvedPath: C:\Users\xxjkl\Unity Projects\Capstone\Webcam-Whack-A-Mole-Hand-Gesture-Capstone\Library\PackageCache\com.unity.modules.jsonserialize@1.0.0
   assetPath: Packages/com.unity.modules.jsonserialize
   name: com.unity.modules.jsonserialize
   displayName: JSONSerialize
@@ -2007,7 +2006,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\bdlau\OneDrive\Desktop\Unity Projects\Team-15-Gesture-based-Interactive-Game-John\Library\PackageCache\com.unity.modules.imageconversion@1.0.0
+  resolvedPath: C:\Users\xxjkl\Unity Projects\Capstone\Webcam-Whack-A-Mole-Hand-Gesture-Capstone\Library\PackageCache\com.unity.modules.imageconversion@1.0.0
   assetPath: Packages/com.unity.modules.imageconversion
   name: com.unity.modules.imageconversion
   displayName: Image Conversion
