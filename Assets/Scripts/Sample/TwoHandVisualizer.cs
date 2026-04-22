@@ -17,12 +17,12 @@ public class TwoHandVisualizer : MonoBehaviour
     [SerializeField] int _webcamFPS = 30;
 
     // Hand size and depth effect parameters
-    [SerializeField, Range(0, 4)] int _CenterCalcComplexity = 2; // Number of key points to consider when calculating hand center, set to 5 for better performance while maintaining reasonable accuracy.
     [SerializeField] float _neutralHandSize = 0.2f; // Set neutral hand size relative to input image.
     [SerializeField] float _depthStrength = 5.0f;   // Strength of depth effect.
     [SerializeField] float _clampDepthBackwards = 1.0f;      // Maximum depth offset.
     [SerializeField] float _clampDepthForwards = 1.0f;      // Maximum depth offset.
 
+    [SerializeField, Range(0, 4)] int _CenterCalcComplexity = 2; // Number of key points to consider when calculating hand center, set to 5 for better performance while maintaining reasonable accuracy.
     [SerializeField] bool _enableDepthEffect = true; // Toggle depth effect on/off.
 
     [SerializeField] private float _leftHandDepthOffset = 0.0f; // Depth offset for left hand, displayed in inspector for debugging and tuning purposes.
@@ -30,6 +30,9 @@ public class TwoHandVisualizer : MonoBehaviour
 
     public float LeftHandDepthOffset { get; private set; } // Depth offset for left hand, call from other scripts.
     public float RightHandDepthOffset { get; private set; } // Depth offset for right hand, call from other scripts.
+
+    private Vector3 leftHandCenter;
+    private Vector3 rightHandCenter;
 
     HolisticPipeline _pipeline;
     public HolisticPipeline Pipeline => _pipeline;
@@ -98,17 +101,28 @@ public class TwoHandVisualizer : MonoBehaviour
         var offset = new Vector2((1 - aspectGap) / 2, vMirrored ? 1 : 0);
         Graphics.Blit(_webcam, _correctedTexture, scale, offset);
         _pipeline.ProcessImage(_correctedTexture, HolisticInferenceType.pose_and_hand);
+        UpdateHandCenters();
         UpdateHandDepths();
     }
 
     void OnRenderObject()
     {
+        Vector3 MarkOffset = new Vector3(0, 0, 0.35f);
+        Vector3 MarkScale = new Vector3((1.8f / 0.5f), (1.0f / 0.5f), 1.0f);
+        
         RenderHand(_leftHandMaterial, Color.red);
-        //leftmark.transform.position = new Vector3(-(_pipeline.GetLeftHandLandmark(0).x + (0.5f * (_pipeline.GetLeftHandLandmark(9).x - _pipeline.GetLeftHandLandmark(0).x)) - 0.5f) * (0.36f / 0.5f), (_pipeline.GetLeftHandLandmark(0).y + (0.5f * (_pipeline.GetLeftHandLandmark(9).y - _pipeline.GetLeftHandLandmark(0).y)) - 0.5f) * (0.2f / 0.5f), 0.35f);
-        leftmark.transform.position = new Vector3((_pipeline.GetLeftHandLandmark(0).x + (0.5f * (_pipeline.GetLeftHandLandmark(9).x - _pipeline.GetLeftHandLandmark(0).x)) - 0.5f) * (1.8f / 0.5f), (_pipeline.GetLeftHandLandmark(0).y + (0.5f * (_pipeline.GetLeftHandLandmark(9).y - _pipeline.GetLeftHandLandmark(0).y)) - 0.5f) * (1.0f / 0.5f), 0.35f);
-        RenderHand(_rightHandMaterial, Color.green);
-        //rightmark.transform.position = new Vector3(-(_pipeline.GetRightHandLandmark(0).x + (0.5f * (_pipeline.GetRightHandLandmark(9).x - _pipeline.GetRightHandLandmark(0).x)) - 0.5f) * (0.36f / 0.5f), (_pipeline.GetRightHandLandmark(0).y + (0.5f * (_pipeline.GetRightHandLandmark(9).y - _pipeline.GetRightHandLandmark(0).y)) - 0.5f) * (0.2f / 0.5f), 0.35f);
-        rightmark.transform.position = new Vector3((_pipeline.GetRightHandLandmark(0).x + (0.5f * (_pipeline.GetRightHandLandmark(9).x - _pipeline.GetRightHandLandmark(0).x)) - 0.5f) * (1.8f / 0.5f), (_pipeline.GetRightHandLandmark(0).y + (0.5f * (_pipeline.GetRightHandLandmark(9).y - _pipeline.GetRightHandLandmark(0).y)) - 0.5f) * (1.0f / 0.5f), 0.35f);
+        leftmark.transform.position = new Vector3(
+            (leftHandCenter.x - 0.5f) * MarkScale.x,
+            (leftHandCenter.y - 0.5f) * MarkScale.y,
+            MarkOffset.z
+        );
+        
+        RenderHand(_rightHandMaterial, Color.green);    
+        rightmark.transform.position = new Vector3(
+            (rightHandCenter.x - 0.5f) * MarkScale.x,
+            (rightHandCenter.y - 0.5f) * MarkScale.y,
+            MarkOffset.z
+        );
     }
 
     void RenderHand(Material mat, Color color)
@@ -149,6 +163,23 @@ public class TwoHandVisualizer : MonoBehaviour
         return maxLength;
     }
 
+    void UpdateHandCenters()
+    {
+        int keyPointCount = CenterKeyPointIndices[_CenterCalcComplexity].Length;
+
+        var leftHandLandmarks = new Vector3[keyPointCount];
+        var rightHandLandmarks = new Vector3[keyPointCount];
+
+        for (int i = 0; i < keyPointCount; i++)
+        {
+            leftHandLandmarks[i] = _pipeline.GetLeftHandLandmark(CenterKeyPointIndices[_CenterCalcComplexity][i]);
+            rightHandLandmarks[i] = _pipeline.GetRightHandLandmark(CenterKeyPointIndices[_CenterCalcComplexity][i]);
+        }
+
+        leftHandCenter = FindHandCenter(leftHandLandmarks.ToArray());
+        rightHandCenter = FindHandCenter(rightHandLandmarks.ToArray());
+    }
+
     void UpdateHandDepths()
     {
         if (!_enableDepthEffect) return;
@@ -159,12 +190,9 @@ public class TwoHandVisualizer : MonoBehaviour
 
         for (int i = 0; i < keyPointCount; i++)
         {
-            leftHandLandmarks[i] = _pipeline.GetLeftHandLandmark(i);
-            rightHandLandmarks[i] = _pipeline.GetRightHandLandmark(i);
+            leftHandLandmarks[i] = _pipeline.GetLeftHandLandmark(CenterKeyPointIndices[_CenterCalcComplexity][i]);
+            rightHandLandmarks[i] = _pipeline.GetRightHandLandmark(CenterKeyPointIndices[_CenterCalcComplexity][i]);
         }
-
-        var leftHandCenter = FindHandCenter(leftHandLandmarks.ToArray());
-        var rightHandCenter = FindHandCenter(rightHandLandmarks.ToArray());
 
         var leftHandSize = LongestKeyPointLength(leftHandLandmarks) / _neutralHandSize;
         var rightHandSize = LongestKeyPointLength(rightHandLandmarks) / _neutralHandSize;
@@ -174,7 +202,7 @@ public class TwoHandVisualizer : MonoBehaviour
         _leftHandDepthOffset = LeftHandDepthOffset;
         _rightHandDepthOffset = RightHandDepthOffset;
 
-        Debug.Log($"Left Hand Depth Offset: {LeftHandDepthOffset}, Right Hand Depth Offset: {RightHandDepthOffset}");
+        Debug.Log($"Left Hand Depth Offset: {LeftHandDepthOffset}, Right Hand Depth Offset: {RightHandDepthOffset}, Using points: {string.Join(", ", CenterKeyPointIndices[_CenterCalcComplexity].Select(i => i.ToString()))}");
         // Debug.Log($"Left Hand Depth Offset: {_leftHandDepthOffset}, Right Hand Depth Offset: {_rightHandDepthOffset}");
     }
 

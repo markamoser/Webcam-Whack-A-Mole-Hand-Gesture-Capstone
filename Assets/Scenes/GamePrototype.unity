@@ -1189,11 +1189,11 @@ MonoBehaviour:
   _webcamWidth: 1920
   _webcamHeight: 1080
   _webcamFPS: 30
-  _CenterCalcComplexity: 2
   _neutralHandSize: 0.2
   _depthStrength: 1
   _clampDepthBackwards: 10
   _clampDepthForwards: 10
+  _CenterCalcComplexity: 2
   _enableDepthEffect: 1
   _leftHandDepthOffset: 0
   _rightHandDepthOffset: 0
