@@ -1,0 +1,5 @@
+﻿<Solution>
+  <Project Path="Mediapipe.Holistic.Runtime.csproj" />
+  <Project Path="MediaPipe.FaceMesh.csproj" />
+  <Project Path="Assembly-CSharp.csproj" />
+</Solution>

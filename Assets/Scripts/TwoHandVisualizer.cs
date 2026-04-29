@@ -157,7 +157,7 @@ public class TwoHandVisualizer : MonoBehaviour
             float length = Vector3.Distance(landmarks[i], landmarks[j]);
             if (length > maxLength)
             {
-                maxLength = length;
+                maxLength = length; 
             }
         }
         return maxLength;
