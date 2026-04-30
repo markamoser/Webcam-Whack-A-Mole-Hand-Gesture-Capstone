@@ -13,7 +13,6 @@ public class GameManagerLogic : MonoBehaviour
     private int hits;
     private float time;
     private int state;
-
     public bool stilltime;
     public Text hitcount;
     public Text gametimera;

@@ -18,12 +18,17 @@ public class TwoHandVisualizer : MonoBehaviour
     public const int TEN_EIGHTY_P_WIDTH = 1920;
     public const int TEN_EIGHTY_P_HEIGHT = 1080;
     public const int TEN_EIGHTY_P_FPS = 30;
-    public const int MAX_GESTURE_HISTORY = 5; // Number of frames to keep in gesture history for smoothing and stability analysis.
+    public const int MAX_FRAMES_IN_GESTURE_HISTORY = 5;
     public const float NEUTRAL_HAND_SIZE = 0.2f;
     public const float DEPTH_EFFECT_STRENGTH = 5.0f;   
     public const float MAXIMUM_DEPTH_OFFSET_FORWARDS = 1.0f;      
-    public const float MAXIMUM_DEPTH_OFFSET_BACKWARDS = 1.0f;      
-    // Webcam and rendering parameters
+    public const float MAXIMUM_DEPTH_OFFSET_BACKWARDS = 1.0f; 
+    const float HAND_SIZE_SMOOTHING_FACTOR = 0.5f; 
+    const float DEPTH_OFFSET_SMOOTHING_FACTOR = 0.5f;
+    const float DEPTH_VELOCITY_SENSITIVITY = 1.0f;
+    const float PRESS_VELOCITY_THRESHOLD_FOR_DEPTH_GESTURE = -2.5f;
+    const float RELEASE_VELOCITY_THRESHOLD_FOR_DEPTH_GESTURE = 1.5f; 
+
     [SerializeField] RawImage _screen;
     [SerializeField] Shader _handShader;
     [SerializeField, Range(0, 1)] float _handScoreThreshold = HAND_TRACKING_CONFIDENCE;
@@ -31,35 +36,33 @@ public class TwoHandVisualizer : MonoBehaviour
     [SerializeField] int _webcamWidth = TEN_EIGHTY_P_WIDTH;
     [SerializeField] int _webcamHeight = TEN_EIGHTY_P_HEIGHT;
     [SerializeField] int _webcamFPS = TEN_EIGHTY_P_FPS;
-
-    // Hand size and depth effect parameters
     [SerializeField] float _neutralHandSize = NEUTRAL_HAND_SIZE;
     [SerializeField] float _depthStrength = DEPTH_EFFECT_STRENGTH;
     [SerializeField] float _clampDepthBackwards = MAXIMUM_DEPTH_OFFSET_BACKWARDS;      
     [SerializeField] float _clampDepthForwards = MAXIMUM_DEPTH_OFFSET_FORWARDS;      
-
     [SerializeField, Range(0, 4)] int _CenterCalcComplexity = 2; // Number of key points to consider when calculating hand center, set to 5 for better performance while maintaining reasonable accuracy.
     [SerializeField] bool _enableDepthEffect = true; 
-
     [SerializeField] private float _leftHandDepthOffset = 0.0f; // Depth offset for left hand, displayed in inspector for debugging and tuning purposes.
     [SerializeField] private float _rightHandDepthOffset = 0.0f; // Depth offset for right hand, displayed in inspector for debugging and tuning purposes.
-
-    [SerializeField] private float _pressVelocityThreshold = -2.0f;
-    [SerializeField] private float _releaseVelocityThreshold = 2.0f;
-    [SerializeField] private float _sensitivity = 1.0f;
+    [SerializeField] private float _pressVelocityThreshold = PRESS_VELOCITY_THRESHOLD_FOR_DEPTH_GESTURE;
+    [SerializeField] private float _releaseVelocityThreshold = RELEASE_VELOCITY_THRESHOLD_FOR_DEPTH_GESTURE;
+    [SerializeField] private float _sensitivity = DEPTH_VELOCITY_SENSITIVITY;
     [SerializeField] private float _leftVelocity;
     [SerializeField] private float _rightVelocity;
-    [SerializeField] private bool _leftPressIndicator=false;
-    [SerializeField] private bool _rightPressIndicator=false;
+    public float LeftVelocity => _leftVelocity;
+    public float RightVelocity => _rightVelocity;
+    public float PressVelocityThreshold => _pressVelocityThreshold;
+    public float ReleaseVelocityThreshold => _releaseVelocityThreshold;
 
+    [SerializeField] private bool _LeftPressed;
+    [SerializeField] private bool _RightPressed;
+    public bool LeftPressed => _LeftPressed;       
+    public bool RightPressed => _RightPressed;
+
+    public float LeftHandDepthOffset { get; private set; } 
+    public float RightHandDepthOffset { get; private set; } 
     private float _prevLeftDepth;
     private float _prevRightDepth;
-
-     [SerializeField] public bool LeftPressed { get; private set; }
-     [SerializeField] public bool RightPressed { get; private set; }
-    public float LeftHandDepthOffset { get; private set; } // Depth offset for left hand, call from other scripts.
-    public float RightHandDepthOffset { get; private set; } // Depth offset for right hand, call from other scripts.
-
     private Vector3 leftHandCenter;
     private Vector3 rightHandCenter;
 
@@ -235,31 +238,27 @@ public class TwoHandVisualizer : MonoBehaviour
         // Debug.Log($"Left Hand Depth Offset: {_leftHandDepthOffset}, Right Hand Depth Offset: {_rightHandDepthOffset}");
 
         float depth_velocity_delta = Time.deltaTime;
-        LeftHandDepthOffset = Mathf.Lerp(_prevLeftDepth, LeftHandDepthOffset, 0.5f);
-        RightHandDepthOffset = Mathf.Lerp(_prevRightDepth, RightHandDepthOffset, 0.5f);
+        LeftHandDepthOffset = Mathf.Lerp(_prevLeftDepth, LeftHandDepthOffset, GESTURE_SMOOTHING_FACTOR);
+        RightHandDepthOffset = Mathf.Lerp(_prevRightDepth, RightHandDepthOffset, GESTURE_SMOOTHING_FACTOR);
         _leftVelocity = ((LeftHandDepthOffset - _prevLeftDepth) / depth_velocity_delta) * _sensitivity;
         _rightVelocity = ((RightHandDepthOffset - _prevRightDepth) / depth_velocity_delta) * _sensitivity;
        //if (_rightVelocity < _pressVelocityThreshold){Debug.Log($"RIGHT BELOW THRESHOLD: {_rightVelocity}");}
 
-        if (!LeftPressed && _leftVelocity < _pressVelocityThreshold)
+        if (!_LeftPressed && _leftVelocity < _pressVelocityThreshold)
         {
-            LeftPressed = true;
-            _leftPressIndicator = true;
+            _LeftPressed = true;
         }
-        if (LeftPressed && _leftVelocity > _releaseVelocityThreshold)
+        if (_LeftPressed && _leftVelocity > _releaseVelocityThreshold)
         {
-            LeftPressed = false;
-            _leftPressIndicator = false;
+            _LeftPressed = false;
         }
-        if (!RightPressed && _rightVelocity < _pressVelocityThreshold)
+        if (!_RightPressed && _rightVelocity < _pressVelocityThreshold)
         {
-            RightPressed = true;
-            _rightPressIndicator = true;
+            _RightPressed = true;
         }
-        if (RightPressed && _rightVelocity > _releaseVelocityThreshold)
+        if (_RightPressed && _rightVelocity > _releaseVelocityThreshold)
         {
-            RightPressed = false;
-            _rightPressIndicator = false;
+            _RightPressed = false;
         }
 
         _prevLeftDepth = LeftHandDepthOffset;
