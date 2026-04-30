@@ -36,7 +36,7 @@ public class GameManagerLogic : MonoBehaviour
         amount = Random.Range(1, 6);
         total = 0;
         wait = 0;
-        cap = 60;
+        cap = 90;
         counter = 0;
         hits = 0;
         time = (60 * 60);

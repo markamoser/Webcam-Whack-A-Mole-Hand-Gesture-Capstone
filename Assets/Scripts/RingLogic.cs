@@ -1,48 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class RingLogic : MonoBehaviour
 {
     private GameObject leftmark;
-    
+    private TwoHandVisualizer _visualizer;
+
     public bool down;
 
-    // Start is called before the first frame update
     void Start()
     {
-        down = true;
+        down = false;
         transform.position = new Vector3(transform.position.x + 0.6f, transform.position.y, transform.position.z);
         leftmark = GameObject.Find("Left Point");
+
+        _visualizer = FindObjectOfType<TwoHandVisualizer>();
     }
 
-    // Update is called once per frame
     void Update()
-    {
-        //float changex = 0f;
-        //float changey = 0f;
+{
+    transform.position = new Vector3(leftmark.transform.position.x, leftmark.transform.position.y, transform.position.z);
 
-        //if (Input.GetKey(KeyCode.A))
-        //{
-        //    changex += 0.005f;
-        //}
-
-        //if (Input.GetKey(KeyCode.D))
-        //{
-        //    changex -= 0.005f;
-        //}
-
-        //if (Input.GetKey(KeyCode.W))
-        //{
-        //    changey += 0.005f;
-        //}
-
-        //if (Input.GetKey(KeyCode.S))
-        //{
-        //    changey -= 0.005f;
-        //}
-
-        //transform.position = new Vector3(transform.position.x + changex, transform.position.y + changey, transform.position.z);
-        transform.position = new Vector3(leftmark.transform.position.x, leftmark.transform.position.y, transform.position.z);
-    }
+    // Must be in pressed state AND velocity still below threshold right now
+    down = _visualizer != null 
+        && _visualizer.LeftPressed 
+        && _visualizer.LeftVelocity < _visualizer.PressVelocityThreshold;
+}
 }

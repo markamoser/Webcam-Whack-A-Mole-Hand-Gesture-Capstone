@@ -7,27 +7,56 @@ using System.Linq;
 
 public class TwoHandVisualizer : MonoBehaviour
 {
+    public const float HAND_DETECTION_CONFIDENCE = 0.5f;
+    public const float HAND_TRACKING_CONFIDENCE = 0.5f;
+    public const int MAX_HANDS = 2;
+    public const int NUMBER_OF_POINTS_ON_HANDS = 21;
+    public const int VERTICES_PER_KEYPOINT_CIRCLE = 96;
+    public const int NUMBER_OF_VERTICIES_PER_LINE_SEGMENT = 2;
+    public const float GESTURE_CONFIDENCE_THRESHOLD = 0.5f;
+    public const float GESTURE_SMOOTHING_FACTOR = 0.5f;
+    public const int TEN_EIGHTY_P_WIDTH = 1920;
+    public const int TEN_EIGHTY_P_HEIGHT = 1080;
+    public const int TEN_EIGHTY_P_FPS = 30;
+    public const int MAX_GESTURE_HISTORY = 5; // Number of frames to keep in gesture history for smoothing and stability analysis.
+    public const float NEUTRAL_HAND_SIZE = 0.2f;
+    public const float DEPTH_EFFECT_STRENGTH = 5.0f;   
+    public const float MAXIMUM_DEPTH_OFFSET_FORWARDS = 1.0f;      
+    public const float MAXIMUM_DEPTH_OFFSET_BACKWARDS = 1.0f;      
     // Webcam and rendering parameters
     [SerializeField] RawImage _screen;
     [SerializeField] Shader _handShader;
-    [SerializeField, Range(0, 1)] float _handScoreThreshold = MediaPipeVariables.HAND_TRACKING_CONFIDENCE;
+    [SerializeField, Range(0, 1)] float _handScoreThreshold = HAND_TRACKING_CONFIDENCE;
     [SerializeField] string _webcamName = "";
-    [SerializeField] int _webcamWidth = 1920;
-    [SerializeField] int _webcamHeight = 1080;
-    [SerializeField] int _webcamFPS = 30;
+    [SerializeField] int _webcamWidth = TEN_EIGHTY_P_WIDTH;
+    [SerializeField] int _webcamHeight = TEN_EIGHTY_P_HEIGHT;
+    [SerializeField] int _webcamFPS = TEN_EIGHTY_P_FPS;
 
     // Hand size and depth effect parameters
-    [SerializeField] float _neutralHandSize = 0.2f; // Set neutral hand size relative to input image.
-    [SerializeField] float _depthStrength = 5.0f;   // Strength of depth effect.
-    [SerializeField] float _clampDepthBackwards = 1.0f;      // Maximum depth offset.
-    [SerializeField] float _clampDepthForwards = 1.0f;      // Maximum depth offset.
+    [SerializeField] float _neutralHandSize = NEUTRAL_HAND_SIZE;
+    [SerializeField] float _depthStrength = DEPTH_EFFECT_STRENGTH;
+    [SerializeField] float _clampDepthBackwards = MAXIMUM_DEPTH_OFFSET_BACKWARDS;      
+    [SerializeField] float _clampDepthForwards = MAXIMUM_DEPTH_OFFSET_FORWARDS;      
 
     [SerializeField, Range(0, 4)] int _CenterCalcComplexity = 2; // Number of key points to consider when calculating hand center, set to 5 for better performance while maintaining reasonable accuracy.
-    [SerializeField] bool _enableDepthEffect = true; // Toggle depth effect on/off.
+    [SerializeField] bool _enableDepthEffect = true; 
 
     [SerializeField] private float _leftHandDepthOffset = 0.0f; // Depth offset for left hand, displayed in inspector for debugging and tuning purposes.
     [SerializeField] private float _rightHandDepthOffset = 0.0f; // Depth offset for right hand, displayed in inspector for debugging and tuning purposes.
 
+    [SerializeField] private float _pressVelocityThreshold = -2.0f;
+    [SerializeField] private float _releaseVelocityThreshold = 2.0f;
+    [SerializeField] private float _sensitivity = 1.0f;
+    [SerializeField] private float _leftVelocity;
+    [SerializeField] private float _rightVelocity;
+    [SerializeField] private bool _leftPressIndicator=false;
+    [SerializeField] private bool _rightPressIndicator=false;
+
+    private float _prevLeftDepth;
+    private float _prevRightDepth;
+
+     [SerializeField] public bool LeftPressed { get; private set; }
+     [SerializeField] public bool RightPressed { get; private set; }
     public float LeftHandDepthOffset { get; private set; } // Depth offset for left hand, call from other scripts.
     public float RightHandDepthOffset { get; private set; } // Depth offset for right hand, call from other scripts.
 
@@ -133,9 +162,9 @@ public class TwoHandVisualizer : MonoBehaviour
         mat.SetVector("_pointColor", color);
         mat.SetFloat("_handScoreThreshold", _handScoreThreshold);
         mat.SetPass(0);
-        Graphics.DrawProceduralNow(MeshTopology.Triangles, MediaPipeVariables.VERTICES_PER_KEYPOINT_CIRCLE, _pipeline.handVertexCount);
+        Graphics.DrawProceduralNow(MeshTopology.Triangles, VERTICES_PER_KEYPOINT_CIRCLE, _pipeline.handVertexCount);
         mat.SetPass(1);
-        Graphics.DrawProceduralNow(MeshTopology.Lines, MediaPipeVariables.NUMBER_OF_VERTICIES_PER_LINE_SEGMENT, MediaPipeVariables.NUMBER_OF_POINTS_ON_HANDS);
+        Graphics.DrawProceduralNow(MeshTopology.Lines, NUMBER_OF_VERTICIES_PER_LINE_SEGMENT, NUMBER_OF_POINTS_ON_HANDS);
     }
 
     Vector3 FindHandCenter(Vector3[] landmarks)
@@ -202,8 +231,41 @@ public class TwoHandVisualizer : MonoBehaviour
         _leftHandDepthOffset = LeftHandDepthOffset;
         _rightHandDepthOffset = RightHandDepthOffset;
 
-        Debug.Log($"Left Hand Depth Offset: {LeftHandDepthOffset}, Right Hand Depth Offset: {RightHandDepthOffset}, Using points: {string.Join(", ", CenterKeyPointIndices[_CenterCalcComplexity].Select(i => i.ToString()))}");
+        //Debug.Log($"Left Hand Depth Offset: {LeftHandDepthOffset}, Right Hand Depth Offset: {RightHandDepthOffset}, Using points: {string.Join(", ", CenterKeyPointIndices[_CenterCalcComplexity].Select(i => i.ToString()))}");
         // Debug.Log($"Left Hand Depth Offset: {_leftHandDepthOffset}, Right Hand Depth Offset: {_rightHandDepthOffset}");
+
+        float depth_velocity_delta = Time.deltaTime;
+        LeftHandDepthOffset = Mathf.Lerp(_prevLeftDepth, LeftHandDepthOffset, 0.5f);
+        RightHandDepthOffset = Mathf.Lerp(_prevRightDepth, RightHandDepthOffset, 0.5f);
+        _leftVelocity = ((LeftHandDepthOffset - _prevLeftDepth) / depth_velocity_delta) * _sensitivity;
+        _rightVelocity = ((RightHandDepthOffset - _prevRightDepth) / depth_velocity_delta) * _sensitivity;
+       //if (_rightVelocity < _pressVelocityThreshold){Debug.Log($"RIGHT BELOW THRESHOLD: {_rightVelocity}");}
+
+        if (!LeftPressed && _leftVelocity < _pressVelocityThreshold)
+        {
+            LeftPressed = true;
+            _leftPressIndicator = true;
+        }
+        if (LeftPressed && _leftVelocity > _releaseVelocityThreshold)
+        {
+            LeftPressed = false;
+            _leftPressIndicator = false;
+        }
+        if (!RightPressed && _rightVelocity < _pressVelocityThreshold)
+        {
+            RightPressed = true;
+            _rightPressIndicator = true;
+        }
+        if (RightPressed && _rightVelocity > _releaseVelocityThreshold)
+        {
+            RightPressed = false;
+            _rightPressIndicator = false;
+        }
+
+        _prevLeftDepth = LeftHandDepthOffset;
+        _prevRightDepth = RightHandDepthOffset;
+        //Debug.Log($"L Vel: {_leftVelocity}, R Vel: {_rightVelocity}");
+
     }
 
 }
