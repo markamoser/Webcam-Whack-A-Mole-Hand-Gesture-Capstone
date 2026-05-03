@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -248,6 +247,10 @@ MonoBehaviour:
   _jointMaterial: {fileID: 2100000, guid: bb02f7161ea1a4d6a85beb5b7749894d, type: 2}
   _boneMaterial: {fileID: 2100000, guid: 639c7a175a7bf4296b211c6afc02329c, type: 2}
   _monitorUI: {fileID: 517617630}
+  _neutralHandSize: 0.2
+  _depthStrength: 0.5
+  _clampDepthBackwards: 1
+  _clampDepthForwards: 2
 --- !u!4 &362122831
 Transform:
   m_ObjectHideFlags: 0
@@ -702,6 +705,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -1585,6 +1589,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
