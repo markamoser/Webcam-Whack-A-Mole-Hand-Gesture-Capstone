@@ -22,28 +22,28 @@ public class GameplaySequenceTests
         
         GameManagerLogic gameManager = gameManagerObj.GetComponent<GameManagerLogic>();
 
-        RingStartAreaLogic[] rings = gameManagerObj.GetComponentsInChildren<RingStartAreaLogic>();
-        Assert.GreaterOrEqual(rings.Length, 2, "GameManager did not spawn the two starting rings.");
+        RingStartAreaLogic[] rings = gameManagerObj.GetComponentsInChildren<RingStartAreaLogic>(); //Ensure the two starting rings are present in the scene
+        Assert.GreaterOrEqual(rings.Length, 2, "GameManager did not spawn the two starting rings."); // Simulate the player hitting both rings to progress the game past the initialization sequence
 
-        rings[0].l = true; 
-        rings[1].r = true;
+        rings[0].l = true; // Simulate hitting the left ring
+        rings[1].r = true; // Simulate hitting the right ring
 
-        yield return new WaitForSeconds(4.5f);
+        yield return new WaitForSeconds(4.5f); // Wait for the game to process the hits and transition to the next state
 
-        Assert.AreEqual("", gameManager.startmessage.text, "The game failed to progress past the initialization sequence.");
+        Assert.AreEqual("", gameManager.startmessage.text, "The game failed to progress past the initialization sequence."); // Check that the start message has been cleared, indicating the game has progressed
 
         gameManager.UpdateHits();
 
         yield return null;
 
-        Assert.AreEqual("Hits x 1", gameManager.hitcount.text, "The scoreboard UI did not update when a hit was registered.");
+        Assert.AreEqual("Hits x 1", gameManager.hitcount.text, "The scoreboard UI did not update when a hit was registered."); // Check that the hit count has been updated to reflect the registered hit
     }
 
     
     [UnityTearDown]
-    public IEnumerator Teardown()
+    public IEnumerator Teardown() 
     {
         
-        yield return SceneManager.UnloadSceneAsync("GamePrototype");
+        yield return SceneManager.UnloadSceneAsync("GamePrototype"); // Unload the game scene to clean up after the test
     }
 }
