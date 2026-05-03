@@ -860,7 +860,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 509455783}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 743f61ddcda343d45b9e424326d0f652, type: 3}
+  m_Script: {fileID: 11500000, guid: c38f63fc4c196b84b9d7ea35e96dd5b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &509455785
@@ -1462,7 +1462,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f64fc354fbc8d4d4ea3e3ce44a29818c, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f64fc354fbc8d4d4ea3e3ce44a29818c, type: 3}
       propertyPath: m_LocalScale.x
