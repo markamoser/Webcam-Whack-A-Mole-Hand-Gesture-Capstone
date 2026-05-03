@@ -4,8 +4,17 @@ using UnityEngine;
 using UnityEngine.TestTools;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Contains end-to-end integration tests for the core gameplay sequence, 
+/// verifying scene initialization, hand-tracking ring spawning, and hit registration.
+/// </summary>
 public class GameplaySequenceTests
 {
+    /// <summary>
+    /// Initializes the test environment by additively loading the main gameplay scene 
+    /// before each test runs.
+    /// </summary>
+    /// <returns>An IEnumerator for Unity's coroutine execution.</returns>
     [UnitySetUp]
     public IEnumerator Setup()
     {
@@ -13,7 +22,12 @@ public class GameplaySequenceTests
         SceneManager.LoadScene("GamePrototype", LoadSceneMode.Additive);
         yield return null; 
     }
-
+    /// <summary>
+    /// Tests the full initialization sequence to ensure the game starts correctly, 
+    /// spawns the initial interaction rings, and accurately updates the UI scoreboard 
+    /// when simulated hits are registered.
+    /// </summary>
+    /// <returns>An IEnumerator for Unity's coroutine execution.</returns>
     [UnityTest]
     public IEnumerator E2E_InitializationSequence_SuccessfullyStartsGameAndRegistersHits()
     {
@@ -39,7 +53,10 @@ public class GameplaySequenceTests
         Assert.AreEqual("Hits x 1", gameManager.hitcount.text, "The scoreboard UI did not update when a hit was registered."); // Check that the hit count has been updated to reflect the registered hit
     }
 
-    
+    /// <summary>
+    /// Cleans up the test environment by unloading the gameplay scene after each test completes.
+    /// </summary>
+    /// <returns>An IEnumerator for Unity's coroutine execution.</returns>
     [UnityTearDown]
     public IEnumerator Teardown() 
     {

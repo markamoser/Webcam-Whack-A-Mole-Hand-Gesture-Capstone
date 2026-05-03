@@ -3,8 +3,17 @@ using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
 
+/// <summary>
+/// Verifies the initialization and functionality of the physical webcam hardware 
+/// required for the hand-tracking system.
+/// </summary>
 public class WebcamInitializationTests // Tests to verify that the webcam initializes and starts playing correctly
-{
+{   
+    /// <summary>
+    /// Tests if a connected webcam device successfully initializes, enters the playing state, 
+    /// and outputs a valid texture resolution. Skips automatically if no physical camera is detected.
+    /// </summary>
+    /// <returns>An IEnumerator for Unity's coroutine execution.</returns>
     [UnityTest]
     public IEnumerator Webcam_WhenDevicesExist_SuccessfullyInitializesAndPlays() 
     {
