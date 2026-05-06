@@ -19,5 +19,7 @@ Desktop.ini
 /Recordings
 /UserSettings
 /Temp
-/obj
-/Executable
+html/
+latex/
+docs/
+*.html
