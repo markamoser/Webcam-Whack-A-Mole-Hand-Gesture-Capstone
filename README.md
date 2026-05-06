@@ -19,9 +19,49 @@ Milestone 4 - Fully functional depth tracking.
 Milestone 5 - All functional requirements inmplemented and game is complete.
 
 ## Setup Instructions:
-Requires Unity Editor Verision 2021.3.45f2.
-Clone the repository or download and unzip in Windows.
-Import the project using the above editor.
-In the assets folder, under scenes open the game prototype.
-Build and deploy game prototype scene.
 
+### A. Requirements
+- **Operating System:** Windows  
+- **Unity Editor Version:** 2021.3.45f2  
+  *(Exact version required — available via Unity Hub)*  
+- **Hardware:** Webcam with at least 480p resolution *(higher recommended)*  
+
+---
+
+### B. Step 1: Download Source Code
+
+#### Option A — Clone with Git
+```bash
+git clone https://github.com/markamoser/Webcam-Whack-A-Mole-Hand-Gesture-Capstone.git
+````
+
+**Option B — Download as ZIP:**
+- Go to https://github.com/markamoser/Webcam-Whack-A-Mole-Hand-Gesture-Capstone
+- Click the green button labeled: `< > Code` and select **Download ZIP**
+- Extract the ZIP file after download
+
+---
+
+### C. Step 2: Import the Project in Unity
+- Open Unity Hub
+- Click **Add** → **Add project from disk**
+- Navigate to and select the root folder of the cloned or unzipped project
+- Ensure the Editor version is set to **2021.3.45f2**
+- Open the project
+
+---
+
+### D. Step 3: Open the Game Scene
+- In the Unity Editor, open the `Assets/Scenes` directory in the Project window
+- Double-click **GamePrototype** to open the scene
+
+---
+
+### E. Step 4: Build and Run
+- Go to **File → Build Settings**
+- Ensure **GamePrototype** is listed under **Scenes In Build**
+  - If not, click **Add Open Scenes**
+- Click **Build** to produce a standalone executable
+- Choose an output folder when prompted and wait for the build to complete
+
+You can also run the game by pressing the **Play** button directly in Unity.
