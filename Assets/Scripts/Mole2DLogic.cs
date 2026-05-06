@@ -4,18 +4,35 @@ using UnityEngine;
 
 public class Mole2DLogic : MonoBehaviour
 {
-    private int state;
+    private int waitmin;
+    private int waitmax;
     private int waittimer;
     private float counter;
     private GameObject leftring;
     private GameObject rightring;
 
+    private enum State
+    {
+        MoleUpdateGameManagerMoleCount,
+        MolePopUpFromGround,
+        MoleWaitToGetWhackedOrForWaitTimerToExpire,
+        MoleDigIntoGroundAndLeave,
+        MoleWhackedAndShowExplosion,
+        MoleWhackedAndSquishDown,
+        MoleWhackedAndSquishUp,
+        MoleWhackedAndFallIntoGround
+    }
+
+    private State stateenum;
+
     // Start is called before the first frame update
     void Start()
     {
-        state = 0;
+        stateenum = State.MoleUpdateGameManagerMoleCount;
         counter = 0;
-        waittimer = Random.Range(120, 301);
+        waitmin = 4;
+        waitmax = 6;
+        waittimer = Random.Range((waitmin * 60), ((waitmax * 60) + 1));
         leftring = GameObject.Find("LeftRing");
         rightring = GameObject.Find("RightRing");
         this.GetComponent<SpriteRenderer>().sprite = GetComponentInParent<GameManagerLogic>().moles[0];
@@ -23,49 +40,47 @@ public class Mole2DLogic : MonoBehaviour
         float newx = (Random.Range(0, 90) * 0.01f);
         float newy = (Random.Range(0, 67) * 0.01f);
         transform.position = new Vector3(((transform.position.x + 0.43f) - newx) * 2.51f, ((transform.position.y - 0.34f) + newy) * 2.52f, transform.position.z);
-        //transform.position = new Vector3(transform.position.x + 0.265f, transform.position.y, transform.position.z);
     }
 
     // Update is called once per frame
     void Update()
     {
-        switch (state)
+        switch (stateenum)
         {
-            case 0:
+            case State.MoleUpdateGameManagerMoleCount:
                 GetComponentInParent<GameManagerLogic>().UpdateCount(true);
-                state = 1;
+                stateenum = State.MolePopUpFromGround;
                 break;
-            case 1:
+            case State.MolePopUpFromGround:
                 float magnitude = 0.000038f;
+                float positionchange = 0.0006f;
+                float scalechange = 0.001f;
                 counter = counter + (Time.deltaTime / (1f / 60f));
-                transform.position = new Vector3(transform.position.x, transform.position.y + (0.0006f * (Time.deltaTime / (1f / 60f))), transform.position.z);
-                transform.localScale = new Vector3(-0.012f, (transform.localScale.y + ((0.001f - (magnitude * counter)) * (Time.deltaTime / (1f / 60f)))), 1);
+                transform.position = new Vector3(transform.position.x, transform.position.y + (positionchange * (Time.deltaTime / (1f / 60f))), transform.position.z);
+                transform.localScale = new Vector3(-0.012f, (transform.localScale.y + ((scalechange - (magnitude * counter)) * (Time.deltaTime / (1f / 60f)))), 1);
                 if (counter > 20)
                 {
-                    transform.position = new Vector3(transform.position.x, transform.position.y - (0.0006f * (Time.deltaTime / (1f / 60f))), transform.position.z);
+                    transform.position = new Vector3(transform.position.x, transform.position.y - (positionchange * (Time.deltaTime / (1f / 60f))), transform.position.z);
                 }
                 if (counter > 30)
                 {
-                    state = 2;
+                    stateenum = State.MoleWaitToGetWhackedOrForWaitTimerToExpire;
                     counter = 0;
                 }
                 break;
-            case 2:
-                //transform.localScale = new Vector3(-0.012f, 0.012f, 1);
-                transform.localScale = new Vector3(-0.012f, transform.localScale.y + ((0.012f - transform.localScale.y) / 2f), 1);
-                state = 3;
-                break;
-            case 3:
+            case State.MoleWaitToGetWhackedOrForWaitTimerToExpire:
                 counter = counter + (Time.deltaTime / (1f / 60f));
 
                 transform.localScale = new Vector3(-0.012f, transform.localScale.y + ((0.012f - transform.localScale.y) / 2f), 1);
 
+                float circlecheckrange = 0.265f;
+
                 if (leftring.GetComponent<RingLogic>().down && GetComponentInParent<GameManagerLogic>().stilltime)
                 {
-                    if (Mathf.Sqrt(((transform.position.x - leftring.transform.position.x) * (transform.position.x - leftring.transform.position.x)) + ((leftring.transform.position.y - transform.position.y) * (leftring.transform.position.y - transform.position.y))) < 0.265f)
+                    if (Mathf.Sqrt(((transform.position.x - leftring.transform.position.x) * (transform.position.x - leftring.transform.position.x)) + ((leftring.transform.position.y - transform.position.y) * (leftring.transform.position.y - transform.position.y))) < circlecheckrange)
                     {
                         counter = 0;
-                        state = 5;
+                        stateenum = State.MoleWhackedAndShowExplosion;
                         GetComponentInParent<GameManagerLogic>().UpdateHits();
                         GetComponentInParent<GameManagerLogic>().UpdateCount(false);
                         break;
@@ -74,10 +89,10 @@ public class Mole2DLogic : MonoBehaviour
 
                 if (rightring.GetComponent<Ring2Logic>().down && GetComponentInParent<GameManagerLogic>().stilltime)
                 {
-                    if (Mathf.Sqrt(((transform.position.x - rightring.transform.position.x) * (transform.position.x - rightring.transform.position.x)) + ((rightring.transform.position.y - transform.position.y) * (rightring.transform.position.y - transform.position.y))) < 0.265f)
+                    if (Mathf.Sqrt(((transform.position.x - rightring.transform.position.x) * (transform.position.x - rightring.transform.position.x)) + ((rightring.transform.position.y - transform.position.y) * (rightring.transform.position.y - transform.position.y))) < circlecheckrange)
                     {
                         counter = 0;
-                        state = 5;
+                        stateenum = State.MoleWhackedAndShowExplosion;
                         GetComponentInParent<GameManagerLogic>().UpdateHits();
                         GetComponentInParent<GameManagerLogic>().UpdateCount(false);
                         break;
@@ -87,52 +102,63 @@ public class Mole2DLogic : MonoBehaviour
                 if (counter > waittimer || !GetComponentInParent<GameManagerLogic>().stilltime)
                 {
                     counter = 0;
-                    state = 4;
+                    stateenum = State.MoleDigIntoGroundAndLeave;
                     GetComponentInParent<GameManagerLogic>().UpdateCount(false);
                 }
                 break;
-            case 4:
+            case State.MoleDigIntoGroundAndLeave:
+                float positionchange2 = 0.0006f;
+                float scalechange2 = 0.0005f;
                 counter = counter + (Time.deltaTime / (1f / 60f));
-                transform.localScale = new Vector3(-0.012f, transform.localScale.y - (0.0005f * (Time.deltaTime / (1f / 60f))), 1);
-                transform.position = new Vector3(transform.position.x, transform.position.y - (0.0006f * (Time.deltaTime / (1f / 60f))), transform.position.z);
+                transform.localScale = new Vector3(-0.012f, transform.localScale.y - (scalechange2 * (Time.deltaTime / (1f / 60f))), 1);
+                transform.position = new Vector3(transform.position.x, transform.position.y - (positionchange2 * (Time.deltaTime / (1f / 60f))), transform.position.z);
                 if (counter > 24)
                 {
                     Destroy(this.gameObject);
                 }
                 break;
-            case 5:
+            case State.MoleWhackedAndShowExplosion:
                 counter = counter + (Time.deltaTime / (1f / 60f));
                 transform.localScale = new Vector3(-0.012f, 0.012f, 1);
                 this.GetComponent<SpriteRenderer>().sprite = GetComponentInParent<GameManagerLogic>().moles[2];
                 if (counter > 5)
                 {
                     counter = 0;
-                    state = 6;
+                    stateenum = State.MoleWhackedAndSquishDown;
                 }
                 break;
-            case 6:
+            case State.MoleWhackedAndSquishDown:
+                float scalechange3 = 0.0002f;
                 counter = counter + (Time.deltaTime / (1f / 60f));
                 this.GetComponent<SpriteRenderer>().sprite = GetComponentInParent<GameManagerLogic>().moles[1];
-                transform.localScale = new Vector3(-0.012f, (transform.localScale.y - ((0.0002f * counter) * (Time.deltaTime / (1f / 60f)))), 1);
+                transform.localScale = new Vector3(-0.012f, (transform.localScale.y - ((scalechange3 * counter) * (Time.deltaTime / (1f / 60f)))), 1);
                 if (counter > 5)
                 {
                     counter = 0;
-                    state = 7;
+                    stateenum = State.MoleWhackedAndSquishUp;
                 }
                 break;
-            case 7:
+            case State.MoleWhackedAndSquishUp:
+                float scalechange4 = 0.0002f;
                 counter = counter + (Time.deltaTime / (1f / 60f));
-                transform.localScale = new Vector3(-0.012f, (transform.localScale.y + ((0.0002f * counter) * (Time.deltaTime / (1f / 60f)))), 1);
+                transform.localScale = new Vector3(-0.012f, (transform.localScale.y + ((scalechange4 * counter) * (Time.deltaTime / (1f / 60f)))), 1);
                 if (counter > 5)
                 {
                     counter = 0;
-                    state = 8;
+                    transform.localScale = new Vector3(-0.012f, 0.012f, 1);
+                    stateenum = State.MoleWhackedAndFallIntoGround;
                 }
                 break;
-            case 8:
+            case State.MoleWhackedAndFallIntoGround:
+                float positionchange3 = 0.001f;
+                float scalechange5 = 0.0012f;
                 counter = counter + (Time.deltaTime / (1f / 60f));
-                transform.localScale = new Vector3(-0.012f, transform.localScale.y - (0.0010f * (Time.deltaTime / (1f / 60f))), 1);
-                transform.position = new Vector3(transform.position.x, transform.position.y - (0.0012f * (Time.deltaTime / (1f / 60f))), transform.position.z);
+                transform.localScale = new Vector3(-0.012f, transform.localScale.y - (positionchange3 * (Time.deltaTime / (1f / 60f))), 1);
+                transform.position = new Vector3(transform.position.x, transform.position.y - (scalechange5 * (Time.deltaTime / (1f / 60f))), transform.position.z);
+                if (transform.localScale.y < 0)
+                {
+                    transform.localScale = new Vector3(-0.012f, 0, 1);
+                }
                 if (counter > 12)
                 {
                     Destroy(this.gameObject);
