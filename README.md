@@ -4,16 +4,63 @@
 This is a game developed as a capstone project by four senior computer science students at the University of Nebraksa at Omaha. We are trying to create a proof-of-concept for using a hand gesture captrue by a webcam which can sense the depth of the hands moving towards and away from the sensor. Future applications will further develop the proof-of-concept if successful to create VR like controls without requiring individuals to hold hand controls, specifically to help individuals rehabilitating from Traumatic Brain Injuries.
 
 ## Project Progress
-We track progress by creating story points with Trello, communicating over discord or during class in our zoom breakout sessions, we store our repository on this public GitHub page, and we keep our journals, and other class documentation on a OneDrive page created by the project lead.
+We collaborated over Zoom, discord, and used Trello for task organization. The semester project is complete.
 
-We finished Milestones 1 and 2. Incorporating Media Pipe Hands library and building a video game.
-John and Hunter are currently working full effort towards the depth tracking feature. Ben and Mark are completing the video game, adding the second hand, and connecting the hands gesture tracking into the game and unity.
+We completed five milestones.
 
 ## Branches
-The functional game is on Ben's branch.
-Mark's milestone 2 demonstration is on the dual-hand-feature branch.
+All demonstrations work in the main branch.
 
-## Release Notes: 2/28/2027
+## Release Notes: 4/26/2026
 Milestone 1 - we have a couple of libraries which capture the up, down, left, and right movements including MediaPipe Hands and a existing project template of the same library with modifications.
 Milestone 2 - Complete now. We have built the whack-a-mole game and incorporated two hands from the MediaPipe Library into Unity.
-Milestone 3 - Upcoming, we will fully integrate our gameplay with the hand gestures.
+Milestone 3 - The game now fully works but without the depth tracking capture. We have also demonstrated our depth capture features.
+Milestone 4 - Fully functional depth tracking. 
+Milestone 5 - All functional requirements inmplemented and game is complete.
+
+## Setup Instructions:
+
+### A. Requirements
+- **Operating System:** Windows  
+- **Unity Editor Version:** 2021.3.45f2  
+  *(Exact version required — available via Unity Hub)*  
+- **Hardware:** Webcam with at least 480p resolution *(higher recommended)*  
+
+---
+
+### B. Step 1: Download Source Code
+
+#### Option A — Clone with Git
+```bash
+git clone https://github.com/markamoser/Webcam-Whack-A-Mole-Hand-Gesture-Capstone.git
+````
+
+**Option B — Download as ZIP:**
+- Click the green button labeled: `< > Code` and select **Download ZIP**
+- Extract the ZIP file after download
+
+---
+
+### C. Step 2: Import the Project in Unity
+- Open Unity Hub
+- Click **Add** → **Add project from disk**
+- Navigate to and select the root folder of the cloned or unzipped project
+- Ensure the Editor version is set to **2021.3.45f2**
+- Open the project
+
+---
+
+### D. Step 3: Open the Game Scene
+- In the Unity Editor, open the `Assets/Scenes` directory in the Project window
+- Double-click **GamePrototype** to open the scene
+
+---
+
+### E. Step 4: Build and Run
+- Go to **File → Build Settings**
+- Ensure **GamePrototype** is listed under **Scenes In Build**
+  - If not, click **Add Open Scenes**
+- Click **Build** to produce a standalone executable
+- Choose an output folder when prompted and wait for the build to complete
+
+You can also run the game by pressing the **Play** button directly in Unity.

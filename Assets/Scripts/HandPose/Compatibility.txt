@@ -1,3 +1,0 @@
-Have to use this version for hand test to work.
-
-"jp.keijiro.mediapipe.handlandmark": "2.1.1",

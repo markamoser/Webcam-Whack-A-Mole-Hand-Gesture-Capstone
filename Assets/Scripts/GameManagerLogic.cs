@@ -13,7 +13,6 @@ public class GameManagerLogic : MonoBehaviour
     private int hits;
     private float time;
     private int state;
-
     public bool stilltime;
     public Text hitcount;
     public Text gametimera;
@@ -36,7 +35,7 @@ public class GameManagerLogic : MonoBehaviour
         amount = Random.Range(1, 6);
         total = 0;
         wait = 0;
-        cap = 60;
+        cap = 90;
         counter = 0;
         hits = 0;
         time = (60 * 60);
