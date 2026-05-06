@@ -36,7 +36,6 @@ git clone https://github.com/markamoser/Webcam-Whack-A-Mole-Hand-Gesture-Capston
 ````
 
 **Option B — Download as ZIP:**
-- Go to https://github.com/markamoser/Webcam-Whack-A-Mole-Hand-Gesture-Capstone
 - Click the green button labeled: `< > Code` and select **Download ZIP**
 - Extract the ZIP file after download
 
