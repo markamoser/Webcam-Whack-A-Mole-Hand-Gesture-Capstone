@@ -118,12 +118,18 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_game_manager_
   <div class="headertitle"><div class="title">GameManagerLogic.cs File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Central game manager for the Whack-a-Mole game. Controls the pre-game startup sequence, mole spawning, hit tracking, countdown timer display, and end-of-round state. Also owns the ring start area indicators used to position players before the game begins.  
+<a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:GameManagerLogic" id="r_GameManagerLogic"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="class_game_manager_logic.html">GameManagerLogic</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manages the full game session from startup through to game over. Runs a state machine that walks through the ring placement prompt, a countdown sequence, and the main gameplay loop. During gameplay it spawns moles in randomised batches, maintains the on-screen hit counter and countdown timer, and signals to moles whether time remains via the public stilltime flag. Attach to the root GameManager GameObject. All mole and UI prefab references must be assigned in the Inspector.  <a href="class_game_manager_logic.html#details">More...</a><br /></td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Central game manager for the Whack-a-Mole game. Controls the pre-game startup sequence, mole spawning, hit tracking, countdown timer display, and end-of-round state. Also owns the ring start area indicators used to position players before the game begins. </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
 <div id="page-nav-resize-handle"></div>

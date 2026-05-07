@@ -118,12 +118,18 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ring_start_ar
   <div class="headertitle"><div class="title">RingStartAreaLogic.cs File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Controls the visual state and lifecycle of a ring start area indicator sprite, highlighting when a hand ring is hovering over it and animating its destruction when the game round ends.  
+<a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:RingStartAreaLogic" id="r_RingStartAreaLogic"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="class_ring_start_area_logic.html">RingStartAreaLogic</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manages a single ring start area marker on the game board. Each frame it checks whether the left or right ring is overlapping it and updates its sprite accordingly. External scripts can push it into specific display states via SetState, and it self-destructs with a shrink animation when told to do so. Attach to each ring start area GameObject and ensure it is parented under a GameObject carrying a <a class="el" href="class_game_manager_logic.html" title="Manages the full game session from startup through to game over. Runs a state machine that walks thro...">GameManagerLogic</a> component.  <a href="class_ring_start_area_logic.html#details">More...</a><br /></td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Controls the visual state and lifecycle of a ring start area indicator sprite, highlighting when a hand ring is hovering over it and animating its destruction when the game round ends. </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
 <div id="page-nav-resize-handle"></div>

@@ -118,77 +118,97 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_mole2_d_
   <div class="headertitle"><div class="title">Mole2DLogic Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Drives a mole GameObject through eight states: initialisation, rising, snapping to full scale, idle (waiting for a hit or timeout), missed retreat, whacked flash, whacked squash, whacked stretch, and whacked retreat. Hit detection is performed manually each frame using distance comparisons against the left and right ring positions. Attach to each mole prefab. Requires a parent GameObject carrying <a class="el" href="class_game_manager_logic.html" title="Manages the full game session from startup through to game over. Runs a state machine that walks thro...">GameManagerLogic</a>.  
+ <a href="#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Mole2DLogic:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="class_mole2_d_logic.png" alt=""/>
- </div></div>
+<div class="center"><img src="class_mole2_d_logic__inherit__graph.png" border="0" usemap="#a_mole2_d_logic_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
+<!-- MAP 0 -->
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for Mole2DLogic:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_mole2_d_logic__coll__graph.png" border="0" usemap="#a_mole2_d_logic_coll__map" loading="lazy" alt="Collaboration graph"/></div>
+<!-- MAP 1 -->
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pri-types" class="groupheader"><a id="pri-types" name="pri-types"></a>
-Private Types</h2></td></tr>
-<tr class="memitem:a112ca01a0738700abb2d5d01f4f530fd" id="r_a112ca01a0738700abb2d5d01f4f530fd"><td class="memItemLeft">enum &#160;</td><td class="memItemRight"><a class="el" href="#a112ca01a0738700abb2d5d01f4f530fd">State</a> { <br />
-&#160;&#160;<a class="el" href="#a112ca01a0738700abb2d5d01f4f530fda5eb8d750cdabeb72773cf6456a451ed0">MoleUpdateGameManagerMoleCount</a>
-, <a class="el" href="#a112ca01a0738700abb2d5d01f4f530fda0913d54bf75ba489ef7413eedff87209">MolePopUpFromGround</a>
-, <a class="el" href="#a112ca01a0738700abb2d5d01f4f530fda7527896719fe2a0b1d9cd21d6343b987">MoleWaitToGetWhackedOrForWaitTimerToExpire</a>
-, <a class="el" href="#a112ca01a0738700abb2d5d01f4f530fda701598a5ade96eebc0529a747280b08d">MoleDigIntoGroundAndLeave</a>
-, <br />
-&#160;&#160;<a class="el" href="#a112ca01a0738700abb2d5d01f4f530fda91e9901bed1559a2f3760cbd1036ab75">MoleWhackedAndShowExplosion</a>
-, <a class="el" href="#a112ca01a0738700abb2d5d01f4f530fdaedc4bf48dc142359a31b4c0848568231">MoleWhackedAndSquishDown</a>
-, <a class="el" href="#a112ca01a0738700abb2d5d01f4f530fdaaac51b5cb2b78743381ecf60ea68a278">MoleWhackedAndSquishUp</a>
-, <a class="el" href="#a112ca01a0738700abb2d5d01f4f530fdadb49f70a47fbb17c8ae175ff9942a701">MoleWhackedAndFallIntoGround</a>
-<br />
- }</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a5c2a1ade737c86ed1188c65437bf3221" id="r_a5c2a1ade737c86ed1188c65437bf3221"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a5c2a1ade737c86ed1188c65437bf3221">Start</a> ()</td></tr>
+<tr class="memdesc:a5c2a1ade737c86ed1188c65437bf3221"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialises the mole at state 0, randomises its on-screen wait duration, locates the ring GameObjects, sets the idle sprite, and calculates a randomised world-space spawn position.  <br /></td></tr>
 <tr class="memitem:aca638a0a34ae0f7a2a91266519fa7836" id="r_aca638a0a34ae0f7a2a91266519fa7836"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aca638a0a34ae0f7a2a91266519fa7836">Update</a> ()</td></tr>
+<tr class="memdesc:aca638a0a34ae0f7a2a91266519fa7836"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called once per frame. Advances the mole through its state machine: state 0 registers the mole with the game manager and enters the rise; state 1 animates the rise with a decelerated scale and positional bob; state 2 snaps the scale toward full in a single frame; state 3 idles and polls for ring hits or timeout; state 4 plays the missed retreat and destroys the mole; state 5 holds the whacked flash sprite; state 6 plays the squash phase of the whacked animation; state 7 plays the stretch phase of the whacked animation; state 8 plays the final whacked retreat and destroys the mole.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a35dbee3740a0224d275bdcc2b94b488a" id="r_a35dbee3740a0224d275bdcc2b94b488a"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a35dbee3740a0224d275bdcc2b94b488a">waitmin</a></td></tr>
-<tr class="memitem:ac6d00b3381f6dda17bd54b383e5a5944" id="r_ac6d00b3381f6dda17bd54b383e5a5944"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ac6d00b3381f6dda17bd54b383e5a5944">waitmax</a></td></tr>
+<tr class="memitem:a273d58bdfd527e04dd3d7abe91f8502f" id="r_a273d58bdfd527e04dd3d7abe91f8502f"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a273d58bdfd527e04dd3d7abe91f8502f">state</a></td></tr>
 <tr class="memitem:a7d0458717699d56118109117930c88c2" id="r_a7d0458717699d56118109117930c88c2"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a7d0458717699d56118109117930c88c2">waittimer</a></td></tr>
 <tr class="memitem:a6e5f440c4c1f5b51269538d3a82dc68c" id="r_a6e5f440c4c1f5b51269538d3a82dc68c"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a6e5f440c4c1f5b51269538d3a82dc68c">counter</a></td></tr>
 <tr class="memitem:a69607a7f0ce6a58cd84ab67c2f313ca1" id="r_a69607a7f0ce6a58cd84ab67c2f313ca1"><td class="memItemLeft">GameObject&#160;</td><td class="memItemRight"><a class="el" href="#a69607a7f0ce6a58cd84ab67c2f313ca1">leftring</a></td></tr>
 <tr class="memitem:ad7f0798d0f6ad350e7e1ef101fec136b" id="r_ad7f0798d0f6ad350e7e1ef101fec136b"><td class="memItemLeft">GameObject&#160;</td><td class="memItemRight"><a class="el" href="#ad7f0798d0f6ad350e7e1ef101fec136b">rightring</a></td></tr>
-<tr class="memitem:af28fdad657c470b8252ee209e8a60ec0" id="r_af28fdad657c470b8252ee209e8a60ec0"><td class="memItemLeft"><a class="el" href="#a112ca01a0738700abb2d5d01f4f530fd">State</a>&#160;</td><td class="memItemRight"><a class="el" href="#af28fdad657c470b8252ee209e8a60ec0">stateenum</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-static-attribs" class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a56bf1a23689365df0a61d78da9db5de0" id="r_a56bf1a23689365df0a61d78da9db5de0"><td class="memItemLeft">const float&#160;</td><td class="memItemRight"><a class="el" href="#a56bf1a23689365df0a61d78da9db5de0">SPAWN_OFFSET_X</a> = 0.43f</td></tr>
+<tr class="memdesc:a56bf1a23689365df0a61d78da9db5de0"><td class="mdescLeft">&#160;</td><td class="mdescRight">X offset added to the base spawn position before scaling.  <br /></td></tr>
+<tr class="memitem:a2d6852e5bd5e333a1215ec8746a64995" id="r_a2d6852e5bd5e333a1215ec8746a64995"><td class="memItemLeft">const float&#160;</td><td class="memItemRight"><a class="el" href="#a2d6852e5bd5e333a1215ec8746a64995">SPAWN_OFFSET_Y</a> = 0.34f</td></tr>
+<tr class="memdesc:a2d6852e5bd5e333a1215ec8746a64995"><td class="mdescLeft">&#160;</td><td class="mdescRight">Y offset subtracted from the base spawn position before scaling.  <br /></td></tr>
+<tr class="memitem:a96ae1d083a30d134cc1fa4e68d23211e" id="r_a96ae1d083a30d134cc1fa4e68d23211e"><td class="memItemLeft">const float&#160;</td><td class="memItemRight"><a class="el" href="#a96ae1d083a30d134cc1fa4e68d23211e">SPAWN_SCALE_X</a> = 2.51f</td></tr>
+<tr class="memdesc:a96ae1d083a30d134cc1fa4e68d23211e"><td class="mdescLeft">&#160;</td><td class="mdescRight">World-space X scale factor applied to the randomised spawn position.  <br /></td></tr>
+<tr class="memitem:a1d061e63c7473f805e17f2e10064bf53" id="r_a1d061e63c7473f805e17f2e10064bf53"><td class="memItemLeft">const float&#160;</td><td class="memItemRight"><a class="el" href="#a1d061e63c7473f805e17f2e10064bf53">SPAWN_SCALE_Y</a> = 2.52f</td></tr>
+<tr class="memdesc:a1d061e63c7473f805e17f2e10064bf53"><td class="mdescLeft">&#160;</td><td class="mdescRight">World-space Y scale factor applied to the randomised spawn position.  <br /></td></tr>
+<tr class="memitem:ae7f2dcc46b99497d740d66a18cdb8805" id="r_ae7f2dcc46b99497d740d66a18cdb8805"><td class="memItemLeft">const int&#160;</td><td class="memItemRight"><a class="el" href="#ae7f2dcc46b99497d740d66a18cdb8805">SPAWN_RANDOM_RANGE_X</a> = 90</td></tr>
+<tr class="memdesc:ae7f2dcc46b99497d740d66a18cdb8805"><td class="mdescLeft">&#160;</td><td class="mdescRight">Upper bound of the random X spawn jitter range (exclusive), in hundredths of a unit.  <br /></td></tr>
+<tr class="memitem:ac95e0701f261660d8ca25b51589557d6" id="r_ac95e0701f261660d8ca25b51589557d6"><td class="memItemLeft">const int&#160;</td><td class="memItemRight"><a class="el" href="#ac95e0701f261660d8ca25b51589557d6">SPAWN_RANDOM_RANGE_Y</a> = 67</td></tr>
+<tr class="memdesc:ac95e0701f261660d8ca25b51589557d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Upper bound of the random Y spawn jitter range (exclusive), in hundredths of a unit.  <br /></td></tr>
+<tr class="memitem:ad87614ffc5a654c9f06acb391d4199f3" id="r_ad87614ffc5a654c9f06acb391d4199f3"><td class="memItemLeft">const int&#160;</td><td class="memItemRight"><a class="el" href="#ad87614ffc5a654c9f06acb391d4199f3">MIN_WAIT_TIMER</a> = 120</td></tr>
+<tr class="memdesc:ad87614ffc5a654c9f06acb391d4199f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minimum number of scaled frames a mole stays fully visible before retreating.  <br /></td></tr>
+<tr class="memitem:aec6362054e26684266d5009bc8fc7ca9" id="r_aec6362054e26684266d5009bc8fc7ca9"><td class="memItemLeft">const int&#160;</td><td class="memItemRight"><a class="el" href="#aec6362054e26684266d5009bc8fc7ca9">MAX_WAIT_TIMER</a> = 301</td></tr>
+<tr class="memdesc:aec6362054e26684266d5009bc8fc7ca9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of scaled frames a mole stays fully visible before retreating.  <br /></td></tr>
+<tr class="memitem:aaa2ca4456de5e037e8a9b408ea0677d5" id="r_aaa2ca4456de5e037e8a9b408ea0677d5"><td class="memItemLeft">const float&#160;</td><td class="memItemRight"><a class="el" href="#aaa2ca4456de5e037e8a9b408ea0677d5">SPRITE_FLIP_X</a> = -0.012f</td></tr>
+<tr class="memdesc:aaa2ca4456de5e037e8a9b408ea0677d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">X scale applied to the mole sprite. Negative value flips the sprite horizontally.  <br /></td></tr>
+<tr class="memitem:a7904fa0bb278395b50f5d781a057ae5b" id="r_a7904fa0bb278395b50f5d781a057ae5b"><td class="memItemLeft">const float&#160;</td><td class="memItemRight"><a class="el" href="#a7904fa0bb278395b50f5d781a057ae5b">FULL_SCALE_Y</a> = 0.012f</td></tr>
+<tr class="memdesc:a7904fa0bb278395b50f5d781a057ae5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The target full Y scale the mole reaches when completely risen.  <br /></td></tr>
+<tr class="memitem:ae69848e90862dc60be79242b05d399ad" id="r_ae69848e90862dc60be79242b05d399ad"><td class="memItemLeft">const float&#160;</td><td class="memItemRight"><a class="el" href="#ae69848e90862dc60be79242b05d399ad">RISE_MOVE_SPEED</a> = 0.0006f</td></tr>
+<tr class="memdesc:ae69848e90862dc60be79242b05d399ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Upward positional movement applied each scaled frame during the rise phase.  <br /></td></tr>
+<tr class="memitem:aee8be22900e33fc66d95fc5537b6a6c7" id="r_aee8be22900e33fc66d95fc5537b6a6c7"><td class="memItemLeft">const float&#160;</td><td class="memItemRight"><a class="el" href="#aee8be22900e33fc66d95fc5537b6a6c7">RISE_SCALE_SPEED</a> = 0.001f</td></tr>
+<tr class="memdesc:aee8be22900e33fc66d95fc5537b6a6c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initial scale growth rate applied each scaled frame at the start of the rise.  <br /></td></tr>
+<tr class="memitem:aee851e8e25710f6550cbdc4297ce0f9d" id="r_aee851e8e25710f6550cbdc4297ce0f9d"><td class="memItemLeft">const float&#160;</td><td class="memItemRight"><a class="el" href="#aee851e8e25710f6550cbdc4297ce0f9d">RISE_DECELERATION</a> = 0.000038f</td></tr>
+<tr class="memdesc:aee851e8e25710f6550cbdc4297ce0f9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deceleration factor multiplied by the counter to slow scale growth over time.  <br /></td></tr>
+<tr class="memitem:aa0af3540ab1aebf6cd16a7db85963451" id="r_aa0af3540ab1aebf6cd16a7db85963451"><td class="memItemLeft">const float&#160;</td><td class="memItemRight"><a class="el" href="#aa0af3540ab1aebf6cd16a7db85963451">RISE_PEAK_COUNTER</a> = 20f</td></tr>
+<tr class="memdesc:aa0af3540ab1aebf6cd16a7db85963451"><td class="mdescLeft">&#160;</td><td class="mdescRight">Counter value at which upward movement reverses to a slight downward bob.  <br /></td></tr>
+<tr class="memitem:a9806e97d4588ddaf8463bd54aff64561" id="r_a9806e97d4588ddaf8463bd54aff64561"><td class="memItemLeft">const float&#160;</td><td class="memItemRight"><a class="el" href="#a9806e97d4588ddaf8463bd54aff64561">RISE_END_COUNTER</a> = 30f</td></tr>
+<tr class="memdesc:a9806e97d4588ddaf8463bd54aff64561"><td class="mdescLeft">&#160;</td><td class="mdescRight">Counter value at which the rise animation ends and the mole snaps to full scale.  <br /></td></tr>
+<tr class="memitem:adb0f4f22bcaad6af144e1b32252f9cc4" id="r_adb0f4f22bcaad6af144e1b32252f9cc4"><td class="memItemLeft">const float&#160;</td><td class="memItemRight"><a class="el" href="#adb0f4f22bcaad6af144e1b32252f9cc4">HIT_DETECTION_RADIUS</a> = 0.265f</td></tr>
+<tr class="memdesc:adb0f4f22bcaad6af144e1b32252f9cc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum distance in world units between the mole and a ring centre for a hit to register.  <br /></td></tr>
+<tr class="memitem:a7d009a0d4d1a37b04d303216734a1a73" id="r_a7d009a0d4d1a37b04d303216734a1a73"><td class="memItemLeft">const float&#160;</td><td class="memItemRight"><a class="el" href="#a7d009a0d4d1a37b04d303216734a1a73">RETREAT_SCALE_SPEED</a> = 0.0005f</td></tr>
+<tr class="memdesc:a7d009a0d4d1a37b04d303216734a1a73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Y scale reduction applied each scaled frame during the missed retreat.  <br /></td></tr>
+<tr class="memitem:a8ed044ea6fecfa8d17287ef7501117c9" id="r_a8ed044ea6fecfa8d17287ef7501117c9"><td class="memItemLeft">const float&#160;</td><td class="memItemRight"><a class="el" href="#a8ed044ea6fecfa8d17287ef7501117c9">RETREAT_MOVE_SPEED</a> = 0.0006f</td></tr>
+<tr class="memdesc:a8ed044ea6fecfa8d17287ef7501117c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Downward positional movement applied each scaled frame during the missed retreat.  <br /></td></tr>
+<tr class="memitem:ae3978c537265638591af14f36b29f4f5" id="r_ae3978c537265638591af14f36b29f4f5"><td class="memItemLeft">const float&#160;</td><td class="memItemRight"><a class="el" href="#ae3978c537265638591af14f36b29f4f5">RETREAT_DURATION</a> = 24f</td></tr>
+<tr class="memdesc:ae3978c537265638591af14f36b29f4f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of scaled frames before the mole is destroyed after a missed retreat.  <br /></td></tr>
+<tr class="memitem:a7b0d8d288b4fea7fdf212881d01c7522" id="r_a7b0d8d288b4fea7fdf212881d01c7522"><td class="memItemLeft">const float&#160;</td><td class="memItemRight"><a class="el" href="#a7b0d8d288b4fea7fdf212881d01c7522">WHACK_FLASH_DURATION</a> = 5f</td></tr>
+<tr class="memdesc:a7b0d8d288b4fea7fdf212881d01c7522"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of scaled frames the whacked flash sprite is held before transitioning.  <br /></td></tr>
+<tr class="memitem:aaf34a923e5c72406048bbd61bec6d9a2" id="r_aaf34a923e5c72406048bbd61bec6d9a2"><td class="memItemLeft">const float&#160;</td><td class="memItemRight"><a class="el" href="#aaf34a923e5c72406048bbd61bec6d9a2">WHACK_SHRINK_DURATION</a> = 5f</td></tr>
+<tr class="memdesc:aaf34a923e5c72406048bbd61bec6d9a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of scaled frames the squash phase of the whacked animation lasts.  <br /></td></tr>
+<tr class="memitem:ad256ace5eb206878835d9cacbcbb8729" id="r_ad256ace5eb206878835d9cacbcbb8729"><td class="memItemLeft">const float&#160;</td><td class="memItemRight"><a class="el" href="#ad256ace5eb206878835d9cacbcbb8729">WHACK_SHRINK_SCALE_RATE</a> = 0.0002f</td></tr>
+<tr class="memdesc:ad256ace5eb206878835d9cacbcbb8729"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scale reduction rate per counter unit per scaled frame during the squash phase.  <br /></td></tr>
+<tr class="memitem:a3e940ab514a75e42c3d9befbafb8dc80" id="r_a3e940ab514a75e42c3d9befbafb8dc80"><td class="memItemLeft">const float&#160;</td><td class="memItemRight"><a class="el" href="#a3e940ab514a75e42c3d9befbafb8dc80">WHACK_GROW_DURATION</a> = 5f</td></tr>
+<tr class="memdesc:a3e940ab514a75e42c3d9befbafb8dc80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of scaled frames the stretch phase of the whacked animation lasts.  <br /></td></tr>
+<tr class="memitem:af0f9079f282cd878e49ecc872e3969d2" id="r_af0f9079f282cd878e49ecc872e3969d2"><td class="memItemLeft">const float&#160;</td><td class="memItemRight"><a class="el" href="#af0f9079f282cd878e49ecc872e3969d2">WHACK_GROW_SCALE_RATE</a> = 0.0002f</td></tr>
+<tr class="memdesc:af0f9079f282cd878e49ecc872e3969d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scale growth rate per counter unit per scaled frame during the stretch phase.  <br /></td></tr>
+<tr class="memitem:afdd59a37c953ed8f1451e3a0662e92c6" id="r_afdd59a37c953ed8f1451e3a0662e92c6"><td class="memItemLeft">const float&#160;</td><td class="memItemRight"><a class="el" href="#afdd59a37c953ed8f1451e3a0662e92c6">WHACK_RETREAT_SCALE_SPEED</a> = 0.0010f</td></tr>
+<tr class="memdesc:afdd59a37c953ed8f1451e3a0662e92c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Y scale reduction applied each scaled frame during the final whacked retreat.  <br /></td></tr>
+<tr class="memitem:ab64e3184ac539799ec1992b9282a8c77" id="r_ab64e3184ac539799ec1992b9282a8c77"><td class="memItemLeft">const float&#160;</td><td class="memItemRight"><a class="el" href="#ab64e3184ac539799ec1992b9282a8c77">WHACK_RETREAT_MOVE_SPEED</a> = 0.0012f</td></tr>
+<tr class="memdesc:ab64e3184ac539799ec1992b9282a8c77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Downward positional movement applied each scaled frame during the whacked retreat.  <br /></td></tr>
+<tr class="memitem:a06cd0ef8bcf6cb1281195d4f05129296" id="r_a06cd0ef8bcf6cb1281195d4f05129296"><td class="memItemLeft">const float&#160;</td><td class="memItemRight"><a class="el" href="#a06cd0ef8bcf6cb1281195d4f05129296">WHACK_RETREAT_DURATION</a> = 12f</td></tr>
+<tr class="memdesc:a06cd0ef8bcf6cb1281195d4f05129296"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of scaled frames before the mole is destroyed after a whacked retreat.  <br /></td></tr>
 </table>
-<a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Member Enumeration Documentation</h2>
-<a id="a112ca01a0738700abb2d5d01f4f530fd" name="a112ca01a0738700abb2d5d01f4f530fd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a112ca01a0738700abb2d5d01f4f530fd">&#9670;&#160;</a></span>State</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="#a112ca01a0738700abb2d5d01f4f530fd">Mole2DLogic.State</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a112ca01a0738700abb2d5d01f4f530fda5eb8d750cdabeb72773cf6456a451ed0" name="a112ca01a0738700abb2d5d01f4f530fda5eb8d750cdabeb72773cf6456a451ed0"></a>MoleUpdateGameManagerMoleCount&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a112ca01a0738700abb2d5d01f4f530fda0913d54bf75ba489ef7413eedff87209" name="a112ca01a0738700abb2d5d01f4f530fda0913d54bf75ba489ef7413eedff87209"></a>MolePopUpFromGround&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a112ca01a0738700abb2d5d01f4f530fda7527896719fe2a0b1d9cd21d6343b987" name="a112ca01a0738700abb2d5d01f4f530fda7527896719fe2a0b1d9cd21d6343b987"></a>MoleWaitToGetWhackedOrForWaitTimerToExpire&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a112ca01a0738700abb2d5d01f4f530fda701598a5ade96eebc0529a747280b08d" name="a112ca01a0738700abb2d5d01f4f530fda701598a5ade96eebc0529a747280b08d"></a>MoleDigIntoGroundAndLeave&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a112ca01a0738700abb2d5d01f4f530fda91e9901bed1559a2f3760cbd1036ab75" name="a112ca01a0738700abb2d5d01f4f530fda91e9901bed1559a2f3760cbd1036ab75"></a>MoleWhackedAndShowExplosion&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a112ca01a0738700abb2d5d01f4f530fdaedc4bf48dc142359a31b4c0848568231" name="a112ca01a0738700abb2d5d01f4f530fdaedc4bf48dc142359a31b4c0848568231"></a>MoleWhackedAndSquishDown&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a112ca01a0738700abb2d5d01f4f530fdaaac51b5cb2b78743381ecf60ea68a278" name="a112ca01a0738700abb2d5d01f4f530fdaaac51b5cb2b78743381ecf60ea68a278"></a>MoleWhackedAndSquishUp&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a112ca01a0738700abb2d5d01f4f530fdadb49f70a47fbb17c8ae175ff9942a701" name="a112ca01a0738700abb2d5d01f4f530fdadb49f70a47fbb17c8ae175ff9942a701"></a>MoleWhackedAndFallIntoGround&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-</div>
-</div>
-<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Drives a mole GameObject through eight states: initialisation, rising, snapping to full scale, idle (waiting for a hit or timeout), missed retreat, whacked flash, whacked squash, whacked stretch, and whacked retreat. Hit detection is performed manually each frame using distance comparisons against the left and right ring positions. Attach to each mole prefab. Requires a parent GameObject carrying <a class="el" href="class_game_manager_logic.html" title="Manages the full game session from startup through to game over. Runs a state machine that walks thro...">GameManagerLogic</a>. </p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a5c2a1ade737c86ed1188c65437bf3221" name="a5c2a1ade737c86ed1188c65437bf3221"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5c2a1ade737c86ed1188c65437bf3221">&#9670;&#160;</a></span>Start()</h2>
 
@@ -211,6 +231,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Initialises the mole at state 0, randomises its on-screen wait duration, locates the ring GameObjects, sets the idle sprite, and calculates a randomised world-space spawn position. </p>
 
 </div>
 </div>
@@ -237,6 +259,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Called once per frame. Advances the mole through its state machine: state 0 registers the mole with the game manager and enters the rise; state 1 animates the rise with a decelerated scale and positional bob; state 2 snaps the scale toward full in a single frame; state 3 idles and polls for ring hits or timeout; state 4 plays the missed retreat and destroys the mole; state 5 holds the whacked flash sprite; state 6 plays the squash phase of the whacked animation; state 7 plays the stretch phase of the whacked animation; state 8 plays the final whacked retreat and destroys the mole. </p>
+
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
@@ -262,6 +286,54 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a7904fa0bb278395b50f5d781a057ae5b" name="a7904fa0bb278395b50f5d781a057ae5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7904fa0bb278395b50f5d781a057ae5b">&#9670;&#160;</a></span>FULL_SCALE_Y</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float Mole2DLogic.FULL_SCALE_Y = 0.012f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The target full Y scale the mole reaches when completely risen. </p>
+
+</div>
+</div>
+<a id="adb0f4f22bcaad6af144e1b32252f9cc4" name="adb0f4f22bcaad6af144e1b32252f9cc4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb0f4f22bcaad6af144e1b32252f9cc4">&#9670;&#160;</a></span>HIT_DETECTION_RADIUS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float Mole2DLogic.HIT_DETECTION_RADIUS = 0.265f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Maximum distance in world units between the mole and a ring centre for a hit to register. </p>
+
+</div>
+</div>
 <a id="a69607a7f0ce6a58cd84ab67c2f313ca1" name="a69607a7f0ce6a58cd84ab67c2f313ca1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a69607a7f0ce6a58cd84ab67c2f313ca1">&#9670;&#160;</a></span>leftring</h2>
 
@@ -281,6 +353,126 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="aec6362054e26684266d5009bc8fc7ca9" name="aec6362054e26684266d5009bc8fc7ca9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec6362054e26684266d5009bc8fc7ca9">&#9670;&#160;</a></span>MAX_WAIT_TIMER</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int Mole2DLogic.MAX_WAIT_TIMER = 301</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Maximum number of scaled frames a mole stays fully visible before retreating. </p>
+
+</div>
+</div>
+<a id="ad87614ffc5a654c9f06acb391d4199f3" name="ad87614ffc5a654c9f06acb391d4199f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad87614ffc5a654c9f06acb391d4199f3">&#9670;&#160;</a></span>MIN_WAIT_TIMER</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int Mole2DLogic.MIN_WAIT_TIMER = 120</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Minimum number of scaled frames a mole stays fully visible before retreating. </p>
+
+</div>
+</div>
+<a id="ae3978c537265638591af14f36b29f4f5" name="ae3978c537265638591af14f36b29f4f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3978c537265638591af14f36b29f4f5">&#9670;&#160;</a></span>RETREAT_DURATION</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float Mole2DLogic.RETREAT_DURATION = 24f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Number of scaled frames before the mole is destroyed after a missed retreat. </p>
+
+</div>
+</div>
+<a id="a8ed044ea6fecfa8d17287ef7501117c9" name="a8ed044ea6fecfa8d17287ef7501117c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ed044ea6fecfa8d17287ef7501117c9">&#9670;&#160;</a></span>RETREAT_MOVE_SPEED</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float Mole2DLogic.RETREAT_MOVE_SPEED = 0.0006f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Downward positional movement applied each scaled frame during the missed retreat. </p>
+
+</div>
+</div>
+<a id="a7d009a0d4d1a37b04d303216734a1a73" name="a7d009a0d4d1a37b04d303216734a1a73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d009a0d4d1a37b04d303216734a1a73">&#9670;&#160;</a></span>RETREAT_SCALE_SPEED</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float Mole2DLogic.RETREAT_SCALE_SPEED = 0.0005f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Y scale reduction applied each scaled frame during the missed retreat. </p>
 
 </div>
 </div>
@@ -306,8 +498,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="af28fdad657c470b8252ee209e8a60ec0" name="af28fdad657c470b8252ee209e8a60ec0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af28fdad657c470b8252ee209e8a60ec0">&#9670;&#160;</a></span>stateenum</h2>
+<a id="aee851e8e25710f6550cbdc4297ce0f9d" name="aee851e8e25710f6550cbdc4297ce0f9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee851e8e25710f6550cbdc4297ce0f9d">&#9670;&#160;</a></span>RISE_DECELERATION</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -316,20 +508,22 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a112ca01a0738700abb2d5d01f4f530fd">State</a> Mole2DLogic.stateenum</td>
+          <td class="memname">const float Mole2DLogic.RISE_DECELERATION = 0.000038f</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
+<p>Deceleration factor multiplied by the counter to slow scale growth over time. </p>
+
 </div>
 </div>
-<a id="ac6d00b3381f6dda17bd54b383e5a5944" name="ac6d00b3381f6dda17bd54b383e5a5944"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac6d00b3381f6dda17bd54b383e5a5944">&#9670;&#160;</a></span>waitmax</h2>
+<a id="a9806e97d4588ddaf8463bd54aff64561" name="a9806e97d4588ddaf8463bd54aff64561"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9806e97d4588ddaf8463bd54aff64561">&#9670;&#160;</a></span>RISE_END_COUNTER</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -338,20 +532,22 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int Mole2DLogic.waitmax</td>
+          <td class="memname">const float Mole2DLogic.RISE_END_COUNTER = 30f</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
+<p>Counter value at which the rise animation ends and the mole snaps to full scale. </p>
+
 </div>
 </div>
-<a id="a35dbee3740a0224d275bdcc2b94b488a" name="a35dbee3740a0224d275bdcc2b94b488a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a35dbee3740a0224d275bdcc2b94b488a">&#9670;&#160;</a></span>waitmin</h2>
+<a id="ae69848e90862dc60be79242b05d399ad" name="ae69848e90862dc60be79242b05d399ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae69848e90862dc60be79242b05d399ad">&#9670;&#160;</a></span>RISE_MOVE_SPEED</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -360,7 +556,247 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int Mole2DLogic.waitmin</td>
+          <td class="memname">const float Mole2DLogic.RISE_MOVE_SPEED = 0.0006f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Upward positional movement applied each scaled frame during the rise phase. </p>
+
+</div>
+</div>
+<a id="aa0af3540ab1aebf6cd16a7db85963451" name="aa0af3540ab1aebf6cd16a7db85963451"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0af3540ab1aebf6cd16a7db85963451">&#9670;&#160;</a></span>RISE_PEAK_COUNTER</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float Mole2DLogic.RISE_PEAK_COUNTER = 20f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Counter value at which upward movement reverses to a slight downward bob. </p>
+
+</div>
+</div>
+<a id="aee8be22900e33fc66d95fc5537b6a6c7" name="aee8be22900e33fc66d95fc5537b6a6c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee8be22900e33fc66d95fc5537b6a6c7">&#9670;&#160;</a></span>RISE_SCALE_SPEED</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float Mole2DLogic.RISE_SCALE_SPEED = 0.001f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initial scale growth rate applied each scaled frame at the start of the rise. </p>
+
+</div>
+</div>
+<a id="a56bf1a23689365df0a61d78da9db5de0" name="a56bf1a23689365df0a61d78da9db5de0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56bf1a23689365df0a61d78da9db5de0">&#9670;&#160;</a></span>SPAWN_OFFSET_X</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float Mole2DLogic.SPAWN_OFFSET_X = 0.43f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>X offset added to the base spawn position before scaling. </p>
+
+</div>
+</div>
+<a id="a2d6852e5bd5e333a1215ec8746a64995" name="a2d6852e5bd5e333a1215ec8746a64995"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d6852e5bd5e333a1215ec8746a64995">&#9670;&#160;</a></span>SPAWN_OFFSET_Y</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float Mole2DLogic.SPAWN_OFFSET_Y = 0.34f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Y offset subtracted from the base spawn position before scaling. </p>
+
+</div>
+</div>
+<a id="ae7f2dcc46b99497d740d66a18cdb8805" name="ae7f2dcc46b99497d740d66a18cdb8805"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7f2dcc46b99497d740d66a18cdb8805">&#9670;&#160;</a></span>SPAWN_RANDOM_RANGE_X</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int Mole2DLogic.SPAWN_RANDOM_RANGE_X = 90</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Upper bound of the random X spawn jitter range (exclusive), in hundredths of a unit. </p>
+
+</div>
+</div>
+<a id="ac95e0701f261660d8ca25b51589557d6" name="ac95e0701f261660d8ca25b51589557d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac95e0701f261660d8ca25b51589557d6">&#9670;&#160;</a></span>SPAWN_RANDOM_RANGE_Y</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int Mole2DLogic.SPAWN_RANDOM_RANGE_Y = 67</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Upper bound of the random Y spawn jitter range (exclusive), in hundredths of a unit. </p>
+
+</div>
+</div>
+<a id="a96ae1d083a30d134cc1fa4e68d23211e" name="a96ae1d083a30d134cc1fa4e68d23211e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96ae1d083a30d134cc1fa4e68d23211e">&#9670;&#160;</a></span>SPAWN_SCALE_X</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float Mole2DLogic.SPAWN_SCALE_X = 2.51f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>World-space X scale factor applied to the randomised spawn position. </p>
+
+</div>
+</div>
+<a id="a1d061e63c7473f805e17f2e10064bf53" name="a1d061e63c7473f805e17f2e10064bf53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d061e63c7473f805e17f2e10064bf53">&#9670;&#160;</a></span>SPAWN_SCALE_Y</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float Mole2DLogic.SPAWN_SCALE_Y = 2.52f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>World-space Y scale factor applied to the randomised spawn position. </p>
+
+</div>
+</div>
+<a id="aaa2ca4456de5e037e8a9b408ea0677d5" name="aaa2ca4456de5e037e8a9b408ea0677d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa2ca4456de5e037e8a9b408ea0677d5">&#9670;&#160;</a></span>SPRITE_FLIP_X</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float Mole2DLogic.SPRITE_FLIP_X = -0.012f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>X scale applied to the mole sprite. Negative value flips the sprite horizontally. </p>
+
+</div>
+</div>
+<a id="a273d58bdfd527e04dd3d7abe91f8502f" name="a273d58bdfd527e04dd3d7abe91f8502f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a273d58bdfd527e04dd3d7abe91f8502f">&#9670;&#160;</a></span>state</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Mole2DLogic.state</td>
         </tr>
       </table>
   </td>
@@ -391,6 +827,198 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7b0d8d288b4fea7fdf212881d01c7522" name="a7b0d8d288b4fea7fdf212881d01c7522"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b0d8d288b4fea7fdf212881d01c7522">&#9670;&#160;</a></span>WHACK_FLASH_DURATION</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float Mole2DLogic.WHACK_FLASH_DURATION = 5f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Number of scaled frames the whacked flash sprite is held before transitioning. </p>
+
+</div>
+</div>
+<a id="a3e940ab514a75e42c3d9befbafb8dc80" name="a3e940ab514a75e42c3d9befbafb8dc80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e940ab514a75e42c3d9befbafb8dc80">&#9670;&#160;</a></span>WHACK_GROW_DURATION</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float Mole2DLogic.WHACK_GROW_DURATION = 5f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Number of scaled frames the stretch phase of the whacked animation lasts. </p>
+
+</div>
+</div>
+<a id="af0f9079f282cd878e49ecc872e3969d2" name="af0f9079f282cd878e49ecc872e3969d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0f9079f282cd878e49ecc872e3969d2">&#9670;&#160;</a></span>WHACK_GROW_SCALE_RATE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float Mole2DLogic.WHACK_GROW_SCALE_RATE = 0.0002f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Scale growth rate per counter unit per scaled frame during the stretch phase. </p>
+
+</div>
+</div>
+<a id="a06cd0ef8bcf6cb1281195d4f05129296" name="a06cd0ef8bcf6cb1281195d4f05129296"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06cd0ef8bcf6cb1281195d4f05129296">&#9670;&#160;</a></span>WHACK_RETREAT_DURATION</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float Mole2DLogic.WHACK_RETREAT_DURATION = 12f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Number of scaled frames before the mole is destroyed after a whacked retreat. </p>
+
+</div>
+</div>
+<a id="ab64e3184ac539799ec1992b9282a8c77" name="ab64e3184ac539799ec1992b9282a8c77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab64e3184ac539799ec1992b9282a8c77">&#9670;&#160;</a></span>WHACK_RETREAT_MOVE_SPEED</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float Mole2DLogic.WHACK_RETREAT_MOVE_SPEED = 0.0012f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Downward positional movement applied each scaled frame during the whacked retreat. </p>
+
+</div>
+</div>
+<a id="afdd59a37c953ed8f1451e3a0662e92c6" name="afdd59a37c953ed8f1451e3a0662e92c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdd59a37c953ed8f1451e3a0662e92c6">&#9670;&#160;</a></span>WHACK_RETREAT_SCALE_SPEED</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float Mole2DLogic.WHACK_RETREAT_SCALE_SPEED = 0.0010f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Y scale reduction applied each scaled frame during the final whacked retreat. </p>
+
+</div>
+</div>
+<a id="aaf34a923e5c72406048bbd61bec6d9a2" name="aaf34a923e5c72406048bbd61bec6d9a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf34a923e5c72406048bbd61bec6d9a2">&#9670;&#160;</a></span>WHACK_SHRINK_DURATION</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float Mole2DLogic.WHACK_SHRINK_DURATION = 5f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Number of scaled frames the squash phase of the whacked animation lasts. </p>
+
+</div>
+</div>
+<a id="ad256ace5eb206878835d9cacbcbb8729" name="ad256ace5eb206878835d9cacbcbb8729"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad256ace5eb206878835d9cacbcbb8729">&#9670;&#160;</a></span>WHACK_SHRINK_SCALE_RATE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float Mole2DLogic.WHACK_SHRINK_SCALE_RATE = 0.0002f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Scale reduction rate per counter unit per scaled frame during the squash phase. </p>
 
 </div>
 </div>

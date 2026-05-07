@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['e2e_5finitializationsequence_5fsuccessfullystartsgameandregistershits_0',['E2E_InitializationSequence_SuccessfullyStartsGameAndRegistersHits',['../class_gameplay_sequence_tests.html#a60c4e7399955b63ca2817e40e4105822',1,'GameplaySequenceTests']]]
+  ['consumeleftpress_0',['ConsumeLeftPress',['../class_two_hand_visualizer.html#ac62712b38408362f19e0154dcdbc6f09',1,'TwoHandVisualizer']]],
+  ['consumerightpress_1',['ConsumeRightPress',['../class_two_hand_visualizer.html#a18e46840a93f6cf86213765812e0aee0',1,'TwoHandVisualizer']]]
 ];

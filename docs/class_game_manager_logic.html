@@ -118,37 +118,62 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_game_man
   <div class="headertitle"><div class="title">GameManagerLogic Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Manages the full game session from startup through to game over. Runs a state machine that walks through the ring placement prompt, a countdown sequence, and the main gameplay loop. During gameplay it spawns moles in randomised batches, maintains the on-screen hit counter and countdown timer, and signals to moles whether time remains via the public stilltime flag. Attach to the root GameManager GameObject. All mole and UI prefab references must be assigned in the Inspector.  
+ <a href="#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for GameManagerLogic:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="class_game_manager_logic.png" alt=""/>
- </div></div>
+<div class="center"><img src="class_game_manager_logic__inherit__graph.png" border="0" usemap="#a_game_manager_logic_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
+<!-- MAP 0 -->
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for GameManagerLogic:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_game_manager_logic__coll__graph.png" border="0" usemap="#a_game_manager_logic_coll__map" loading="lazy" alt="Collaboration graph"/></div>
+<!-- MAP 1 -->
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a22faaff680ce4870764b06abd1611abb" id="r_a22faaff680ce4870764b06abd1611abb"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a22faaff680ce4870764b06abd1611abb">UpdateCount</a> (bool surfcing)</td></tr>
+<tr class="memdesc:a22faaff680ce4870764b06abd1611abb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increments or decrements the count of moles currently on screen. Called by each mole on spawn and on removal to keep the total accurate for spawn cap enforcement.  <br /></td></tr>
 <tr class="memitem:a2bcc1bf0a98f816b2f43c63c3e2a968b" id="r_a2bcc1bf0a98f816b2f43c63c3e2a968b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a2bcc1bf0a98f816b2f43c63c3e2a968b">UpdateHits</a> ()</td></tr>
+<tr class="memdesc:a2bcc1bf0a98f816b2f43c63c3e2a968b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increments the player's hit count by one. Called by <a class="el" href="class_mole2_d_logic.html" title="Drives a mole GameObject through eight states: initialisation, rising, snapping to full scale,...">Mole2DLogic</a> when a mole successfully transitions to the whacked state.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a7ff5f416d870b71614d0a3bd51d3f95b" id="r_a7ff5f416d870b71614d0a3bd51d3f95b"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a7ff5f416d870b71614d0a3bd51d3f95b">stilltime</a></td></tr>
+<tr class="memdesc:a7ff5f416d870b71614d0a3bd51d3f95b"><td class="mdescLeft">&#160;</td><td class="mdescRight">True while the game timer has not yet reached zero. Moles read this flag each frame to decide whether to retreat early.  <br /></td></tr>
 <tr class="memitem:a28f85748c9a35c4be954b5c6ea88be0c" id="r_a28f85748c9a35c4be954b5c6ea88be0c"><td class="memItemLeft">Text&#160;</td><td class="memItemRight"><a class="el" href="#a28f85748c9a35c4be954b5c6ea88be0c">hitcount</a></td></tr>
+<tr class="memdesc:a28f85748c9a35c4be954b5c6ea88be0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">UI Text element displaying the current hit count.  <br /></td></tr>
 <tr class="memitem:af9e53bf2412a7110a876b572b2acd07f" id="r_af9e53bf2412a7110a876b572b2acd07f"><td class="memItemLeft">Text&#160;</td><td class="memItemRight"><a class="el" href="#af9e53bf2412a7110a876b572b2acd07f">gametimera</a></td></tr>
+<tr class="memdesc:af9e53bf2412a7110a876b572b2acd07f"><td class="mdescLeft">&#160;</td><td class="mdescRight">UI Text element displaying the minutes portion of the countdown timer.  <br /></td></tr>
 <tr class="memitem:a64958f17bb47c83b295b2d64ee432f52" id="r_a64958f17bb47c83b295b2d64ee432f52"><td class="memItemLeft">Text&#160;</td><td class="memItemRight"><a class="el" href="#a64958f17bb47c83b295b2d64ee432f52">gametimerb</a></td></tr>
+<tr class="memdesc:a64958f17bb47c83b295b2d64ee432f52"><td class="mdescLeft">&#160;</td><td class="mdescRight">UI Text element displaying the blinking colon separator of the countdown timer.  <br /></td></tr>
 <tr class="memitem:a53ad6686c1917407d047b72f3a5f3f8d" id="r_a53ad6686c1917407d047b72f3a5f3f8d"><td class="memItemLeft">Text&#160;</td><td class="memItemRight"><a class="el" href="#a53ad6686c1917407d047b72f3a5f3f8d">gametimerc</a></td></tr>
+<tr class="memdesc:a53ad6686c1917407d047b72f3a5f3f8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">UI Text element displaying the seconds portion of the countdown timer.  <br /></td></tr>
 <tr class="memitem:ab42992ee68d98dcab3dc309048f977a4" id="r_ab42992ee68d98dcab3dc309048f977a4"><td class="memItemLeft">Text&#160;</td><td class="memItemRight"><a class="el" href="#ab42992ee68d98dcab3dc309048f977a4">startmessage</a></td></tr>
+<tr class="memdesc:ab42992ee68d98dcab3dc309048f977a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">UI Text element used to display startup and game state messages to the player.  <br /></td></tr>
 <tr class="memitem:a48b554409ae5520288654f67d1eef552" id="r_a48b554409ae5520288654f67d1eef552"><td class="memItemLeft">GameObject&#160;</td><td class="memItemRight"><a class="el" href="#a48b554409ae5520288654f67d1eef552">mole</a></td></tr>
+<tr class="memdesc:a48b554409ae5520288654f67d1eef552"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prefab instantiated for each mole spawned during gameplay.  <br /></td></tr>
 <tr class="memitem:aebac7a427c697d9e647a8a5a9db1aa8b" id="r_aebac7a427c697d9e647a8a5a9db1aa8b"><td class="memItemLeft">GameObject&#160;</td><td class="memItemRight"><a class="el" href="#aebac7a427c697d9e647a8a5a9db1aa8b">outoftime</a></td></tr>
+<tr class="memdesc:aebac7a427c697d9e647a8a5a9db1aa8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prefab instantiated when the game timer expires to display the Game Over screen.  <br /></td></tr>
 <tr class="memitem:a6247319258012b88229ecdff99089d44" id="r_a6247319258012b88229ecdff99089d44"><td class="memItemLeft">GameObject&#160;</td><td class="memItemRight"><a class="el" href="#a6247319258012b88229ecdff99089d44">ringstartarea</a></td></tr>
+<tr class="memdesc:a6247319258012b88229ecdff99089d44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prefab instantiated at startup for each hand's ring placement target area.  <br /></td></tr>
 <tr class="memitem:aea9f772a6296aa71fec7b0661c142e06" id="r_aea9f772a6296aa71fec7b0661c142e06"><td class="memItemLeft">Sprite[]&#160;</td><td class="memItemRight"><a class="el" href="#aea9f772a6296aa71fec7b0661c142e06">moles</a></td></tr>
+<tr class="memdesc:aea9f772a6296aa71fec7b0661c142e06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sprite array for mole states: index 0 = idle, 1 = whacked, 2 = flash.  <br /></td></tr>
 <tr class="memitem:a6c606540bd41269a969262f676a76dae" id="r_a6c606540bd41269a969262f676a76dae"><td class="memItemLeft">Sprite[]&#160;</td><td class="memItemRight"><a class="el" href="#a6c606540bd41269a969262f676a76dae">ringareas</a></td></tr>
+<tr class="memdesc:a6c606540bd41269a969262f676a76dae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sprite array for ring start area states: index 0 = idle, 1 = highlighted, 2 = confirmed.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:ac23ff4ad89b7b26c23773087191aa66b" id="r_ac23ff4ad89b7b26c23773087191aa66b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ac23ff4ad89b7b26c23773087191aa66b">Start</a> ()</td></tr>
+<tr class="memdesc:ac23ff4ad89b7b26c23773087191aa66b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialises all game state variables, locks the frame rate to 60 fps, instantiates and positions the two ring start area indicators, and clears all UI text elements.  <br /></td></tr>
 <tr class="memitem:a43a573a8f52f695a3d143da3db0d72a0" id="r_a43a573a8f52f695a3d143da3db0d72a0"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a43a573a8f52f695a3d143da3db0d72a0">Update</a> ()</td></tr>
+<tr class="memdesc:a43a573a8f52f695a3d143da3db0d72a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called once per frame. Advances the startup state machine through ring placement detection, countdown, and game start before handing off to RunGame each frame during active gameplay. State 0: waits for both rings to be placed inside their target areas; State 1: holds the highlighted ring state briefly; State 2: displays the OK confirmation message; State 3: plays the ring area shrink-out animation; State 4: displays the GAME START message; State 5: runs the active gameplay loop each frame via RunGame.  <br /></td></tr>
 <tr class="memitem:a1a086b2068ac50aa3d2cf9d3d17b741e" id="r_a1a086b2068ac50aa3d2cf9d3d17b741e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a1a086b2068ac50aa3d2cf9d3d17b741e">RunGame</a> ()</td></tr>
+<tr class="memdesc:a1a086b2068ac50aa3d2cf9d3d17b741e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the active gameplay loop each frame. Spawns mole batches at randomised intervals while the mole cap has not been reached and time remains. Updates the hit counter display and the countdown timer. When time expires, instantiates the Game Over object, freezes the timer display at zero, and clears stilltime.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -162,8 +187,39 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:acbd90e58eb269046bda845ab69bff5bb" id="r_acbd90e58eb269046bda845ab69bff5bb"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#acbd90e58eb269046bda845ab69bff5bb">state</a></td></tr>
 <tr class="memitem:a790048f013771c53234fb5ecbc2d2143" id="r_a790048f013771c53234fb5ecbc2d2143"><td class="memItemLeft">GameObject&#160;</td><td class="memItemRight"><a class="el" href="#a790048f013771c53234fb5ecbc2d2143">leftringarea</a></td></tr>
 <tr class="memitem:a47c75fa1171de4d37c216654ab650116" id="r_a47c75fa1171de4d37c216654ab650116"><td class="memItemLeft">GameObject&#160;</td><td class="memItemRight"><a class="el" href="#a47c75fa1171de4d37c216654ab650116">rightringarea</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-static-attribs" class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:add860c5668ee9ce2c35394625d0d71bf" id="r_add860c5668ee9ce2c35394625d0d71bf"><td class="memItemLeft">const int&#160;</td><td class="memItemRight"><a class="el" href="#add860c5668ee9ce2c35394625d0d71bf">MOLE_CAP</a> = 90</td></tr>
+<tr class="memdesc:add860c5668ee9ce2c35394625d0d71bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum total number of moles allowed on screen simultaneously.  <br /></td></tr>
+<tr class="memitem:adfe405d69d60ca70716d34ccd4df779f" id="r_adfe405d69d60ca70716d34ccd4df779f"><td class="memItemLeft">const int&#160;</td><td class="memItemRight"><a class="el" href="#adfe405d69d60ca70716d34ccd4df779f">MIN_SPAWN_WAIT</a> = 60</td></tr>
+<tr class="memdesc:adfe405d69d60ca70716d34ccd4df779f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minimum scaled frames between mole spawn batches.  <br /></td></tr>
+<tr class="memitem:a7ea4e17d73ae28695c905a257705c106" id="r_a7ea4e17d73ae28695c905a257705c106"><td class="memItemLeft">const int&#160;</td><td class="memItemRight"><a class="el" href="#a7ea4e17d73ae28695c905a257705c106">MAX_SPAWN_WAIT</a> = 241</td></tr>
+<tr class="memdesc:a7ea4e17d73ae28695c905a257705c106"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum scaled frames between mole spawn batches.  <br /></td></tr>
+<tr class="memitem:a500329d68fadb5ad003253f44831cf6f" id="r_a500329d68fadb5ad003253f44831cf6f"><td class="memItemLeft">const int&#160;</td><td class="memItemRight"><a class="el" href="#a500329d68fadb5ad003253f44831cf6f">MIN_SPAWN_AMOUNT</a> = 1</td></tr>
+<tr class="memdesc:a500329d68fadb5ad003253f44831cf6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minimum number of moles spawned per batch.  <br /></td></tr>
+<tr class="memitem:a4ac48640168094688f858d74cf332de9" id="r_a4ac48640168094688f858d74cf332de9"><td class="memItemLeft">const int&#160;</td><td class="memItemRight"><a class="el" href="#a4ac48640168094688f858d74cf332de9">MAX_SPAWN_AMOUNT</a> = 6</td></tr>
+<tr class="memdesc:a4ac48640168094688f858d74cf332de9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of moles spawned per batch (exclusive).  <br /></td></tr>
+<tr class="memitem:a1393847b899c272a9839447beda4801f" id="r_a1393847b899c272a9839447beda4801f"><td class="memItemLeft">const float&#160;</td><td class="memItemRight"><a class="el" href="#a1393847b899c272a9839447beda4801f">GAME_DURATION_FRAMES</a> = 60 * 60</td></tr>
+<tr class="memdesc:a1393847b899c272a9839447beda4801f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total game duration expressed as a scaled frame count (60 frames/sec * 60 seconds).  <br /></td></tr>
+<tr class="memitem:ab1d1f2815cf45af76450280ea15fbc42" id="r_ab1d1f2815cf45af76450280ea15fbc42"><td class="memItemLeft">const float&#160;</td><td class="memItemRight"><a class="el" href="#ab1d1f2815cf45af76450280ea15fbc42">TIME_EXPIRED_SENTINEL</a> = -101f</td></tr>
+<tr class="memdesc:ab1d1f2815cf45af76450280ea15fbc42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sentinel value assigned to time after the out-of-time object has been spawned, preventing it from being instantiated more than once.  <br /></td></tr>
+<tr class="memitem:a490db2615d3850e6c7ac850d7cbefe0f" id="r_a490db2615d3850e6c7ac850d7cbefe0f"><td class="memItemLeft">const float&#160;</td><td class="memItemRight"><a class="el" href="#a490db2615d3850e6c7ac850d7cbefe0f">STARTUP_HOLD_DURATION</a> = 60f</td></tr>
+<tr class="memdesc:a490db2615d3850e6c7ac850d7cbefe0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scaled frames spent holding the ring-highlighted state before showing OK.  <br /></td></tr>
+<tr class="memitem:a06339e0d977cfdbbdd5311dfbf54c716" id="r_a06339e0d977cfdbbdd5311dfbf54c716"><td class="memItemLeft">const float&#160;</td><td class="memItemRight"><a class="el" href="#a06339e0d977cfdbbdd5311dfbf54c716">STARTUP_OK_DURATION</a> = 60f</td></tr>
+<tr class="memdesc:a06339e0d977cfdbbdd5311dfbf54c716"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scaled frames the OK message is displayed.  <br /></td></tr>
+<tr class="memitem:aa75fe9392f9ef7689789fd86a6d8ae4a" id="r_aa75fe9392f9ef7689789fd86a6d8ae4a"><td class="memItemLeft">const float&#160;</td><td class="memItemRight"><a class="el" href="#aa75fe9392f9ef7689789fd86a6d8ae4a">STARTUP_SHRINK_DURATION</a> = 60f</td></tr>
+<tr class="memdesc:aa75fe9392f9ef7689789fd86a6d8ae4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scaled frames the ring shrink-out animation plays.  <br /></td></tr>
+<tr class="memitem:ab436b049707b5b2e2e5a928c77b3de9e" id="r_ab436b049707b5b2e2e5a928c77b3de9e"><td class="memItemLeft">const float&#160;</td><td class="memItemRight"><a class="el" href="#ab436b049707b5b2e2e5a928c77b3de9e">STARTUP_GAMESTART_DURATION</a> = 60f</td></tr>
+<tr class="memdesc:ab436b049707b5b2e2e5a928c77b3de9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scaled frames the GAME START message is displayed.  <br /></td></tr>
+<tr class="memitem:a446d0c6a9a77d4f1409e239aaccc5b4d" id="r_a446d0c6a9a77d4f1409e239aaccc5b4d"><td class="memItemLeft">const float&#160;</td><td class="memItemRight"><a class="el" href="#a446d0c6a9a77d4f1409e239aaccc5b4d">TIMER_CENTISECOND_SCALE</a> = 100f / 60f</td></tr>
+<tr class="memdesc:a446d0c6a9a77d4f1409e239aaccc5b4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplier used to convert remaining seconds into a centisecond display value.  <br /></td></tr>
+<tr class="memitem:ade290775f423804ca75a695109e86a2d" id="r_ade290775f423804ca75a695109e86a2d"><td class="memItemLeft">const float&#160;</td><td class="memItemRight"><a class="el" href="#ade290775f423804ca75a695109e86a2d">TIMER_BLINK_DIVISOR</a> = 30f</td></tr>
+<tr class="memdesc:ade290775f423804ca75a695109e86a2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Divisor used to determine whether the colon separator should blink on or off.  <br /></td></tr>
 </table>
-<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Manages the full game session from startup through to game over. Runs a state machine that walks through the ring placement prompt, a countdown sequence, and the main gameplay loop. During gameplay it spawns moles in randomised batches, maintains the on-screen hit counter and countdown timer, and signals to moles whether time remains via the public stilltime flag. Attach to the root GameManager GameObject. All mole and UI prefab references must be assigned in the Inspector. </p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a1a086b2068ac50aa3d2cf9d3d17b741e" name="a1a086b2068ac50aa3d2cf9d3d17b741e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1a086b2068ac50aa3d2cf9d3d17b741e">&#9670;&#160;</a></span>RunGame()</h2>
 
@@ -186,6 +242,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Executes the active gameplay loop each frame. Spawns mole batches at randomised intervals while the mole cap has not been reached and time remains. Updates the hit counter display and the countdown timer. When time expires, instantiates the Game Over object, freezes the timer display at zero, and clears stilltime. </p>
 
 </div>
 </div>
@@ -212,6 +270,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Initialises all game state variables, locks the frame rate to 60 fps, instantiates and positions the two ring start area indicators, and clears all UI text elements. </p>
+
 </div>
 </div>
 <a id="a43a573a8f52f695a3d143da3db0d72a0" name="a43a573a8f52f695a3d143da3db0d72a0"></a>
@@ -237,6 +297,14 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Called once per frame. Advances the startup state machine through ring placement detection, countdown, and game start before handing off to RunGame each frame during active gameplay. State 0: waits for both rings to be placed inside their target areas; State 1: holds the highlighted ring state briefly; State 2: displays the OK confirmation message; State 3: plays the ring area shrink-out animation; State 4: displays the GAME START message; State 5: runs the active gameplay loop each frame via RunGame. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_game_manager_logic_a43a573a8f52f695a3d143da3db0d72a0_cgraph.png" border="0" usemap="#aclass_game_manager_logic_a43a573a8f52f695a3d143da3db0d72a0_cgraph" loading="lazy" alt=""/></div>
+<!-- MAP 2 -->
+</div>
+
 </div>
 </div>
 <a id="a22faaff680ce4870764b06abd1611abb" name="a22faaff680ce4870764b06abd1611abb"></a>
@@ -254,6 +322,14 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Increments or decrements the count of moles currently on screen. Called by each mole on spawn and on removal to keep the total accurate for spawn cap enforcement. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">surfcing</td><td>True when a mole is surfacing (increment); false when it is leaving (decrement).</td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a2bcc1bf0a98f816b2f43c63c3e2a968b" name="a2bcc1bf0a98f816b2f43c63c3e2a968b"></a>
@@ -270,6 +346,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Increments the player's hit count by one. Called by <a class="el" href="class_mole2_d_logic.html" title="Drives a mole GameObject through eight states: initialisation, rising, snapping to full scale,...">Mole2DLogic</a> when a mole successfully transitions to the whacked state. </p>
 
 </div>
 </div>
@@ -340,6 +418,30 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a1393847b899c272a9839447beda4801f" name="a1393847b899c272a9839447beda4801f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1393847b899c272a9839447beda4801f">&#9670;&#160;</a></span>GAME_DURATION_FRAMES</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float GameManagerLogic.GAME_DURATION_FRAMES = 60 * 60</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Total game duration expressed as a scaled frame count (60 frames/sec * 60 seconds). </p>
+
+</div>
+</div>
 <a id="af9e53bf2412a7110a876b572b2acd07f" name="af9e53bf2412a7110a876b572b2acd07f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af9e53bf2412a7110a876b572b2acd07f">&#9670;&#160;</a></span>gametimera</h2>
 
@@ -351,6 +453,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>UI Text element displaying the minutes portion of the countdown timer. </p>
 
 </div>
 </div>
@@ -366,6 +470,8 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>UI Text element displaying the blinking colon separator of the countdown timer. </p>
+
 </div>
 </div>
 <a id="a53ad6686c1917407d047b72f3a5f3f8d" name="a53ad6686c1917407d047b72f3a5f3f8d"></a>
@@ -380,6 +486,8 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>UI Text element displaying the seconds portion of the countdown timer. </p>
+
 </div>
 </div>
 <a id="a28f85748c9a35c4be954b5c6ea88be0c" name="a28f85748c9a35c4be954b5c6ea88be0c"></a>
@@ -393,6 +501,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>UI Text element displaying the current hit count. </p>
 
 </div>
 </div>
@@ -440,6 +550,102 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a4ac48640168094688f858d74cf332de9" name="a4ac48640168094688f858d74cf332de9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ac48640168094688f858d74cf332de9">&#9670;&#160;</a></span>MAX_SPAWN_AMOUNT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int GameManagerLogic.MAX_SPAWN_AMOUNT = 6</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Maximum number of moles spawned per batch (exclusive). </p>
+
+</div>
+</div>
+<a id="a7ea4e17d73ae28695c905a257705c106" name="a7ea4e17d73ae28695c905a257705c106"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ea4e17d73ae28695c905a257705c106">&#9670;&#160;</a></span>MAX_SPAWN_WAIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int GameManagerLogic.MAX_SPAWN_WAIT = 241</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Maximum scaled frames between mole spawn batches. </p>
+
+</div>
+</div>
+<a id="a500329d68fadb5ad003253f44831cf6f" name="a500329d68fadb5ad003253f44831cf6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a500329d68fadb5ad003253f44831cf6f">&#9670;&#160;</a></span>MIN_SPAWN_AMOUNT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int GameManagerLogic.MIN_SPAWN_AMOUNT = 1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Minimum number of moles spawned per batch. </p>
+
+</div>
+</div>
+<a id="adfe405d69d60ca70716d34ccd4df779f" name="adfe405d69d60ca70716d34ccd4df779f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfe405d69d60ca70716d34ccd4df779f">&#9670;&#160;</a></span>MIN_SPAWN_WAIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int GameManagerLogic.MIN_SPAWN_WAIT = 60</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Minimum scaled frames between mole spawn batches. </p>
+
+</div>
+</div>
 <a id="a48b554409ae5520288654f67d1eef552" name="a48b554409ae5520288654f67d1eef552"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a48b554409ae5520288654f67d1eef552">&#9670;&#160;</a></span>mole</h2>
 
@@ -451,6 +657,32 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Prefab instantiated for each mole spawned during gameplay. </p>
+
+</div>
+</div>
+<a id="add860c5668ee9ce2c35394625d0d71bf" name="add860c5668ee9ce2c35394625d0d71bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add860c5668ee9ce2c35394625d0d71bf">&#9670;&#160;</a></span>MOLE_CAP</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int GameManagerLogic.MOLE_CAP = 90</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Maximum total number of moles allowed on screen simultaneously. </p>
 
 </div>
 </div>
@@ -466,6 +698,8 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Sprite array for mole states: index 0 = idle, 1 = whacked, 2 = flash. </p>
+
 </div>
 </div>
 <a id="aebac7a427c697d9e647a8a5a9db1aa8b" name="aebac7a427c697d9e647a8a5a9db1aa8b"></a>
@@ -479,6 +713,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Prefab instantiated when the game timer expires to display the Game Over screen. </p>
 
 </div>
 </div>
@@ -516,6 +752,8 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Sprite array for ring start area states: index 0 = idle, 1 = highlighted, 2 = confirmed. </p>
+
 </div>
 </div>
 <a id="a6247319258012b88229ecdff99089d44" name="a6247319258012b88229ecdff99089d44"></a>
@@ -530,6 +768,8 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Prefab instantiated at startup for each hand's ring placement target area. </p>
+
 </div>
 </div>
 <a id="ab42992ee68d98dcab3dc309048f977a4" name="ab42992ee68d98dcab3dc309048f977a4"></a>
@@ -543,6 +783,104 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>UI Text element used to display startup and game state messages to the player. </p>
+
+</div>
+</div>
+<a id="ab436b049707b5b2e2e5a928c77b3de9e" name="ab436b049707b5b2e2e5a928c77b3de9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab436b049707b5b2e2e5a928c77b3de9e">&#9670;&#160;</a></span>STARTUP_GAMESTART_DURATION</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float GameManagerLogic.STARTUP_GAMESTART_DURATION = 60f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Scaled frames the GAME START message is displayed. </p>
+
+</div>
+</div>
+<a id="a490db2615d3850e6c7ac850d7cbefe0f" name="a490db2615d3850e6c7ac850d7cbefe0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a490db2615d3850e6c7ac850d7cbefe0f">&#9670;&#160;</a></span>STARTUP_HOLD_DURATION</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float GameManagerLogic.STARTUP_HOLD_DURATION = 60f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Scaled frames spent holding the ring-highlighted state before showing OK. </p>
+
+</div>
+</div>
+<a id="a06339e0d977cfdbbdd5311dfbf54c716" name="a06339e0d977cfdbbdd5311dfbf54c716"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06339e0d977cfdbbdd5311dfbf54c716">&#9670;&#160;</a></span>STARTUP_OK_DURATION</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float GameManagerLogic.STARTUP_OK_DURATION = 60f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Scaled frames the OK message is displayed. </p>
+
+</div>
+</div>
+<a id="aa75fe9392f9ef7689789fd86a6d8ae4a" name="aa75fe9392f9ef7689789fd86a6d8ae4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa75fe9392f9ef7689789fd86a6d8ae4a">&#9670;&#160;</a></span>STARTUP_SHRINK_DURATION</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float GameManagerLogic.STARTUP_SHRINK_DURATION = 60f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Scaled frames the ring shrink-out animation plays. </p>
 
 </div>
 </div>
@@ -580,6 +918,8 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>True while the game timer has not yet reached zero. Moles read this flag each frame to decide whether to retreat early. </p>
+
 </div>
 </div>
 <a id="a83c02e23f8da7dfa7fa3022e83c6ccfe" name="a83c02e23f8da7dfa7fa3022e83c6ccfe"></a>
@@ -601,6 +941,78 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab1d1f2815cf45af76450280ea15fbc42" name="ab1d1f2815cf45af76450280ea15fbc42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1d1f2815cf45af76450280ea15fbc42">&#9670;&#160;</a></span>TIME_EXPIRED_SENTINEL</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float GameManagerLogic.TIME_EXPIRED_SENTINEL = -101f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sentinel value assigned to time after the out-of-time object has been spawned, preventing it from being instantiated more than once. </p>
+
+</div>
+</div>
+<a id="ade290775f423804ca75a695109e86a2d" name="ade290775f423804ca75a695109e86a2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade290775f423804ca75a695109e86a2d">&#9670;&#160;</a></span>TIMER_BLINK_DIVISOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float GameManagerLogic.TIMER_BLINK_DIVISOR = 30f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Divisor used to determine whether the colon separator should blink on or off. </p>
+
+</div>
+</div>
+<a id="a446d0c6a9a77d4f1409e239aaccc5b4d" name="a446d0c6a9a77d4f1409e239aaccc5b4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a446d0c6a9a77d4f1409e239aaccc5b4d">&#9670;&#160;</a></span>TIMER_CENTISECOND_SCALE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float GameManagerLogic.TIMER_CENTISECOND_SCALE = 100f / 60f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Multiplier used to convert remaining seconds into a centisecond display value. </p>
 
 </div>
 </div>

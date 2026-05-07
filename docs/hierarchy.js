@@ -1,6 +1,5 @@
 var hierarchy =
 [
-    [ "GameplaySequenceTests", "class_gameplay_sequence_tests.html", null ],
     [ "MonoBehaviour", null, [
       [ "GameManagerLogic", "class_game_manager_logic.html", null ],
       [ "Mole2DLogic", "class_mole2_d_logic.html", null ],
@@ -10,7 +9,5 @@ var hierarchy =
       [ "TimeOutLogic", "class_time_out_logic.html", null ],
       [ "TwoHandVisualizer", "class_two_hand_visualizer.html", null ],
       [ "WebCamInput", "class_web_cam_input.html", null ]
-    ] ],
-    [ "ScoringTests", "class_scoring_tests.html", null ],
-    [ "WebcamInitializationTests", "class_webcam_initialization_tests.html", null ]
+    ] ]
 ];

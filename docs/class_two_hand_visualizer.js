@@ -1,5 +1,7 @@
 var class_two_hand_visualizer =
 [
+    [ "ConsumeLeftPress", "class_two_hand_visualizer.html#ac62712b38408362f19e0154dcdbc6f09", null ],
+    [ "ConsumeRightPress", "class_two_hand_visualizer.html#a18e46840a93f6cf86213765812e0aee0", null ],
     [ "FindHandCenter", "class_two_hand_visualizer.html#a8a3f8a9a6e1d87494e01ef243127bf32", null ],
     [ "LateUpdate", "class_two_hand_visualizer.html#a72790c8610d9f6ec8fb4f1dfb5f4aec8", null ],
     [ "LongestKeyPointLength", "class_two_hand_visualizer.html#a0c38b0d446689cac7a7f6df0246bc071", null ],

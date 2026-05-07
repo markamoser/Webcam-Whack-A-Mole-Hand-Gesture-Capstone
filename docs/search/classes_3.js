@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['scoringtests_0',['ScoringTests',['../class_scoring_tests.html',1,'']]]
+  ['timeoutlogic_0',['TimeOutLogic',['../class_time_out_logic.html',1,'']]],
+  ['twohandvisualizer_1',['TwoHandVisualizer',['../class_two_hand_visualizer.html',1,'']]]
 ];

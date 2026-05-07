@@ -118,12 +118,18 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_two_hand_visu
   <div class="headertitle"><div class="title">TwoHandVisualizer.cs File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Processes webcam input through a MediaPipe Holistic pipeline to detect, render, and track both hands in 2D screen space. Calculates per-hand depth offsets based on apparent hand size and exposes press/release gesture booleans for use by other scripts.  
+<a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:TwoHandVisualizer" id="r_TwoHandVisualizer"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="class_two_hand_visualizer.html">TwoHandVisualizer</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manages webcam capture, MediaPipe hand tracking, hand mesh rendering, hand center calculation, depth-based velocity tracking, and press/release gesture detection for two hands simultaneously. Attach to a GameObject in the scene and assign the required serialized fields in the Inspector.  <a href="class_two_hand_visualizer.html#details">More...</a><br /></td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Processes webcam input through a MediaPipe Holistic pipeline to detect, render, and track both hands in 2D screen space. Calculates per-hand depth offsets based on apparent hand size and exposes press/release gesture booleans for use by other scripts. </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
 <div id="page-nav-resize-handle"></div>

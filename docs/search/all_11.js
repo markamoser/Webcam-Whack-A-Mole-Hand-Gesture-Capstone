@@ -4,6 +4,5 @@ var searchData=
   ['updatecount_1',['UpdateCount',['../class_game_manager_logic.html#a22faaff680ce4870764b06abd1611abb',1,'GameManagerLogic']]],
   ['updatehandcenters_2',['UpdateHandCenters',['../class_two_hand_visualizer.html#a395cb8c82b7f05ffb4bf68bd97e4e41a',1,'TwoHandVisualizer']]],
   ['updatehanddepths_3',['UpdateHandDepths',['../class_two_hand_visualizer.html#a021fd57283cf5dcd1ff808ee1749fe03',1,'TwoHandVisualizer']]],
-  ['updatehits_4',['UpdateHits',['../class_game_manager_logic.html#a2bcc1bf0a98f816b2f43c63c3e2a968b',1,'GameManagerLogic']]],
-  ['updatehits_5fwhencalled_5fproperlyupdatesscoreboardtext_5',['UpdateHits_WhenCalled_ProperlyUpdatesScoreboardText',['../class_scoring_tests.html#a0c013cf8945045b0682c6cd10e04ac31',1,'ScoringTests']]]
+  ['updatehits_4',['UpdateHits',['../class_game_manager_logic.html#a2bcc1bf0a98f816b2f43c63c3e2a968b',1,'GameManagerLogic']]]
 ];

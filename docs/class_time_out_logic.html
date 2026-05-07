@@ -118,19 +118,39 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_time_out
   <div class="headertitle"><div class="title">TimeOutLogic Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Animates a GameObject from zero scale up to a target scale of 0.15 on both X and Y axes using a framerate-independent exponential ease-in approach. Attach to the Time Out / Game Over UI GameObject that should pop into view at the end of a round.  
+ <a href="#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for TimeOutLogic:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="class_time_out_logic.png" alt=""/>
- </div></div>
+<div class="center"><img src="class_time_out_logic__inherit__graph.png" border="0" usemap="#a_time_out_logic_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
+<!-- MAP 0 -->
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for TimeOutLogic:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_time_out_logic__coll__graph.png" border="0" usemap="#a_time_out_logic_coll__map" loading="lazy" alt="Collaboration graph"/></div>
+<!-- MAP 1 -->
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:ab7a18445f05688154d7aa7c0e50bd47e" id="r_ab7a18445f05688154d7aa7c0e50bd47e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab7a18445f05688154d7aa7c0e50bd47e">Start</a> ()</td></tr>
+<tr class="memdesc:ab7a18445f05688154d7aa7c0e50bd47e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialises the GameObject at zero scale so it is invisible when the scene starts.  <br /></td></tr>
 <tr class="memitem:a36215b06503ad597973dc2d515bd9bda" id="r_a36215b06503ad597973dc2d515bd9bda"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a36215b06503ad597973dc2d515bd9bda">Update</a> ()</td></tr>
+<tr class="memdesc:a36215b06503ad597973dc2d515bd9bda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called once per frame. Moves the current scale toward TARGET_SCALE each frame using a framerate-independent exponential ease, so the growth slows as it approaches the target size.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-static-attribs" class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a18ff36f658364baaa4699455c1930d33" id="r_a18ff36f658364baaa4699455c1930d33"><td class="memItemLeft">const float&#160;</td><td class="memItemRight"><a class="el" href="#a18ff36f658364baaa4699455c1930d33">TARGET_SCALE</a> = 0.15f</td></tr>
+<tr class="memdesc:a18ff36f658364baaa4699455c1930d33"><td class="mdescLeft">&#160;</td><td class="mdescRight">The target scale the GameObject eases toward on both X and Y axes.  <br /></td></tr>
+<tr class="memitem:a917b6689b025982cbade7c135cfded1f" id="r_a917b6689b025982cbade7c135cfded1f"><td class="memItemLeft">const float&#160;</td><td class="memItemRight"><a class="el" href="#a917b6689b025982cbade7c135cfded1f">EASE_DIVISOR</a> = 10f</td></tr>
+<tr class="memdesc:a917b6689b025982cbade7c135cfded1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Divisor controlling how quickly the scale approaches the target. Higher values produce a slower, smoother ease-in.  <br /></td></tr>
 </table>
-<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Animates a GameObject from zero scale up to a target scale of 0.15 on both X and Y axes using a framerate-independent exponential ease-in approach. Attach to the Time Out / Game Over UI GameObject that should pop into view at the end of a round. </p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="ab7a18445f05688154d7aa7c0e50bd47e" name="ab7a18445f05688154d7aa7c0e50bd47e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab7a18445f05688154d7aa7c0e50bd47e">&#9670;&#160;</a></span>Start()</h2>
 
@@ -153,6 +173,8 @@ Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Initialises the GameObject at zero scale so it is invisible when the scene starts. </p>
 
 </div>
 </div>
@@ -178,6 +200,57 @@ Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Called once per frame. Moves the current scale toward TARGET_SCALE each frame using a framerate-independent exponential ease, so the growth slows as it approaches the target size. </p>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="a917b6689b025982cbade7c135cfded1f" name="a917b6689b025982cbade7c135cfded1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a917b6689b025982cbade7c135cfded1f">&#9670;&#160;</a></span>EASE_DIVISOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float TimeOutLogic.EASE_DIVISOR = 10f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Divisor controlling how quickly the scale approaches the target. Higher values produce a slower, smoother ease-in. </p>
+
+</div>
+</div>
+<a id="a18ff36f658364baaa4699455c1930d33" name="a18ff36f658364baaa4699455c1930d33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18ff36f658364baaa4699455c1930d33">&#9670;&#160;</a></span>TARGET_SCALE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float TimeOutLogic.TARGET_SCALE = 0.15f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The target scale the GameObject eases toward on both X and Y axes. </p>
 
 </div>
 </div>

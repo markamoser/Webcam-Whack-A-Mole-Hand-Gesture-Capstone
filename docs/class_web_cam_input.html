@@ -118,32 +118,50 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_web_cam_
   <div class="headertitle"><div class="title">WebCamInput Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Captures frames from a named webcam device and blits them into a RenderTexture, correcting for aspect ratio and vertical mirroring. If a static input texture is assigned in the Inspector, that texture is used instead and no webcam is opened. Attach to any GameObject and reference inputImageTexture from other scripts.  
+ <a href="#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for WebCamInput:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="class_web_cam_input.png" alt=""/>
- </div></div>
+<div class="center"><img src="class_web_cam_input__inherit__graph.png" border="0" usemap="#a_web_cam_input_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
+<!-- MAP 0 -->
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for WebCamInput:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_web_cam_input__coll__graph.png" border="0" usemap="#a_web_cam_input_coll__map" loading="lazy" alt="Collaboration graph"/></div>
+<!-- MAP 1 -->
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-properties" class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:aa144d8552da67b124f40881f26d3d23c" id="r_aa144d8552da67b124f40881f26d3d23c"><td class="memItemLeft">Texture&#160;</td><td class="memItemRight"><a class="el" href="#aa144d8552da67b124f40881f26d3d23c">inputImageTexture</a><code> [get]</code></td></tr>
+<tr class="memdesc:aa144d8552da67b124f40881f26d3d23c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current input image to be consumed by the MediaPipe pipeline. Returns the static texture if one is assigned, otherwise returns the corrected webcam RenderTexture updated each frame.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a63ea55c55d1c33e0a7b113764638074a" id="r_a63ea55c55d1c33e0a7b113764638074a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a63ea55c55d1c33e0a7b113764638074a">Start</a> ()</td></tr>
+<tr class="memdesc:a63ea55c55d1c33e0a7b113764638074a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialises the webcam device and allocates the output RenderTexture. If a static input texture is assigned, the webcam is not opened.  <br /></td></tr>
 <tr class="memitem:aebf479cc5e473ebf3cc3d686b7d6a76c" id="r_aebf479cc5e473ebf3cc3d686b7d6a76c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aebf479cc5e473ebf3cc3d686b7d6a76c">Update</a> ()</td></tr>
+<tr class="memdesc:aebf479cc5e473ebf3cc3d686b7d6a76c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called once per frame. Skips processing if a static texture is in use or if the webcam has not produced a new frame. Otherwise corrects the aspect ratio and vertical mirror of the webcam feed and blits the result into the output RenderTexture.  <br /></td></tr>
 <tr class="memitem:a353a785ae319749646152f1993c8170d" id="r_a353a785ae319749646152f1993c8170d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a353a785ae319749646152f1993c8170d">OnDestroy</a> ()</td></tr>
+<tr class="memdesc:a353a785ae319749646152f1993c8170d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases the webcam device and RenderTexture when this GameObject is destroyed.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:adcb5dac3ac75100ff8dc641c382d9872" id="r_adcb5dac3ac75100ff8dc641c382d9872"><td class="memItemLeft">string&#160;</td><td class="memItemRight"><a class="el" href="#adcb5dac3ac75100ff8dc641c382d9872">webCamName</a></td></tr>
+<tr class="memdesc:adcb5dac3ac75100ff8dc641c382d9872"><td class="mdescLeft">&#160;</td><td class="mdescRight">The device name of the webcam to open. Leave empty to use the system default.  <br /></td></tr>
 <tr class="memitem:a4fb94e23e1ec2e3f3d5e079e928ccf89" id="r_a4fb94e23e1ec2e3f3d5e079e928ccf89"><td class="memItemLeft">Vector2&#160;</td><td class="memItemRight"><a class="el" href="#a4fb94e23e1ec2e3f3d5e079e928ccf89">webCamResolution</a> = new Vector2(1920, 1080)</td></tr>
+<tr class="memdesc:a4fb94e23e1ec2e3f3d5e079e928ccf89"><td class="mdescLeft">&#160;</td><td class="mdescRight">The resolution the webcam will be requested to capture at. Actual resolution may differ by device.  <br /></td></tr>
 <tr class="memitem:af5d1f10394acaf92e827adb3cfb2fce9" id="r_af5d1f10394acaf92e827adb3cfb2fce9"><td class="memItemLeft">Texture&#160;</td><td class="memItemRight"><a class="el" href="#af5d1f10394acaf92e827adb3cfb2fce9">staticInput</a></td></tr>
+<tr class="memdesc:af5d1f10394acaf92e827adb3cfb2fce9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optional static texture used instead of a live webcam feed. Assign in the Inspector for offline testing.  <br /></td></tr>
 <tr class="memitem:a5bfee99566a6540cdf5acffddcfd53d9" id="r_a5bfee99566a6540cdf5acffddcfd53d9"><td class="memItemLeft">WebCamTexture&#160;</td><td class="memItemRight"><a class="el" href="#a5bfee99566a6540cdf5acffddcfd53d9">webCamTexture</a></td></tr>
 <tr class="memitem:a632a1d5c5e6783c654ae3b8c04cb402b" id="r_a632a1d5c5e6783c654ae3b8c04cb402b"><td class="memItemLeft">RenderTexture&#160;</td><td class="memItemRight"><a class="el" href="#a632a1d5c5e6783c654ae3b8c04cb402b">inputRT</a></td></tr>
 </table>
-<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Captures frames from a named webcam device and blits them into a RenderTexture, correcting for aspect ratio and vertical mirroring. If a static input texture is assigned in the Inspector, that texture is used instead and no webcam is opened. Attach to any GameObject and reference inputImageTexture from other scripts. </p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a353a785ae319749646152f1993c8170d" name="a353a785ae319749646152f1993c8170d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a353a785ae319749646152f1993c8170d">&#9670;&#160;</a></span>OnDestroy()</h2>
 
@@ -166,6 +184,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Releases the webcam device and RenderTexture when this GameObject is destroyed. </p>
 
 </div>
 </div>
@@ -192,6 +212,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Initialises the webcam device and allocates the output RenderTexture. If a static input texture is assigned, the webcam is not opened. </p>
+
 </div>
 </div>
 <a id="aebf479cc5e473ebf3cc3d686b7d6a76c" name="aebf479cc5e473ebf3cc3d686b7d6a76c"></a>
@@ -216,6 +238,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Called once per frame. Skips processing if a static texture is in use or if the webcam has not produced a new frame. Otherwise corrects the aspect ratio and vertical mirror of the webcam feed and blits the result into the output RenderTexture. </p>
 
 </div>
 </div>
@@ -262,6 +286,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Optional static texture used instead of a live webcam feed. Assign in the Inspector for offline testing. </p>
+
 </div>
 </div>
 <a id="adcb5dac3ac75100ff8dc641c382d9872" name="adcb5dac3ac75100ff8dc641c382d9872"></a>
@@ -284,6 +310,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The device name of the webcam to open. Leave empty to use the system default. </p>
+
 </div>
 </div>
 <a id="a4fb94e23e1ec2e3f3d5e079e928ccf89" name="a4fb94e23e1ec2e3f3d5e079e928ccf89"></a>
@@ -305,6 +333,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The resolution the webcam will be requested to capture at. Actual resolution may differ by device. </p>
 
 </div>
 </div>
@@ -350,6 +380,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The current input image to be consumed by the MediaPipe pipeline. Returns the static texture if one is assigned, otherwise returns the corrected webcam RenderTexture updated each frame. </p>
 
 </div>
 </div>

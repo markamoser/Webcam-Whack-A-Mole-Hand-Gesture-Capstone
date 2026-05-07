@@ -118,12 +118,18 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ring_logic_8c
   <div class="headertitle"><div class="title">RingLogic.cs File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Controls the position and press state of the left hand ring marker, tracking the left hand's position via <a class="el" href="class_two_hand_visualizer.html" title="Manages webcam capture, MediaPipe hand tracking, hand mesh rendering, hand center calculation,...">TwoHandVisualizer</a> and exposing a boolean that is true only while an active forward punch gesture is detected.  
+<a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:RingLogic" id="r_RingLogic"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="class_ring_logic.html">RingLogic</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Follows the left hand marker point each frame and sets the public down boolean to true only when the left hand is both in a latched press state and still actively moving forward past the press velocity threshold. Used by <a class="el" href="class_mole2_d_logic.html" title="Drives a mole GameObject through eight states: initialisation, rising, snapping to full scale,...">Mole2DLogic</a> to determine whether a whack attempt is valid. Attach to the LeftRing GameObject in the scene.  <a href="class_ring_logic.html#details">More...</a><br /></td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Controls the position and press state of the left hand ring marker, tracking the left hand's position via <a class="el" href="class_two_hand_visualizer.html" title="Manages webcam capture, MediaPipe hand tracking, hand mesh rendering, hand center calculation,...">TwoHandVisualizer</a> and exposing a boolean that is true only while an active forward punch gesture is detected. </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
 <div id="page-nav-resize-handle"></div>

@@ -118,28 +118,47 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_ring2_lo
   <div class="headertitle"><div class="title">Ring2Logic Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Follows the right hand marker point each frame and sets the public down boolean to true only when the right hand is both in a latched press state and still actively moving forward past the press velocity threshold. Used by <a class="el" href="class_mole2_d_logic.html" title="Drives a mole GameObject through eight states: initialisation, rising, snapping to full scale,...">Mole2DLogic</a> to determine whether a whack attempt is valid. Attach to the RightRing GameObject in the scene.  
+ <a href="#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Ring2Logic:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="class_ring2_logic.png" alt=""/>
- </div></div>
+<div class="center"><img src="class_ring2_logic__inherit__graph.png" border="0" usemap="#a_ring2_logic_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
+<!-- MAP 0 -->
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for Ring2Logic:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_ring2_logic__coll__graph.png" border="0" usemap="#a_ring2_logic_coll__map" loading="lazy" alt="Collaboration graph"/></div>
+<!-- MAP 1 -->
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a512bcb5bde6a0fcbcdf97c2a681fd4bb" id="r_a512bcb5bde6a0fcbcdf97c2a681fd4bb"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a512bcb5bde6a0fcbcdf97c2a681fd4bb">down</a></td></tr>
+<tr class="memdesc:a512bcb5bde6a0fcbcdf97c2a681fd4bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">True when the right hand is in a latched press state and its current depth velocity is still below the press threshold, indicating an active punch. Read by <a class="el" href="class_mole2_d_logic.html" title="Drives a mole GameObject through eight states: initialisation, rising, snapping to full scale,...">Mole2DLogic</a> each frame to validate whack attempts.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a027405dc666385b70393962bf2afd9b3" id="r_a027405dc666385b70393962bf2afd9b3"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a027405dc666385b70393962bf2afd9b3">Start</a> ()</td></tr>
+<tr class="memdesc:a027405dc666385b70393962bf2afd9b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialises the ring to its starting position, locates the Right Point marker GameObject, and finds the <a class="el" href="class_two_hand_visualizer.html" title="Manages webcam capture, MediaPipe hand tracking, hand mesh rendering, hand center calculation,...">TwoHandVisualizer</a> in the scene.  <br /></td></tr>
 <tr class="memitem:a0733f1076f54e0fe887daa59a322ef73" id="r_a0733f1076f54e0fe887daa59a322ef73"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a0733f1076f54e0fe887daa59a322ef73">Update</a> ()</td></tr>
+<tr class="memdesc:a0733f1076f54e0fe887daa59a322ef73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called once per frame. Snaps this ring's position to the current right hand marker position and updates down based on whether the right hand is actively punching forward past the press velocity threshold.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a09438028e0b4f9b1e25a122210555f8d" id="r_a09438028e0b4f9b1e25a122210555f8d"><td class="memItemLeft">GameObject&#160;</td><td class="memItemRight"><a class="el" href="#a09438028e0b4f9b1e25a122210555f8d">rightmark</a></td></tr>
 <tr class="memitem:ad5d995b9c6f71ed9427480fe7e1134c5" id="r_ad5d995b9c6f71ed9427480fe7e1134c5"><td class="memItemLeft"><a class="el" href="class_two_hand_visualizer.html">TwoHandVisualizer</a>&#160;</td><td class="memItemRight"><a class="el" href="#ad5d995b9c6f71ed9427480fe7e1134c5">_visualizer</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-static-attribs" class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:ac45860f5a92bb5226a80f098899d0968" id="r_ac45860f5a92bb5226a80f098899d0968"><td class="memItemLeft">const float&#160;</td><td class="memItemRight"><a class="el" href="#ac45860f5a92bb5226a80f098899d0968">INITIAL_X_OFFSET</a> = 0.6f</td></tr>
+<tr class="memdesc:ac45860f5a92bb5226a80f098899d0968"><td class="mdescLeft">&#160;</td><td class="mdescRight">X offset applied to the ring's starting position on scene load.  <br /></td></tr>
 </table>
-<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Follows the right hand marker point each frame and sets the public down boolean to true only when the right hand is both in a latched press state and still actively moving forward past the press velocity threshold. Used by <a class="el" href="class_mole2_d_logic.html" title="Drives a mole GameObject through eight states: initialisation, rising, snapping to full scale,...">Mole2DLogic</a> to determine whether a whack attempt is valid. Attach to the RightRing GameObject in the scene. </p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a027405dc666385b70393962bf2afd9b3" name="a027405dc666385b70393962bf2afd9b3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a027405dc666385b70393962bf2afd9b3">&#9670;&#160;</a></span>Start()</h2>
 
@@ -162,6 +181,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Initialises the ring to its starting position, locates the Right Point marker GameObject, and finds the <a class="el" href="class_two_hand_visualizer.html" title="Manages webcam capture, MediaPipe hand tracking, hand mesh rendering, hand center calculation,...">TwoHandVisualizer</a> in the scene. </p>
 
 </div>
 </div>
@@ -187,6 +208,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Called once per frame. Snaps this ring's position to the current right hand marker position and updates down based on whether the right hand is actively punching forward past the press velocity threshold. </p>
 
 </div>
 </div>
@@ -224,6 +247,32 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>True when the right hand is in a latched press state and its current depth velocity is still below the press threshold, indicating an active punch. Read by <a class="el" href="class_mole2_d_logic.html" title="Drives a mole GameObject through eight states: initialisation, rising, snapping to full scale,...">Mole2DLogic</a> each frame to validate whack attempts. </p>
+
+</div>
+</div>
+<a id="ac45860f5a92bb5226a80f098899d0968" name="ac45860f5a92bb5226a80f098899d0968"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac45860f5a92bb5226a80f098899d0968">&#9670;&#160;</a></span>INITIAL_X_OFFSET</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float Ring2Logic.INITIAL_X_OFFSET = 0.6f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>X offset applied to the ring's starting position on scene load. </p>
 
 </div>
 </div>

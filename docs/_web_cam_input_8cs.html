@@ -118,12 +118,18 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_web_cam_input
   <div class="headertitle"><div class="title">WebCamInput.cs File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Manages webcam capture and provides a corrected RenderTexture for use by the MediaPipe pipeline. Supports both live webcam input and a static fallback texture for testing without a physical camera.  
+<a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:WebCamInput" id="r_WebCamInput"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="class_web_cam_input.html">WebCamInput</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Captures frames from a named webcam device and blits them into a RenderTexture, correcting for aspect ratio and vertical mirroring. If a static input texture is assigned in the Inspector, that texture is used instead and no webcam is opened. Attach to any GameObject and reference inputImageTexture from other scripts.  <a href="class_web_cam_input.html#details">More...</a><br /></td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Manages webcam capture and provides a corrected RenderTexture for use by the MediaPipe pipeline. Supports both live webcam input and a static fallback texture for testing without a physical camera. </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
 <div id="page-nav-resize-handle"></div>

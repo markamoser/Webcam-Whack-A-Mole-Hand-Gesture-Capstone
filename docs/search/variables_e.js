@@ -1,8 +1,20 @@
 var searchData=
 [
-  ['ten_5feighty_5fp_5ffps_0',['TEN_EIGHTY_P_FPS',['../class_two_hand_visualizer.html#a518e5d8ecc8464ecda6bf09356cad717',1,'TwoHandVisualizer']]],
-  ['ten_5feighty_5fp_5fheight_1',['TEN_EIGHTY_P_HEIGHT',['../class_two_hand_visualizer.html#ac97eba8959f5552fb99b0089041629df',1,'TwoHandVisualizer']]],
-  ['ten_5feighty_5fp_5fwidth_2',['TEN_EIGHTY_P_WIDTH',['../class_two_hand_visualizer.html#afa48303129dbef825a999dfbde661160',1,'TwoHandVisualizer']]],
-  ['time_3',['time',['../class_game_manager_logic.html#a83c02e23f8da7dfa7fa3022e83c6ccfe',1,'GameManagerLogic']]],
-  ['total_4',['total',['../class_game_manager_logic.html#ab0992bbc526b5bce6bded831f855a09c',1,'GameManagerLogic']]]
+  ['r_0',['r',['../class_ring_start_area_logic.html#a3f5662e9b2a22ff76b3535396461ba8a',1,'RingStartAreaLogic']]],
+  ['release_5fvelocity_5fthreshold_5ffor_5fdepth_5fgesture_1',['RELEASE_VELOCITY_THRESHOLD_FOR_DEPTH_GESTURE',['../class_two_hand_visualizer.html#ab8069868e0b0dafe488597b58a86dfec',1,'TwoHandVisualizer']]],
+  ['retreat_5fduration_2',['RETREAT_DURATION',['../class_mole2_d_logic.html#ae3978c537265638591af14f36b29f4f5',1,'Mole2DLogic']]],
+  ['retreat_5fmove_5fspeed_3',['RETREAT_MOVE_SPEED',['../class_mole2_d_logic.html#a8ed044ea6fecfa8d17287ef7501117c9',1,'Mole2DLogic']]],
+  ['retreat_5fscale_5fspeed_4',['RETREAT_SCALE_SPEED',['../class_mole2_d_logic.html#a7d009a0d4d1a37b04d303216734a1a73',1,'Mole2DLogic']]],
+  ['right_5farea_5foffset_5fx_5',['RIGHT_AREA_OFFSET_X',['../class_ring_start_area_logic.html#a2aa2c5de7d0be57967c401638060ec01',1,'RingStartAreaLogic']]],
+  ['righthandcenter_6',['rightHandCenter',['../class_two_hand_visualizer.html#a96d4ebe7f6b87608e2724affff6e99f2',1,'TwoHandVisualizer']]],
+  ['rightmark_7',['rightmark',['../class_ring2_logic.html#a09438028e0b4f9b1e25a122210555f8d',1,'Ring2Logic.rightmark'],['../class_two_hand_visualizer.html#abe4ed8b9a7ced5da1c89f3ea2988a5dd',1,'TwoHandVisualizer.rightmark']]],
+  ['rightring_8',['rightring',['../class_mole2_d_logic.html#ad7f0798d0f6ad350e7e1ef101fec136b',1,'Mole2DLogic.rightring'],['../class_ring_start_area_logic.html#ac333e8783eec86c246aa32e5de661e63',1,'RingStartAreaLogic.rightring']]],
+  ['rightringarea_9',['rightringarea',['../class_game_manager_logic.html#a47c75fa1171de4d37c216654ab650116',1,'GameManagerLogic']]],
+  ['ringareas_10',['ringareas',['../class_game_manager_logic.html#a6c606540bd41269a969262f676a76dae',1,'GameManagerLogic']]],
+  ['ringstartarea_11',['ringstartarea',['../class_game_manager_logic.html#a6247319258012b88229ecdff99089d44',1,'GameManagerLogic']]],
+  ['rise_5fdeceleration_12',['RISE_DECELERATION',['../class_mole2_d_logic.html#aee851e8e25710f6550cbdc4297ce0f9d',1,'Mole2DLogic']]],
+  ['rise_5fend_5fcounter_13',['RISE_END_COUNTER',['../class_mole2_d_logic.html#a9806e97d4588ddaf8463bd54aff64561',1,'Mole2DLogic']]],
+  ['rise_5fmove_5fspeed_14',['RISE_MOVE_SPEED',['../class_mole2_d_logic.html#ae69848e90862dc60be79242b05d399ad',1,'Mole2DLogic']]],
+  ['rise_5fpeak_5fcounter_15',['RISE_PEAK_COUNTER',['../class_mole2_d_logic.html#aa0af3540ab1aebf6cd16a7db85963451',1,'Mole2DLogic']]],
+  ['rise_5fscale_5fspeed_16',['RISE_SCALE_SPEED',['../class_mole2_d_logic.html#aee8be22900e33fc66d95fc5537b6a6c7',1,'Mole2DLogic']]]
 ];
