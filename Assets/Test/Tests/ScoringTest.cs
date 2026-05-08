@@ -34,47 +34,38 @@ public class ScoringTests
     /// </summary>
     /// <remarks>
     /// This test performs several safety injections (providing a dummy Camera and dummy center object) 
-    /// to prevent the <c>MoleLogic.Update()</c> loop from throwing a NullReferenceException when running in 
+    /// to prevent the <c>Mole2DLogic.Update()</c> loop from throwing a NullReferenceException when running in 
     /// an isolated Test Runner environment. It then uses Reflection to set the private <c>hits</c> integer to 1.
     /// </remarks>
     /// <returns>An IEnumerator to allow the Unity engine to process the Update loop for 0.1 seconds.</returns>
     [UnityTest]
+    
     public IEnumerator UpdateHits_WhenCalled_ProperlyUpdatesScoreboardText()
     {
-        MoleLogic moleLogic = Object.FindObjectOfType<MoleLogic>(true);
-        Assert.IsNotNull(moleLogic, "Failed to find MoleLogic in the scene.");
 
-        moleLogic.gameObject.SetActive(true);
+        GameManagerLogic gameManager = Object.FindObjectOfType<GameManagerLogic>(true);
+        Assert.IsNotNull(gameManager, "Failed to find GameManagerLogic in the scene.");
 
-        FieldInfo cameraField = typeof(MoleLogic).GetField("camera", BindingFlags.NonPublic | BindingFlags.Instance);
-        if (cameraField != null && cameraField.GetValue(moleLogic) == null)
-        {
-            Camera dummyCam = new GameObject("DummyCamera").AddComponent<Camera>();
-            cameraField.SetValue(moleLogic, dummyCam);
-        }
-
-        if (moleLogic.center == null)
-        {
-            moleLogic.center = new GameObject("DummyCenter");
-        }
-
-        // Give Unity time to run the Start() method, which sets hits = 0
-        yield return new WaitForSeconds(0.1f); 
-
-        // NOW use Reflection to find and modify the private 'hits' integer
-        FieldInfo hitsField = typeof(MoleLogic).GetField("hits", BindingFlags.NonPublic | BindingFlags.Instance);
-        
-        // Forcefully set the private 'hits' variable to 1
-        if (hitsField != null)
-        {
-            hitsField.SetValue(moleLogic, 1);
-        }
-
-        //  Yield one single frame so the Update() loop can push our new '1' to the UI
-        yield return null; 
+        gameManager.gameObject.SetActive(true);
 
         
-        Assert.AreEqual("Hits : 1", moleLogic.text.text);
+        yield return new WaitForSeconds(0.1f);
+
+        
+        FieldInfo stateField = typeof(GameManagerLogic).GetField("state", BindingFlags.NonPublic | BindingFlags.Instance);
+        if (stateField != null)
+        {
+        stateField.SetValue(gameManager, 5);
+        }
+
+        
+        gameManager.UpdateHits();
+
+        
+        yield return null;
+
+        
+        Assert.AreEqual("Hits x 1", gameManager.hitcount.text);
     }
 
     /// <summary>
