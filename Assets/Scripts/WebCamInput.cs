@@ -41,6 +41,7 @@ public class WebCamInput : MonoBehaviour
     /// Initialises the webcam device and allocates the output RenderTexture.
     /// If a static input texture is assigned, the webcam is not opened.
     /// </summary>
+    /// <remarks>Called automatically by Unity at scene start. No parameters or return value.</remarks>
     void Start()
     {
         if (staticInput == null)
@@ -57,6 +58,7 @@ public class WebCamInput : MonoBehaviour
     /// webcam has not produced a new frame. Otherwise corrects the aspect ratio and
     /// vertical mirror of the webcam feed and blits the result into the output RenderTexture.
     /// </summary>
+    /// <remarks>Called automatically by Unity each frame. No parameters or return value.</remarks>
     void Update()
     {
         if (staticInput != null) return;
@@ -76,6 +78,7 @@ public class WebCamInput : MonoBehaviour
     /// <summary>
     /// Releases the webcam device and RenderTexture when this GameObject is destroyed.
     /// </summary>
+    /// <remarks>Called automatically by Unity when the GameObject is destroyed. No parameters or return value.</remarks>
     void OnDestroy()
     {
         if (webCamTexture != null) Destroy(webCamTexture);

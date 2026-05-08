@@ -18,7 +18,6 @@ using UnityEngine.UI;
 /// </summary>
 public class GameManagerLogic : MonoBehaviour
 {
-    // --- Spawn tuning ---
     /// <summary>Maximum total number of moles allowed on screen simultaneously.</summary>
     private const int MOLE_CAP = 90;
     /// <summary>Minimum scaled frames between mole spawn batches.</summary>
@@ -29,8 +28,6 @@ public class GameManagerLogic : MonoBehaviour
     private const int MIN_SPAWN_AMOUNT = 1;
     /// <summary>Maximum number of moles spawned per batch (exclusive).</summary>
     private const int MAX_SPAWN_AMOUNT = 6;
-
-    // --- Game timer ---
     /// <summary>Total game duration expressed as a scaled frame count (60 frames/sec * 60 seconds).</summary>
     private const float GAME_DURATION_FRAMES = 60 * 60;
     /// <summary>Sentinel value assigned to time after the out-of-time object has been spawned,
@@ -47,19 +44,26 @@ public class GameManagerLogic : MonoBehaviour
     /// <summary>Scaled frames the GAME START message is displayed.</summary>
     private const float STARTUP_GAMESTART_DURATION = 60f;
 
-    // --- Timer display ---
     /// <summary>Multiplier used to convert remaining seconds into a centisecond display value.</summary>
     private const float TIMER_CENTISECOND_SCALE = 100f / 60f;
     /// <summary>Divisor used to determine whether the colon separator should blink on or off.</summary>
     private const float TIMER_BLINK_DIVISOR = 30f;
 
+    /// <summary>Number of frames to wait before spawning the next batch of moles.</summary>
     private int amount;
+    /// <summary>Delay counter used to measure time until the next spawn batch.</summary>
     private int wait;
+    /// <summary>Current total number of active moles on screen.</summary>
     private int total;
+    /// <summary>Maximum number of moles allowed on screen.</summary>
     private int cap;
+    /// <summary>Frame-based timer used for startup and spawn sequencing.</summary>
     private float counter;
+    /// <summary>Total number of successful mole hits recorded this round.</summary>
     private int hits;
+    /// <summary>Remaining game time expressed in scaled frames.</summary>
     private float time;
+    /// <summary>Current game state in the startup / gameplay state machine.</summary>
     private int state;
 
     /// <summary>
@@ -91,7 +95,9 @@ public class GameManagerLogic : MonoBehaviour
     /// <summary>Sprite array for ring start area states: index 0 = idle, 1 = highlighted, 2 = confirmed.</summary>
     public Sprite[] ringareas;
 
+    /// <summary>Runtime instance of the left ring placement target area.</summary>
     private GameObject leftringarea;
+    /// <summary>Runtime instance of the right ring placement target area.</summary>
     private GameObject rightringarea;
 
     /// <summary>
@@ -99,6 +105,7 @@ public class GameManagerLogic : MonoBehaviour
     /// instantiates and positions the two ring start area indicators, and
     /// clears all UI text elements.
     /// </summary>
+    /// <remarks>Called automatically by Unity at scene start. No parameters or return value.</remarks>
     void Start()
     {
         Application.targetFrameRate = 60;
@@ -134,6 +141,7 @@ public class GameManagerLogic : MonoBehaviour
     /// State 4: displays the GAME START message;
     /// State 5: runs the active gameplay loop each frame via RunGame.
     /// </summary>
+    /// <remarks>Called automatically by Unity each frame. No parameters or return value.</remarks>
     void Update()
     {
         switch (state)
@@ -204,6 +212,7 @@ public class GameManagerLogic : MonoBehaviour
     /// hit counter display and the countdown timer. When time expires, instantiates the
     /// Game Over object, freezes the timer display at zero, and clears stilltime.
     /// </summary>
+    /// <remarks>Called from Update() during state 5. No parameters or return value.</remarks>
     void RunGame()
     {
         if (total < cap && stilltime)
@@ -253,6 +262,7 @@ public class GameManagerLogic : MonoBehaviour
     /// for spawn cap enforcement.
     /// </summary>
     /// <param name="surfcing">True when a mole is surfacing (increment); false when it is leaving (decrement).</param>
+    /// <returns>No return value (void).</returns>
     public void UpdateCount(bool surfcing)
     {
         if (surfcing)
@@ -265,6 +275,7 @@ public class GameManagerLogic : MonoBehaviour
     /// Increments the player's hit count by one. Called by Mole2DLogic
     /// when a mole successfully transitions to the whacked state.
     /// </summary>
+    /// <returns>No return value (void).</returns>
     public void UpdateHits()
     {
         hits++;

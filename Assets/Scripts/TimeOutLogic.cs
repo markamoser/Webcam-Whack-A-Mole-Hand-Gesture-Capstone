@@ -24,6 +24,7 @@ public class TimeOutLogic : MonoBehaviour
     /// <summary>
     /// Initialises the GameObject at zero scale so it is invisible when the scene starts.
     /// </summary>
+    /// <remarks>Called automatically by Unity at scene start. No parameters or return value.</remarks>
     void Start()
     {
         transform.localScale = new Vector3(0, 0, 1);
@@ -34,6 +35,7 @@ public class TimeOutLogic : MonoBehaviour
     /// using a framerate-independent exponential ease, so the growth slows as it
     /// approaches the target size.
     /// </summary>
+    /// <remarks>Called automatically by Unity each frame. No parameters or return value.</remarks>
     void Update()
     {
         float delta = Time.deltaTime / (1f / 60f);

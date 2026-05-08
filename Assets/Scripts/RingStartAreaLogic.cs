@@ -33,8 +33,7 @@ public class RingStartAreaLogic : MonoBehaviour
     /// <summary>Y offset applied when positioning this area for either hand side.</summary>
     private const float AREA_OFFSET_Y = 0.4f;
 
-    /// <summary>
-    /// Current state of this area marker.
+    /// <summary>Current state of this area marker.
     /// 0 = idle, checking for ring overlap;
     /// 1 = forced highlighted;
     /// 2 = forced alternate sprite;
@@ -42,8 +41,11 @@ public class RingStartAreaLogic : MonoBehaviour
     /// </summary>
     private int state;
 
+    /// <summary>Frame counter used to track animation progress and state transitions.</summary>
     private float counter;
+    /// <summary>Reference to the LeftRing GameObject for distance calculations.</summary>
     private GameObject leftring;
+    /// <summary>Reference to the RightRing GameObject for distance calculations.</summary>
     private GameObject rightring;
 
     /// <summary>True this frame if the left ring is overlapping this start area.</summary>
@@ -55,6 +57,7 @@ public class RingStartAreaLogic : MonoBehaviour
     /// Initialises state and counter to zero and locates the LeftRing
     /// and RightRing GameObjects in the scene.
     /// </summary>
+    /// <remarks>Called automatically by Unity at scene start. No parameters or return value.</remarks>
     void Start()
     {
         state = 0;
@@ -70,6 +73,7 @@ public class RingStartAreaLogic : MonoBehaviour
     /// state 2 forces the alternate sprite;
     /// state 3 plays a shrink animation and destroys the GameObject when complete.
     /// </summary>
+    /// <remarks>Called automatically by Unity each frame. No parameters or return value.</remarks>
     void Update()
     {
         switch (state)
@@ -112,6 +116,7 @@ public class RingStartAreaLogic : MonoBehaviour
     /// Repositions this area marker to the left-hand starting position by
     /// offsetting it rightward and downward from its current position.
     /// </summary>
+    /// <remarks>No parameters or return value.</remarks>
     public void SetLeftArea()
     {
         transform.position = new Vector3(
@@ -124,6 +129,7 @@ public class RingStartAreaLogic : MonoBehaviour
     /// Repositions this area marker to the right-hand starting position by
     /// offsetting it leftward and downward from its current position.
     /// </summary>
+    /// <remarks>No parameters or return value.</remarks>
     public void SetRightArea()
     {
         transform.position = new Vector3(
@@ -138,6 +144,7 @@ public class RingStartAreaLogic : MonoBehaviour
     /// highlighted, alternate, and destroy states.
     /// </summary>
     /// <param name="value">The target state index (0-3).</param>
+    /// <returns>No return value (void).</returns>
     public void SetState(int value)
     {
         state = value;
