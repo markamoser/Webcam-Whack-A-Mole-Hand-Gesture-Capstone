@@ -17,7 +17,9 @@ public class RingLogic : MonoBehaviour
     /// <summary>X offset applied to the ring's starting position on scene load.</summary>
     private const float INITIAL_X_OFFSET = 0.6f;
 
+    /// <summary>Reference to the Left Point marker GameObject positioned by TwoHandVisualizer.</summary>
     private GameObject leftmark;
+    /// <summary>Reference to the TwoHandVisualizer instance used to track hand state and velocity.</summary>
     private TwoHandVisualizer _visualizer;
 
     /// <summary>
@@ -31,6 +33,7 @@ public class RingLogic : MonoBehaviour
     /// Initialises the ring to its starting position, locates the Left Point
     /// marker GameObject, and finds the TwoHandVisualizer in the scene.
     /// </summary>
+    /// <remarks>Called automatically by Unity at scene start. No parameters or return value.</remarks>
     void Start()
     {
         down = false;
@@ -44,6 +47,7 @@ public class RingLogic : MonoBehaviour
     /// marker position and updates down based on whether the left hand is actively
     /// punching forward past the press velocity threshold.
     /// </summary>
+    /// <remarks>Called automatically by Unity each frame. No parameters or return value.</remarks>
     void Update()
     {
         transform.position = new Vector3(leftmark.transform.position.x, leftmark.transform.position.y, transform.position.z);

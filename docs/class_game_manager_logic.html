@@ -122,18 +122,6 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_game_man
 
 <p>Manages the full game session from startup through to game over. Runs a state machine that walks through the ring placement prompt, a countdown sequence, and the main gameplay loop. During gameplay it spawns moles in randomised batches, maintains the on-screen hit counter and countdown timer, and signals to moles whether time remains via the public stilltime flag. Attach to the root GameManager GameObject. All mole and UI prefab references must be assigned in the Inspector.  
  <a href="#details">More...</a></p>
-<div class="dynheader">
-Inheritance diagram for GameManagerLogic:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_game_manager_logic__inherit__graph.png" border="0" usemap="#a_game_manager_logic_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
-<!-- MAP 0 -->
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
-<div class="dynheader">
-Collaboration diagram for GameManagerLogic:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_game_manager_logic__coll__graph.png" border="0" usemap="#a_game_manager_logic_coll__map" loading="lazy" alt="Collaboration graph"/></div>
-<!-- MAP 1 -->
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -179,15 +167,25 @@ Private Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a25e467ec71ece4537db24a9b51bdd6c6" id="r_a25e467ec71ece4537db24a9b51bdd6c6"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a25e467ec71ece4537db24a9b51bdd6c6">amount</a></td></tr>
+<tr class="memdesc:a25e467ec71ece4537db24a9b51bdd6c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of frames to wait before spawning the next batch of moles.  <br /></td></tr>
 <tr class="memitem:a638c79dab8644b46edf5b365940b4e16" id="r_a638c79dab8644b46edf5b365940b4e16"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a638c79dab8644b46edf5b365940b4e16">wait</a></td></tr>
+<tr class="memdesc:a638c79dab8644b46edf5b365940b4e16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delay counter used to measure time until the next spawn batch.  <br /></td></tr>
 <tr class="memitem:ab0992bbc526b5bce6bded831f855a09c" id="r_ab0992bbc526b5bce6bded831f855a09c"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ab0992bbc526b5bce6bded831f855a09c">total</a></td></tr>
+<tr class="memdesc:ab0992bbc526b5bce6bded831f855a09c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current total number of active moles on screen.  <br /></td></tr>
 <tr class="memitem:a299cb91b5133705a52ad10b917727b3a" id="r_a299cb91b5133705a52ad10b917727b3a"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a299cb91b5133705a52ad10b917727b3a">cap</a></td></tr>
+<tr class="memdesc:a299cb91b5133705a52ad10b917727b3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of moles allowed on screen.  <br /></td></tr>
 <tr class="memitem:a3b319df957be5720033984aecb4c9e9f" id="r_a3b319df957be5720033984aecb4c9e9f"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a3b319df957be5720033984aecb4c9e9f">counter</a></td></tr>
+<tr class="memdesc:a3b319df957be5720033984aecb4c9e9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frame-based timer used for startup and spawn sequencing.  <br /></td></tr>
 <tr class="memitem:a4c0f2678cdb910d64f318d0c3e67de22" id="r_a4c0f2678cdb910d64f318d0c3e67de22"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a4c0f2678cdb910d64f318d0c3e67de22">hits</a></td></tr>
+<tr class="memdesc:a4c0f2678cdb910d64f318d0c3e67de22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total number of successful mole hits recorded this round.  <br /></td></tr>
 <tr class="memitem:a83c02e23f8da7dfa7fa3022e83c6ccfe" id="r_a83c02e23f8da7dfa7fa3022e83c6ccfe"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a83c02e23f8da7dfa7fa3022e83c6ccfe">time</a></td></tr>
+<tr class="memdesc:a83c02e23f8da7dfa7fa3022e83c6ccfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remaining game time expressed in scaled frames.  <br /></td></tr>
 <tr class="memitem:acbd90e58eb269046bda845ab69bff5bb" id="r_acbd90e58eb269046bda845ab69bff5bb"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#acbd90e58eb269046bda845ab69bff5bb">state</a></td></tr>
+<tr class="memdesc:acbd90e58eb269046bda845ab69bff5bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current game state in the startup / gameplay state machine.  <br /></td></tr>
 <tr class="memitem:a790048f013771c53234fb5ecbc2d2143" id="r_a790048f013771c53234fb5ecbc2d2143"><td class="memItemLeft">GameObject&#160;</td><td class="memItemRight"><a class="el" href="#a790048f013771c53234fb5ecbc2d2143">leftringarea</a></td></tr>
+<tr class="memdesc:a790048f013771c53234fb5ecbc2d2143"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runtime instance of the left ring placement target area.  <br /></td></tr>
 <tr class="memitem:a47c75fa1171de4d37c216654ab650116" id="r_a47c75fa1171de4d37c216654ab650116"><td class="memItemLeft">GameObject&#160;</td><td class="memItemRight"><a class="el" href="#a47c75fa1171de4d37c216654ab650116">rightringarea</a></td></tr>
+<tr class="memdesc:a47c75fa1171de4d37c216654ab650116"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runtime instance of the right ring placement target area.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-static-attribs" class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
@@ -245,6 +243,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Executes the active gameplay loop each frame. Spawns mole batches at randomised intervals while the mole cap has not been reached and time remains. Updates the hit counter display and the countdown timer. When time expires, instantiates the Game Over object, freezes the timer display at zero, and clears stilltime. </p>
+<p>Called from <a class="el" href="#a43a573a8f52f695a3d143da3db0d72a0" title="Called once per frame. Advances the startup state machine through ring placement detection,...">Update()</a> during state 5. No parameters or return value.</p>
 
 </div>
 </div>
@@ -272,6 +271,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initialises all game state variables, locks the frame rate to 60 fps, instantiates and positions the two ring start area indicators, and clears all UI text elements. </p>
+<p>Called automatically by Unity at scene start. No parameters or return value.</p>
 
 </div>
 </div>
@@ -299,12 +299,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Called once per frame. Advances the startup state machine through ring placement detection, countdown, and game start before handing off to RunGame each frame during active gameplay. State 0: waits for both rings to be placed inside their target areas; State 1: holds the highlighted ring state briefly; State 2: displays the OK confirmation message; State 3: plays the ring area shrink-out animation; State 4: displays the GAME START message; State 5: runs the active gameplay loop each frame via RunGame. </p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_game_manager_logic_a43a573a8f52f695a3d143da3db0d72a0_cgraph.png" border="0" usemap="#aclass_game_manager_logic_a43a573a8f52f695a3d143da3db0d72a0_cgraph" loading="lazy" alt=""/></div>
-<!-- MAP 2 -->
-</div>
+<p>Called automatically by Unity each frame. No parameters or return value.</p>
 
 </div>
 </div>
@@ -330,6 +325,7 @@ Here is the call graph for this function:</div>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>No return value (void).</dd></dl>
 
 </div>
 </div>
@@ -349,6 +345,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Increments the player's hit count by one. Called by <a class="el" href="class_mole2_d_logic.html" title="Drives a mole GameObject through eight states: initialisation, rising, snapping to full scale,...">Mole2DLogic</a> when a mole successfully transitions to the whacked state. </p>
+<dl class="section return"><dt>Returns</dt><dd>No return value (void).</dd></dl>
 
 </div>
 </div>
@@ -373,6 +370,8 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Number of frames to wait before spawning the next batch of moles. </p>
+
 </div>
 </div>
 <a id="a299cb91b5133705a52ad10b917727b3a" name="a299cb91b5133705a52ad10b917727b3a"></a>
@@ -395,6 +394,8 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Maximum number of moles allowed on screen. </p>
+
 </div>
 </div>
 <a id="a3b319df957be5720033984aecb4c9e9f" name="a3b319df957be5720033984aecb4c9e9f"></a>
@@ -416,6 +417,8 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Frame-based timer used for startup and spawn sequencing. </p>
 
 </div>
 </div>
@@ -527,6 +530,8 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Total number of successful mole hits recorded this round. </p>
+
 </div>
 </div>
 <a id="a790048f013771c53234fb5ecbc2d2143" name="a790048f013771c53234fb5ecbc2d2143"></a>
@@ -548,6 +553,8 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Runtime instance of the left ring placement target area. </p>
 
 </div>
 </div>
@@ -739,6 +746,8 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Runtime instance of the right ring placement target area. </p>
+
 </div>
 </div>
 <a id="a6c606540bd41269a969262f676a76dae" name="a6c606540bd41269a969262f676a76dae"></a>
@@ -905,6 +914,8 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Current game state in the startup / gameplay state machine. </p>
+
 </div>
 </div>
 <a id="a7ff5f416d870b71614d0a3bd51d3f95b" name="a7ff5f416d870b71614d0a3bd51d3f95b"></a>
@@ -942,6 +953,8 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Remaining game time expressed in scaled frames. </p>
 
 </div>
 </div>
@@ -1037,6 +1050,8 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Current total number of active moles on screen. </p>
+
 </div>
 </div>
 <a id="a638c79dab8644b46edf5b365940b4e16" name="a638c79dab8644b46edf5b365940b4e16"></a>
@@ -1058,6 +1073,8 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Delay counter used to measure time until the next spawn batch. </p>
 
 </div>
 </div>

@@ -34,13 +34,11 @@ public class Mole2DLogic : MonoBehaviour
     /// <summary>Maximum number of scaled frames a mole stays fully visible before retreating.</summary>
     private const int MAX_WAIT_TIMER = 301;
 
-    // --- Sprite scale ---
     /// <summary>X scale applied to the mole sprite. Negative value flips the sprite horizontally.</summary>
     private const float SPRITE_FLIP_X = -0.012f;
     /// <summary>The target full Y scale the mole reaches when completely risen.</summary>
     private const float FULL_SCALE_Y = 0.012f;
 
-    // --- Rise animation (state 1) ---
     /// <summary>Upward positional movement applied each scaled frame during the rise phase.</summary>
     private const float RISE_MOVE_SPEED = 0.0006f;
     /// <summary>Initial scale growth rate applied each scaled frame at the start of the rise.</summary>
@@ -52,11 +50,9 @@ public class Mole2DLogic : MonoBehaviour
     /// <summary>Counter value at which the rise animation ends and the mole snaps to full scale.</summary>
     private const float RISE_END_COUNTER = 30f;
 
-    // --- Hit detection (state 3) ---
     /// <summary>Maximum distance in world units between the mole and a ring centre for a hit to register.</summary>
     private const float HIT_DETECTION_RADIUS = 0.265f;
 
-    // --- Missed retreat animation (state 4) ---
     /// <summary>Y scale reduction applied each scaled frame during the missed retreat.</summary>
     private const float RETREAT_SCALE_SPEED = 0.0005f;
     /// <summary>Downward positional movement applied each scaled frame during the missed retreat.</summary>
@@ -88,10 +84,15 @@ public class Mole2DLogic : MonoBehaviour
     /// <summary>Number of scaled frames before the mole is destroyed after a whacked retreat.</summary>
     private const float WHACK_RETREAT_DURATION = 12f;
 
+    /// <summary>Current state of this mole in its lifecycle state machine (0-8).</summary>
     private int state;
+    /// <summary>Randomised wait duration in scaled frames before the idle mole retreats if unhit.</summary>
     private int waittimer;
+    /// <summary>Frame counter used to track animation and state transition progress.</summary>
     private float counter;
+    /// <summary>Reference to the LeftRing GameObject for hit detection distance calculations.</summary>
     private GameObject leftring;
+    /// <summary>Reference to the RightRing GameObject for hit detection distance calculations.</summary>
     private GameObject rightring;
 
     /// <summary>
@@ -99,6 +100,7 @@ public class Mole2DLogic : MonoBehaviour
     /// locates the ring GameObjects, sets the idle sprite, and calculates a
     /// randomised world-space spawn position.
     /// </summary>
+    /// <remarks>Called automatically by Unity at scene start. No parameters or return value.</remarks>
     void Start()
     {
         state = 0;
@@ -128,6 +130,7 @@ public class Mole2DLogic : MonoBehaviour
     /// state 7 plays the stretch phase of the whacked animation;
     /// state 8 plays the final whacked retreat and destroys the mole.
     /// </summary>
+    /// <remarks>Called automatically by Unity each frame. No parameters or return value.</remarks>
     void Update()
     {
         float delta = Time.deltaTime / (1f / 60f);

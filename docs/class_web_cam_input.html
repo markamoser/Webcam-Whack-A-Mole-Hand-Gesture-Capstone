@@ -122,18 +122,6 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_web_cam_
 
 <p>Captures frames from a named webcam device and blits them into a RenderTexture, correcting for aspect ratio and vertical mirroring. If a static input texture is assigned in the Inspector, that texture is used instead and no webcam is opened. Attach to any GameObject and reference inputImageTexture from other scripts.  
  <a href="#details">More...</a></p>
-<div class="dynheader">
-Inheritance diagram for WebCamInput:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_web_cam_input__inherit__graph.png" border="0" usemap="#a_web_cam_input_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
-<!-- MAP 0 -->
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
-<div class="dynheader">
-Collaboration diagram for WebCamInput:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_web_cam_input__coll__graph.png" border="0" usemap="#a_web_cam_input_coll__map" loading="lazy" alt="Collaboration graph"/></div>
-<!-- MAP 1 -->
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-properties" class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
@@ -187,6 +175,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Releases the webcam device and RenderTexture when this GameObject is destroyed. </p>
+<p>Called automatically by Unity when the GameObject is destroyed. No parameters or return value.</p>
 
 </div>
 </div>
@@ -214,6 +203,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initialises the webcam device and allocates the output RenderTexture. If a static input texture is assigned, the webcam is not opened. </p>
+<p>Called automatically by Unity at scene start. No parameters or return value.</p>
 
 </div>
 </div>
@@ -241,6 +231,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Called once per frame. Skips processing if a static texture is in use or if the webcam has not produced a new frame. Otherwise corrects the aspect ratio and vertical mirror of the webcam feed and blits the result into the output RenderTexture. </p>
+<p>Called automatically by Unity each frame. No parameters or return value.</p>
 
 </div>
 </div>

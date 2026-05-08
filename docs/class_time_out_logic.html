@@ -122,18 +122,6 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_time_out
 
 <p>Animates a GameObject from zero scale up to a target scale of 0.15 on both X and Y axes using a framerate-independent exponential ease-in approach. Attach to the Time Out / Game Over UI GameObject that should pop into view at the end of a round.  
  <a href="#details">More...</a></p>
-<div class="dynheader">
-Inheritance diagram for TimeOutLogic:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_time_out_logic__inherit__graph.png" border="0" usemap="#a_time_out_logic_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
-<!-- MAP 0 -->
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
-<div class="dynheader">
-Collaboration diagram for TimeOutLogic:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_time_out_logic__coll__graph.png" border="0" usemap="#a_time_out_logic_coll__map" loading="lazy" alt="Collaboration graph"/></div>
-<!-- MAP 1 -->
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -176,6 +164,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initialises the GameObject at zero scale so it is invisible when the scene starts. </p>
+<p>Called automatically by Unity at scene start. No parameters or return value.</p>
 
 </div>
 </div>
@@ -203,6 +192,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Called once per frame. Moves the current scale toward TARGET_SCALE each frame using a framerate-independent exponential ease, so the growth slows as it approaches the target size. </p>
+<p>Called automatically by Unity each frame. No parameters or return value.</p>
 
 </div>
 </div>

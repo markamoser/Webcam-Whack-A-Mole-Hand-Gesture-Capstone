@@ -163,6 +163,7 @@ public class TwoHandVisualizer : MonoBehaviour
     /// Initialises the webcam, MediaPipe pipeline, render textures, hand materials,
     /// and locates the left and right marker GameObjects in the scene.
     /// </summary>
+    /// <remarks>Called automatically by Unity at scene start. No parameters or return value.</remarks>
     void Start()
     {
         leftmark = GameObject.Find("Left Point");
@@ -184,6 +185,7 @@ public class TwoHandVisualizer : MonoBehaviour
     /// Releases all unmanaged resources: stops the webcam, releases the render texture,
     /// disposes the MediaPipe pipeline, and destroys hand materials.
     /// </summary>
+    /// <remarks>Called automatically by Unity when the GameObject is destroyed. No parameters or return value.</remarks>
     void OnDestroy()
     {
         _webcam?.Stop();
@@ -198,6 +200,7 @@ public class TwoHandVisualizer : MonoBehaviour
     /// mirror, blits the result into the corrected render texture, runs the MediaPipe
     /// inference pass, then updates hand centers and depth offsets.
     /// </summary>
+    /// <remarks>Called automatically by Unity after Update(). No parameters or return value.</remarks>
     void LateUpdate()
     {
         var aspect1 = (float)_webcam.width / _webcam.height;
@@ -216,6 +219,7 @@ public class TwoHandVisualizer : MonoBehaviour
     /// Called by Unity's rendering system. Draws both hand meshes via the hand shader
     /// and repositions the left and right marker GameObjects to the current hand centers.
     /// </summary>
+    /// <remarks>Called automatically by Unity for rendering. No parameters or return value.</remarks>
     void OnRenderObject()
     {
         Vector3 MarkOffset = new Vector3(0, 0, 0.35f);
@@ -242,6 +246,7 @@ public class TwoHandVisualizer : MonoBehaviour
     /// </summary>
     /// <param name="mat">The hand shader material configured with the correct vertex buffer.</param>
     /// <param name="color">The tint color applied to the rendered hand overlay.</param>
+    /// <returns>No return value (void).</returns>
     void RenderHand(Material mat, Color color)
     {
         var w = _screen.rectTransform.rect.width;
@@ -291,6 +296,7 @@ public class TwoHandVisualizer : MonoBehaviour
     /// Samples the keypoints defined by CenterKeyPointIndices at the current complexity
     /// setting and updates leftHandCenter and rightHandCenter for both hands.
     /// </summary>
+    /// <remarks>Called by LateUpdate() each frame. No parameters or return value.</remarks>
     void UpdateHandCenters()
     {
         int keyPointCount = CenterKeyPointIndices[_CenterCalcComplexity].Length;
@@ -313,6 +319,7 @@ public class TwoHandVisualizer : MonoBehaviour
     /// depth velocity, and updates the LeftPressed/RightPressed latch booleans.
     /// Does nothing if _enableDepthEffect is false.
     /// </summary>
+    /// <remarks>Called by LateUpdate() each frame. No parameters or return value.</remarks>
     void UpdateHandDepths()
     {
         if (!_enableDepthEffect) return;

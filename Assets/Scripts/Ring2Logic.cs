@@ -17,7 +17,9 @@ public class Ring2Logic : MonoBehaviour
     /// <summary>X offset applied to the ring's starting position on scene load.</summary>
     private const float INITIAL_X_OFFSET = 0.6f;
 
+    /// <summary>Reference to the Right Point marker GameObject positioned by TwoHandVisualizer.</summary>
     private GameObject rightmark;
+    /// <summary>Reference to the TwoHandVisualizer instance used to track hand state and velocity.</summary>
     private TwoHandVisualizer _visualizer;
 
     /// <summary>
@@ -44,6 +46,7 @@ public class Ring2Logic : MonoBehaviour
     /// marker position and updates down based on whether the right hand is actively
     /// punching forward past the press velocity threshold.
     /// </summary>
+    /// <remarks>Called automatically by Unity each frame. No parameters or return value.</remarks>
     void Update()
     {
         transform.position = new Vector3(rightmark.transform.position.x, rightmark.transform.position.y, transform.position.z);

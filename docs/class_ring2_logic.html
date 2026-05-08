@@ -122,18 +122,6 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_ring2_lo
 
 <p>Follows the right hand marker point each frame and sets the public down boolean to true only when the right hand is both in a latched press state and still actively moving forward past the press velocity threshold. Used by <a class="el" href="class_mole2_d_logic.html" title="Drives a mole GameObject through eight states: initialisation, rising, snapping to full scale,...">Mole2DLogic</a> to determine whether a whack attempt is valid. Attach to the RightRing GameObject in the scene.  
  <a href="#details">More...</a></p>
-<div class="dynheader">
-Inheritance diagram for Ring2Logic:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_ring2_logic__inherit__graph.png" border="0" usemap="#a_ring2_logic_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
-<!-- MAP 0 -->
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
-<div class="dynheader">
-Collaboration diagram for Ring2Logic:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_ring2_logic__coll__graph.png" border="0" usemap="#a_ring2_logic_coll__map" loading="lazy" alt="Collaboration graph"/></div>
-<!-- MAP 1 -->
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -150,7 +138,9 @@ Private Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a09438028e0b4f9b1e25a122210555f8d" id="r_a09438028e0b4f9b1e25a122210555f8d"><td class="memItemLeft">GameObject&#160;</td><td class="memItemRight"><a class="el" href="#a09438028e0b4f9b1e25a122210555f8d">rightmark</a></td></tr>
+<tr class="memdesc:a09438028e0b4f9b1e25a122210555f8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to the Right Point marker GameObject positioned by <a class="el" href="class_two_hand_visualizer.html" title="Manages webcam capture, MediaPipe hand tracking, hand mesh rendering, hand center calculation,...">TwoHandVisualizer</a>.  <br /></td></tr>
 <tr class="memitem:ad5d995b9c6f71ed9427480fe7e1134c5" id="r_ad5d995b9c6f71ed9427480fe7e1134c5"><td class="memItemLeft"><a class="el" href="class_two_hand_visualizer.html">TwoHandVisualizer</a>&#160;</td><td class="memItemRight"><a class="el" href="#ad5d995b9c6f71ed9427480fe7e1134c5">_visualizer</a></td></tr>
+<tr class="memdesc:ad5d995b9c6f71ed9427480fe7e1134c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to the <a class="el" href="class_two_hand_visualizer.html" title="Manages webcam capture, MediaPipe hand tracking, hand mesh rendering, hand center calculation,...">TwoHandVisualizer</a> instance used to track hand state and velocity.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-static-attribs" class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
@@ -211,6 +201,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Called once per frame. Snaps this ring's position to the current right hand marker position and updates down based on whether the right hand is actively punching forward past the press velocity threshold. </p>
+<p>Called automatically by Unity each frame. No parameters or return value.</p>
 
 </div>
 </div>
@@ -234,6 +225,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Reference to the <a class="el" href="class_two_hand_visualizer.html" title="Manages webcam capture, MediaPipe hand tracking, hand mesh rendering, hand center calculation,...">TwoHandVisualizer</a> instance used to track hand state and velocity. </p>
 
 </div>
 </div>
@@ -296,6 +289,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Reference to the Right Point marker GameObject positioned by <a class="el" href="class_two_hand_visualizer.html" title="Manages webcam capture, MediaPipe hand tracking, hand mesh rendering, hand center calculation,...">TwoHandVisualizer</a>. </p>
 
 </div>
 </div>

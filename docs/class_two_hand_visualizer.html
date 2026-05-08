@@ -122,18 +122,6 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_two_hand
 
 <p>Manages webcam capture, MediaPipe hand tracking, hand mesh rendering, hand center calculation, depth-based velocity tracking, and press/release gesture detection for two hands simultaneously. Attach to a GameObject in the scene and assign the required serialized fields in the Inspector.  
  <a href="#details">More...</a></p>
-<div class="dynheader">
-Inheritance diagram for TwoHandVisualizer:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_two_hand_visualizer__inherit__graph.png" border="0" usemap="#a_two_hand_visualizer_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
-<!-- MAP 0 -->
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
-<div class="dynheader">
-Collaboration diagram for TwoHandVisualizer:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_two_hand_visualizer__coll__graph.png" border="0" usemap="#a_two_hand_visualizer_coll__map" loading="lazy" alt="Collaboration graph"/></div>
-<!-- MAP 1 -->
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -381,12 +369,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Called once per frame after all Updates. Corrects webcam aspect ratio and vertical mirror, blits the result into the corrected render texture, runs the MediaPipe inference pass, then updates hand centers and depth offsets. </p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_two_hand_visualizer_a72790c8610d9f6ec8fb4f1dfb5f4aec8_cgraph.png" border="0" usemap="#aclass_two_hand_visualizer_a72790c8610d9f6ec8fb4f1dfb5f4aec8_cgraph" loading="lazy" alt=""/></div>
-<!-- MAP 2 -->
-</div>
+<p>Called automatically by Unity after Update(). No parameters or return value.</p>
 
 </div>
 </div>
@@ -448,6 +431,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Releases all unmanaged resources: stops the webcam, releases the render texture, disposes the MediaPipe pipeline, and destroys hand materials. </p>
+<p>Called automatically by Unity when the GameObject is destroyed. No parameters or return value.</p>
 
 </div>
 </div>
@@ -475,12 +459,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Called by Unity's rendering system. Draws both hand meshes via the hand shader and repositions the left and right marker GameObjects to the current hand centers. </p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_two_hand_visualizer_a92dcbf6b81cb6062a6d402e959a76b1c_cgraph.png" border="0" usemap="#aclass_two_hand_visualizer_a92dcbf6b81cb6062a6d402e959a76b1c_cgraph" loading="lazy" alt=""/></div>
-<!-- MAP 3 -->
-</div>
+<p>Called automatically by Unity for rendering. No parameters or return value.</p>
 
 </div>
 </div>
@@ -550,6 +529,7 @@ Here is the call graph for this function:</div>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>No return value (void).</dd></dl>
 
 </div>
 </div>
@@ -577,6 +557,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Initialises the webcam, MediaPipe pipeline, render textures, hand materials, and locates the left and right marker GameObjects in the scene. </p>
+<p>Called automatically by Unity at scene start. No parameters or return value.</p>
 
 </div>
 </div>
@@ -604,12 +585,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Samples the keypoints defined by CenterKeyPointIndices at the current complexity setting and updates leftHandCenter and rightHandCenter for both hands. </p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_two_hand_visualizer_a395cb8c82b7f05ffb4bf68bd97e4e41a_cgraph.png" border="0" usemap="#aclass_two_hand_visualizer_a395cb8c82b7f05ffb4bf68bd97e4e41a_cgraph" loading="lazy" alt=""/></div>
-<!-- MAP 4 -->
-</div>
+<p>Called by <a class="el" href="#a72790c8610d9f6ec8fb4f1dfb5f4aec8" title="Called once per frame after all Updates. Corrects webcam aspect ratio and vertical mirror,...">LateUpdate()</a> each frame. No parameters or return value.</p>
 
 </div>
 </div>
@@ -637,12 +613,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Calculates the depth offset for each hand from its apparent size relative to the neutral reference size, smooths the result with Lerp, computes per-hand depth velocity, and updates the LeftPressed/RightPressed latch booleans. Does nothing if _enableDepthEffect is false. </p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_two_hand_visualizer_a021fd57283cf5dcd1ff808ee1749fe03_cgraph.png" border="0" usemap="#aclass_two_hand_visualizer_a021fd57283cf5dcd1ff808ee1749fe03_cgraph" loading="lazy" alt=""/></div>
-<!-- MAP 5 -->
-</div>
+<p>Called by <a class="el" href="#a72790c8610d9f6ec8fb4f1dfb5f4aec8" title="Called once per frame after all Updates. Corrects webcam aspect ratio and vertical mirror,...">LateUpdate()</a> each frame. No parameters or return value.</p>
 
 </div>
 </div>
