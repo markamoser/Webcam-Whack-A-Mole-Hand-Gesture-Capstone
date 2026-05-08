@@ -215,26 +215,41 @@ Static Private Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a2d9e8166e1f877deb3983c2e2bdc650c" id="r_a2d9e8166e1f877deb3983c2e2bdc650c"><td class="memItemLeft">RawImage&#160;</td><td class="memItemRight"><a class="el" href="#a2d9e8166e1f877deb3983c2e2bdc650c">_screen</a></td></tr>
+<tr class="memdesc:a2d9e8166e1f877deb3983c2e2bdc650c"><td class="mdescLeft">&#160;</td><td class="mdescRight">UI element used to display the webcam texture on screen.  <br /></td></tr>
 <tr class="memitem:afba8653bdb085743dd349a87b9823fb4" id="r_afba8653bdb085743dd349a87b9823fb4"><td class="memItemLeft">Shader&#160;</td><td class="memItemRight"><a class="el" href="#afba8653bdb085743dd349a87b9823fb4">_handShader</a></td></tr>
+<tr class="memdesc:afba8653bdb085743dd349a87b9823fb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shader used to render hand landmarks and bones over the webcam feed.  <br /></td></tr>
 <tr class="memitem:af0e8effc75224d8a81eb1cc603887496" id="r_af0e8effc75224d8a81eb1cc603887496"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#af0e8effc75224d8a81eb1cc603887496">_handScoreThreshold</a> = <a class="el" href="#a82dba0741d847a9c5e8f6bcd0bae6d26">HAND_TRACKING_CONFIDENCE</a></td></tr>
+<tr class="memdesc:af0e8effc75224d8a81eb1cc603887496"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minimum confidence threshold for tracking to render hand annotations.  <br /></td></tr>
 <tr class="memitem:a77ed8d9c790f65e1e99aa9af9ea2e952" id="r_a77ed8d9c790f65e1e99aa9af9ea2e952"><td class="memItemLeft">string&#160;</td><td class="memItemRight"><a class="el" href="#a77ed8d9c790f65e1e99aa9af9ea2e952">_webcamName</a> = &quot;&quot;</td></tr>
+<tr class="memdesc:a77ed8d9c790f65e1e99aa9af9ea2e952"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of the webcam device to use for capture. Empty selects the default camera.  <br /></td></tr>
 <tr class="memitem:af0478ff54e694eab28b76342c6e785db" id="r_af0478ff54e694eab28b76342c6e785db"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#af0478ff54e694eab28b76342c6e785db">_webcamWidth</a> = <a class="el" href="#afa48303129dbef825a999dfbde661160">TEN_EIGHTY_P_WIDTH</a></td></tr>
+<tr class="memdesc:af0478ff54e694eab28b76342c6e785db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Requested webcam texture width in pixels.  <br /></td></tr>
 <tr class="memitem:a82d45d0b6da0ab9ed1a563f5e7067385" id="r_a82d45d0b6da0ab9ed1a563f5e7067385"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a82d45d0b6da0ab9ed1a563f5e7067385">_webcamHeight</a> = <a class="el" href="#ac97eba8959f5552fb99b0089041629df">TEN_EIGHTY_P_HEIGHT</a></td></tr>
+<tr class="memdesc:a82d45d0b6da0ab9ed1a563f5e7067385"><td class="mdescLeft">&#160;</td><td class="mdescRight">Requested webcam texture height in pixels.  <br /></td></tr>
 <tr class="memitem:a7b3ae0e67c23cc65862fcf2ce8143007" id="r_a7b3ae0e67c23cc65862fcf2ce8143007"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a7b3ae0e67c23cc65862fcf2ce8143007">_webcamFPS</a> = <a class="el" href="#a518e5d8ecc8464ecda6bf09356cad717">TEN_EIGHTY_P_FPS</a></td></tr>
+<tr class="memdesc:a7b3ae0e67c23cc65862fcf2ce8143007"><td class="mdescLeft">&#160;</td><td class="mdescRight">Requested webcam capture frame rate.  <br /></td></tr>
 <tr class="memitem:a2a34cf14ae9e4f6525f584d4df9a36c7" id="r_a2a34cf14ae9e4f6525f584d4df9a36c7"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a2a34cf14ae9e4f6525f584d4df9a36c7">_neutralHandSize</a> = <a class="el" href="#aa4cc3b0daa422e4e23d42b88fd5d148d">NEUTRAL_HAND_SIZE</a></td></tr>
+<tr class="memdesc:a2a34cf14ae9e4f6525f584d4df9a36c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Neutral hand size used as the baseline for depth offset calculations.  <br /></td></tr>
 <tr class="memitem:a857bfd3bfa372a3fb24adb2347083c20" id="r_a857bfd3bfa372a3fb24adb2347083c20"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a857bfd3bfa372a3fb24adb2347083c20">_depthStrength</a> = <a class="el" href="#aeedcc08fac909c09eac9ccf2da312377">DEPTH_EFFECT_STRENGTH</a></td></tr>
+<tr class="memdesc:a857bfd3bfa372a3fb24adb2347083c20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strength multiplier applied to calculated depth offsets.  <br /></td></tr>
 <tr class="memitem:a3280e555f6091ecfd1aed6358d65b582" id="r_a3280e555f6091ecfd1aed6358d65b582"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a3280e555f6091ecfd1aed6358d65b582">_clampDepthBackwards</a> = <a class="el" href="#acbf989e0ec46bac2ff98f193d78eea69">MAXIMUM_DEPTH_OFFSET_BACKWARDS</a></td></tr>
+<tr class="memdesc:a3280e555f6091ecfd1aed6358d65b582"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum allowed backward depth offset for hands.  <br /></td></tr>
 <tr class="memitem:af3516d0740096e7d81ca20803211aed0" id="r_af3516d0740096e7d81ca20803211aed0"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#af3516d0740096e7d81ca20803211aed0">_clampDepthForwards</a> = <a class="el" href="#a5f56feffc26977d8b796e3e8e9e0562f">MAXIMUM_DEPTH_OFFSET_FORWARDS</a></td></tr>
+<tr class="memdesc:af3516d0740096e7d81ca20803211aed0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum allowed forward depth offset for hands.  <br /></td></tr>
 <tr class="memitem:ad2b3612fa72a09caf81c677dca57b549" id="r_ad2b3612fa72a09caf81c677dca57b549"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ad2b3612fa72a09caf81c677dca57b549">_CenterCalcComplexity</a> = 2</td></tr>
 <tr class="memdesc:ad2b3612fa72a09caf81c677dca57b549"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of keypoints averaged to find the hand center. Higher values are more accurate but cost more performance. Range 0-4.  <br /></td></tr>
 <tr class="memitem:ac4d0adc8104bf2a29a27fcb67218f04d" id="r_ac4d0adc8104bf2a29a27fcb67218f04d"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ac4d0adc8104bf2a29a27fcb67218f04d">_enableDepthEffect</a> = true</td></tr>
+<tr class="memdesc:ac4d0adc8104bf2a29a27fcb67218f04d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the depth effect is enabled for hand tracking.  <br /></td></tr>
 <tr class="memitem:a86a90bc676a70558455b5cc072916cd9" id="r_a86a90bc676a70558455b5cc072916cd9"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a86a90bc676a70558455b5cc072916cd9">_leftHandDepthOffset</a> = 0.0f</td></tr>
 <tr class="memdesc:a86a90bc676a70558455b5cc072916cd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current depth offset for the left hand. Visible in Inspector for debugging and tuning.  <br /></td></tr>
 <tr class="memitem:ac0b7469a85d1ea739a2951883f81cca0" id="r_ac0b7469a85d1ea739a2951883f81cca0"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#ac0b7469a85d1ea739a2951883f81cca0">_rightHandDepthOffset</a> = 0.0f</td></tr>
 <tr class="memdesc:ac0b7469a85d1ea739a2951883f81cca0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current depth offset for the right hand. Visible in Inspector for debugging and tuning.  <br /></td></tr>
 <tr class="memitem:a54ee18e10ad190c05c87d6371fee4fb9" id="r_a54ee18e10ad190c05c87d6371fee4fb9"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a54ee18e10ad190c05c87d6371fee4fb9">_pressVelocityThreshold</a> = <a class="el" href="#ac7016af5e2591c094bb0528f6c2292ce">PRESS_VELOCITY_THRESHOLD_FOR_DEPTH_GESTURE</a></td></tr>
+<tr class="memdesc:a54ee18e10ad190c05c87d6371fee4fb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Velocity threshold used to register a press gesture from depth motion.  <br /></td></tr>
 <tr class="memitem:a282c18c40d68734ad121fafda88efe46" id="r_a282c18c40d68734ad121fafda88efe46"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a282c18c40d68734ad121fafda88efe46">_releaseVelocityThreshold</a> = <a class="el" href="#ab8069868e0b0dafe488597b58a86dfec">RELEASE_VELOCITY_THRESHOLD_FOR_DEPTH_GESTURE</a></td></tr>
+<tr class="memdesc:a282c18c40d68734ad121fafda88efe46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Velocity threshold used to release a press gesture from depth motion.  <br /></td></tr>
 <tr class="memitem:a430929b74f7f389c89693ec02d55ae8f" id="r_a430929b74f7f389c89693ec02d55ae8f"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a430929b74f7f389c89693ec02d55ae8f">_sensitivity</a> = <a class="el" href="#ae74fb628e84ab7f564bb503831ba65fe">DEPTH_VELOCITY_SENSITIVITY</a></td></tr>
+<tr class="memdesc:a430929b74f7f389c89693ec02d55ae8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplier that scales raw depth velocity before gesture threshold checks.  <br /></td></tr>
 <tr class="memitem:a7587f0f09ad731a4e7e9e4a1c661ff52" id="r_a7587f0f09ad731a4e7e9e4a1c661ff52"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a7587f0f09ad731a4e7e9e4a1c661ff52">_leftVelocity</a></td></tr>
 <tr class="memdesc:a7587f0f09ad731a4e7e9e4a1c661ff52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculated depth velocity for the left hand this frame. Visible in Inspector for debugging.  <br /></td></tr>
 <tr class="memitem:ad5fec070fed6b784a7f1d29e5168cbac" id="r_ad5fec070fed6b784a7f1d29e5168cbac"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#ad5fec070fed6b784a7f1d29e5168cbac">_rightVelocity</a></td></tr>
@@ -244,16 +259,27 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:aa957c70bf02d8c4c2b03d6df51e777f1" id="r_aa957c70bf02d8c4c2b03d6df51e777f1"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#aa957c70bf02d8c4c2b03d6df51e777f1">_RightPressed</a></td></tr>
 <tr class="memdesc:aa957c70bf02d8c4c2b03d6df51e777f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the right hand is currently in a pressed state. Latches true on press, releases on pull-back.  <br /></td></tr>
 <tr class="memitem:a3cf4d4fb54ca7b0f658c45800c2e4d52" id="r_a3cf4d4fb54ca7b0f658c45800c2e4d52"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a3cf4d4fb54ca7b0f658c45800c2e4d52">_prevLeftDepth</a></td></tr>
+<tr class="memdesc:a3cf4d4fb54ca7b0f658c45800c2e4d52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Previous frame left hand depth measurement used for velocity calculation.  <br /></td></tr>
 <tr class="memitem:a1f59e86788ad203f3578f747c0df1e24" id="r_a1f59e86788ad203f3578f747c0df1e24"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a1f59e86788ad203f3578f747c0df1e24">_prevRightDepth</a></td></tr>
+<tr class="memdesc:a1f59e86788ad203f3578f747c0df1e24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Previous frame right hand depth measurement used for velocity calculation.  <br /></td></tr>
 <tr class="memitem:ad10ce5262e805a23be6eaf530828a0f1" id="r_ad10ce5262e805a23be6eaf530828a0f1"><td class="memItemLeft">Vector3&#160;</td><td class="memItemRight"><a class="el" href="#ad10ce5262e805a23be6eaf530828a0f1">leftHandCenter</a></td></tr>
+<tr class="memdesc:ad10ce5262e805a23be6eaf530828a0f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cached normalized screen-space center position of the left hand.  <br /></td></tr>
 <tr class="memitem:a96d4ebe7f6b87608e2724affff6e99f2" id="r_a96d4ebe7f6b87608e2724affff6e99f2"><td class="memItemLeft">Vector3&#160;</td><td class="memItemRight"><a class="el" href="#a96d4ebe7f6b87608e2724affff6e99f2">rightHandCenter</a></td></tr>
+<tr class="memdesc:a96d4ebe7f6b87608e2724affff6e99f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cached normalized screen-space center position of the right hand.  <br /></td></tr>
 <tr class="memitem:a2f763db50ecbfeac804630b11b75bbd4" id="r_a2f763db50ecbfeac804630b11b75bbd4"><td class="memItemLeft">HolisticPipeline&#160;</td><td class="memItemRight"><a class="el" href="#a2f763db50ecbfeac804630b11b75bbd4">_pipeline</a></td></tr>
+<tr class="memdesc:a2f763db50ecbfeac804630b11b75bbd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">MediaPipe Holistic pipeline instance used for hand and pose inference.  <br /></td></tr>
 <tr class="memitem:a99f8d799a63a7f80d50c1a3f5c6b88b6" id="r_a99f8d799a63a7f80d50c1a3f5c6b88b6"><td class="memItemLeft">WebCamTexture&#160;</td><td class="memItemRight"><a class="el" href="#a99f8d799a63a7f80d50c1a3f5c6b88b6">_webcam</a></td></tr>
+<tr class="memdesc:a99f8d799a63a7f80d50c1a3f5c6b88b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">WebCamTexture used to capture live video from the webcam.  <br /></td></tr>
 <tr class="memitem:a1978c9a696e7cf4fcbfc779c021adcc7" id="r_a1978c9a696e7cf4fcbfc779c021adcc7"><td class="memItemLeft">RenderTexture&#160;</td><td class="memItemRight"><a class="el" href="#a1978c9a696e7cf4fcbfc779c021adcc7">_correctedTexture</a></td></tr>
+<tr class="memdesc:a1978c9a696e7cf4fcbfc779c021adcc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Render texture used to correct aspect ratio and vertical mirroring of the webcam feed.  <br /></td></tr>
 <tr class="memitem:a34efbb8490396feeb1063642f6e9ed8e" id="r_a34efbb8490396feeb1063642f6e9ed8e"><td class="memItemLeft">Material&#160;</td><td class="memItemRight"><a class="el" href="#a34efbb8490396feeb1063642f6e9ed8e">_leftHandMaterial</a></td></tr>
+<tr class="memdesc:a34efbb8490396feeb1063642f6e9ed8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Material used to render the left hand overlay.  <br /></td></tr>
 <tr class="memitem:ad28b34948da1ba94ce5144a40630735d" id="r_ad28b34948da1ba94ce5144a40630735d"><td class="memItemLeft">Material&#160;</td><td class="memItemRight"><a class="el" href="#ad28b34948da1ba94ce5144a40630735d">_rightHandMaterial</a></td></tr>
+<tr class="memdesc:ad28b34948da1ba94ce5144a40630735d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Material used to render the right hand overlay.  <br /></td></tr>
 <tr class="memitem:afa9c87b072038235d0124a97de5a40a8" id="r_afa9c87b072038235d0124a97de5a40a8"><td class="memItemLeft">GameObject&#160;</td><td class="memItemRight"><a class="el" href="#afa9c87b072038235d0124a97de5a40a8">leftmark</a></td></tr>
+<tr class="memdesc:afa9c87b072038235d0124a97de5a40a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">GameObject used as a marker for the left hand position in the scene.  <br /></td></tr>
 <tr class="memitem:abe4ed8b9a7ced5da1c89f3ea2988a5dd" id="r_abe4ed8b9a7ced5da1c89f3ea2988a5dd"><td class="memItemLeft">GameObject&#160;</td><td class="memItemRight"><a class="el" href="#abe4ed8b9a7ced5da1c89f3ea2988a5dd">rightmark</a></td></tr>
+<tr class="memdesc:abe4ed8b9a7ced5da1c89f3ea2988a5dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">GameObject used as a marker for the right hand position in the scene.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-static-attribs" class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
@@ -662,6 +688,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Maximum allowed backward depth offset for hands. </p>
+
 </div>
 </div>
 <a id="af3516d0740096e7d81ca20803211aed0" name="af3516d0740096e7d81ca20803211aed0"></a>
@@ -683,6 +711,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Maximum allowed forward depth offset for hands. </p>
 
 </div>
 </div>
@@ -706,6 +736,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Render texture used to correct aspect ratio and vertical mirroring of the webcam feed. </p>
+
 </div>
 </div>
 <a id="a857bfd3bfa372a3fb24adb2347083c20" name="a857bfd3bfa372a3fb24adb2347083c20"></a>
@@ -727,6 +759,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Strength multiplier applied to calculated depth offsets. </p>
 
 </div>
 </div>
@@ -750,6 +784,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Whether the depth effect is enabled for hand tracking. </p>
+
 </div>
 </div>
 <a id="af0e8effc75224d8a81eb1cc603887496" name="af0e8effc75224d8a81eb1cc603887496"></a>
@@ -772,6 +808,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Minimum confidence threshold for tracking to render hand annotations. </p>
+
 </div>
 </div>
 <a id="afba8653bdb085743dd349a87b9823fb4" name="afba8653bdb085743dd349a87b9823fb4"></a>
@@ -793,6 +831,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Shader used to render hand landmarks and bones over the webcam feed. </p>
 
 </div>
 </div>
@@ -839,6 +879,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Material used to render the left hand overlay. </p>
 
 </div>
 </div>
@@ -910,6 +952,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Neutral hand size used as the baseline for depth offset calculations. </p>
+
 </div>
 </div>
 <a id="a2f763db50ecbfeac804630b11b75bbd4" name="a2f763db50ecbfeac804630b11b75bbd4"></a>
@@ -931,6 +975,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>MediaPipe Holistic pipeline instance used for hand and pose inference. </p>
 
 </div>
 </div>
@@ -954,6 +1000,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Velocity threshold used to register a press gesture from depth motion. </p>
+
 </div>
 </div>
 <a id="a3cf4d4fb54ca7b0f658c45800c2e4d52" name="a3cf4d4fb54ca7b0f658c45800c2e4d52"></a>
@@ -975,6 +1023,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Previous frame left hand depth measurement used for velocity calculation. </p>
 
 </div>
 </div>
@@ -998,6 +1048,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Previous frame right hand depth measurement used for velocity calculation. </p>
+
 </div>
 </div>
 <a id="a282c18c40d68734ad121fafda88efe46" name="a282c18c40d68734ad121fafda88efe46"></a>
@@ -1019,6 +1071,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Velocity threshold used to release a press gesture from depth motion. </p>
 
 </div>
 </div>
@@ -1065,6 +1119,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Material used to render the right hand overlay. </p>
 
 </div>
 </div>
@@ -1136,6 +1192,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>UI element used to display the webcam texture on screen. </p>
+
 </div>
 </div>
 <a id="a430929b74f7f389c89693ec02d55ae8f" name="a430929b74f7f389c89693ec02d55ae8f"></a>
@@ -1157,6 +1215,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Multiplier that scales raw depth velocity before gesture threshold checks. </p>
 
 </div>
 </div>
@@ -1180,6 +1240,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>WebCamTexture used to capture live video from the webcam. </p>
+
 </div>
 </div>
 <a id="a7b3ae0e67c23cc65862fcf2ce8143007" name="a7b3ae0e67c23cc65862fcf2ce8143007"></a>
@@ -1201,6 +1263,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Requested webcam capture frame rate. </p>
 
 </div>
 </div>
@@ -1224,6 +1288,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Requested webcam texture height in pixels. </p>
+
 </div>
 </div>
 <a id="a77ed8d9c790f65e1e99aa9af9ea2e952" name="a77ed8d9c790f65e1e99aa9af9ea2e952"></a>
@@ -1246,6 +1312,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Name of the webcam device to use for capture. Empty selects the default camera. </p>
+
 </div>
 </div>
 <a id="af0478ff54e694eab28b76342c6e785db" name="af0478ff54e694eab28b76342c6e785db"></a>
@@ -1267,6 +1335,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Requested webcam texture width in pixels. </p>
 
 </div>
 </div>
@@ -1514,6 +1584,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Cached normalized screen-space center position of the left hand. </p>
+
 </div>
 </div>
 <a id="afa9c87b072038235d0124a97de5a40a8" name="afa9c87b072038235d0124a97de5a40a8"></a>
@@ -1535,6 +1607,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>GameObject used as a marker for the left hand position in the scene. </p>
 
 </div>
 </div>
@@ -1774,6 +1848,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Cached normalized screen-space center position of the right hand. </p>
+
 </div>
 </div>
 <a id="abe4ed8b9a7ced5da1c89f3ea2988a5dd" name="abe4ed8b9a7ced5da1c89f3ea2988a5dd"></a>
@@ -1795,6 +1871,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>GameObject used as a marker for the right hand position in the scene. </p>
 
 </div>
 </div>

@@ -61,26 +61,41 @@ public class TwoHandVisualizer : MonoBehaviour
     /// <summary>Depth velocity must rise above this value to release an active press.</summary>
     const float RELEASE_VELOCITY_THRESHOLD_FOR_DEPTH_GESTURE = 1.5f;
 
+    /// <summary>UI element used to display the webcam texture on screen.</summary>
     [SerializeField] RawImage _screen;
+    /// <summary>Shader used to render hand landmarks and bones over the webcam feed.</summary>
     [SerializeField] Shader _handShader;
+    /// <summary>Minimum confidence threshold for tracking to render hand annotations.</summary>
     [SerializeField, Range(0, 1)] float _handScoreThreshold = HAND_TRACKING_CONFIDENCE;
+    /// <summary>Name of the webcam device to use for capture. Empty selects the default camera.</summary>
     [SerializeField] string _webcamName = "";
+    /// <summary>Requested webcam texture width in pixels.</summary>
     [SerializeField] int _webcamWidth = TEN_EIGHTY_P_WIDTH;
+    /// <summary>Requested webcam texture height in pixels.</summary>
     [SerializeField] int _webcamHeight = TEN_EIGHTY_P_HEIGHT;
+    /// <summary>Requested webcam capture frame rate.</summary>
     [SerializeField] int _webcamFPS = TEN_EIGHTY_P_FPS;
+    /// <summary>Neutral hand size used as the baseline for depth offset calculations.</summary>
     [SerializeField] float _neutralHandSize = NEUTRAL_HAND_SIZE;
+    /// <summary>Strength multiplier applied to calculated depth offsets.</summary>
     [SerializeField] float _depthStrength = DEPTH_EFFECT_STRENGTH;
+    /// <summary>Maximum allowed backward depth offset for hands.</summary>
     [SerializeField] float _clampDepthBackwards = MAXIMUM_DEPTH_OFFSET_BACKWARDS;
+    /// <summary>Maximum allowed forward depth offset for hands.</summary>
     [SerializeField] float _clampDepthForwards = MAXIMUM_DEPTH_OFFSET_FORWARDS;
     /// <summary>Number of keypoints averaged to find the hand center. Higher values are more accurate but cost more performance. Range 0-4.</summary>
     [SerializeField, Range(0, 4)] int _CenterCalcComplexity = 2;
+    /// <summary>Whether the depth effect is enabled for hand tracking.</summary>
     [SerializeField] bool _enableDepthEffect = true;
     /// <summary>Current depth offset for the left hand. Visible in Inspector for debugging and tuning.</summary>
     [SerializeField] private float _leftHandDepthOffset = 0.0f;
     /// <summary>Current depth offset for the right hand. Visible in Inspector for debugging and tuning.</summary>
     [SerializeField] private float _rightHandDepthOffset = 0.0f;
+    /// <summary>Velocity threshold used to register a press gesture from depth motion.</summary>
     [SerializeField] private float _pressVelocityThreshold = PRESS_VELOCITY_THRESHOLD_FOR_DEPTH_GESTURE;
+    /// <summary>Velocity threshold used to release a press gesture from depth motion.</summary>
     [SerializeField] private float _releaseVelocityThreshold = RELEASE_VELOCITY_THRESHOLD_FOR_DEPTH_GESTURE;
+    /// <summary>Multiplier that scales raw depth velocity before gesture threshold checks.</summary>
     [SerializeField] private float _sensitivity = DEPTH_VELOCITY_SENSITIVITY;
     /// <summary>Calculated depth velocity for the left hand this frame. Visible in Inspector for debugging.</summary>
     [SerializeField] private float _leftVelocity;
@@ -111,22 +126,33 @@ public class TwoHandVisualizer : MonoBehaviour
     /// <summary>Smoothed depth offset for the right hand, readable by other scripts.</summary>
     public float RightHandDepthOffset { get; private set; }
 
+    /// <summary>Previous frame left hand depth measurement used for velocity calculation.</summary>
     private float _prevLeftDepth;
+    /// <summary>Previous frame right hand depth measurement used for velocity calculation.</summary>
     private float _prevRightDepth;
+    /// <summary>Cached normalized screen-space center position of the left hand.</summary>
     private Vector3 leftHandCenter;
+    /// <summary>Cached normalized screen-space center position of the right hand.</summary>
     private Vector3 rightHandCenter;
 
+    /// <summary>MediaPipe Holistic pipeline instance used for hand and pose inference.</summary>
     HolisticPipeline _pipeline;
 
     /// <summary>The underlying MediaPipe HolisticPipeline instance. Exposed for external inspection if needed.</summary>
     public HolisticPipeline Pipeline => _pipeline;
 
+    /// <summary>WebCamTexture used to capture live video from the webcam.</summary>
     WebCamTexture _webcam;
+    /// <summary>Render texture used to correct aspect ratio and vertical mirroring of the webcam feed.</summary>
     RenderTexture _correctedTexture;
+    /// <summary>Material used to render the left hand overlay.</summary>
     Material _leftHandMaterial;
+    /// <summary>Material used to render the right hand overlay.</summary>
     Material _rightHandMaterial;
 
+    /// <summary>GameObject used as a marker for the left hand position in the scene.</summary>
     private GameObject leftmark;
+    /// <summary>GameObject used as a marker for the right hand position in the scene.</summary>
     private GameObject rightmark;
 
     /// <summary>

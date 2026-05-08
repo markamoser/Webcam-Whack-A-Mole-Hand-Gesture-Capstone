@@ -141,12 +141,14 @@ Private Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:adcb5dac3ac75100ff8dc641c382d9872" id="r_adcb5dac3ac75100ff8dc641c382d9872"><td class="memItemLeft">string&#160;</td><td class="memItemRight"><a class="el" href="#adcb5dac3ac75100ff8dc641c382d9872">webCamName</a></td></tr>
 <tr class="memdesc:adcb5dac3ac75100ff8dc641c382d9872"><td class="mdescLeft">&#160;</td><td class="mdescRight">The device name of the webcam to open. Leave empty to use the system default.  <br /></td></tr>
-<tr class="memitem:a4fb94e23e1ec2e3f3d5e079e928ccf89" id="r_a4fb94e23e1ec2e3f3d5e079e928ccf89"><td class="memItemLeft">Vector2&#160;</td><td class="memItemRight"><a class="el" href="#a4fb94e23e1ec2e3f3d5e079e928ccf89">webCamResolution</a> = new Vector2(1920, 1080)</td></tr>
+<tr class="memitem:a4fb94e23e1ec2e3f3d5e079e928ccf89" id="r_a4fb94e23e1ec2e3f3d5e079e928ccf89"><td class="memItemLeft">Vector2&#160;</td><td class="memItemRight"><a class="el" href="#a4fb94e23e1ec2e3f3d5e079e928ccf89">webCamResolution</a> = new Vector2(<a class="el" href="class_two_hand_visualizer.html#afa48303129dbef825a999dfbde661160">TwoHandVisualizer.TEN_EIGHTY_P_WIDTH</a>, <a class="el" href="class_two_hand_visualizer.html#ac97eba8959f5552fb99b0089041629df">TwoHandVisualizer.TEN_EIGHTY_P_HEIGHT</a>)</td></tr>
 <tr class="memdesc:a4fb94e23e1ec2e3f3d5e079e928ccf89"><td class="mdescLeft">&#160;</td><td class="mdescRight">The resolution the webcam will be requested to capture at. Actual resolution may differ by device.  <br /></td></tr>
 <tr class="memitem:af5d1f10394acaf92e827adb3cfb2fce9" id="r_af5d1f10394acaf92e827adb3cfb2fce9"><td class="memItemLeft">Texture&#160;</td><td class="memItemRight"><a class="el" href="#af5d1f10394acaf92e827adb3cfb2fce9">staticInput</a></td></tr>
 <tr class="memdesc:af5d1f10394acaf92e827adb3cfb2fce9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optional static texture used instead of a live webcam feed. Assign in the Inspector for offline testing.  <br /></td></tr>
 <tr class="memitem:a5bfee99566a6540cdf5acffddcfd53d9" id="r_a5bfee99566a6540cdf5acffddcfd53d9"><td class="memItemLeft">WebCamTexture&#160;</td><td class="memItemRight"><a class="el" href="#a5bfee99566a6540cdf5acffddcfd53d9">webCamTexture</a></td></tr>
+<tr class="memdesc:a5bfee99566a6540cdf5acffddcfd53d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Live webcam texture device capturing frames from the selected camera.  <br /></td></tr>
 <tr class="memitem:a632a1d5c5e6783c654ae3b8c04cb402b" id="r_a632a1d5c5e6783c654ae3b8c04cb402b"><td class="memItemLeft">RenderTexture&#160;</td><td class="memItemRight"><a class="el" href="#a632a1d5c5e6783c654ae3b8c04cb402b">inputRT</a></td></tr>
+<tr class="memdesc:a632a1d5c5e6783c654ae3b8c04cb402b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output render texture corrected for aspect ratio and vertical mirroring.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Captures frames from a named webcam device and blits them into a RenderTexture, correcting for aspect ratio and vertical mirroring. If a static input texture is assigned in the Inspector, that texture is used instead and no webcam is opened. Attach to any GameObject and reference inputImageTexture from other scripts. </p>
@@ -256,6 +258,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Output render texture corrected for aspect ratio and vertical mirroring. </p>
+
 </div>
 </div>
 <a id="af5d1f10394acaf92e827adb3cfb2fce9" name="af5d1f10394acaf92e827adb3cfb2fce9"></a>
@@ -316,7 +320,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Vector2 WebCamInput.webCamResolution = new Vector2(1920, 1080)</td>
+          <td class="memname">Vector2 WebCamInput.webCamResolution = new Vector2(<a class="el" href="class_two_hand_visualizer.html#afa48303129dbef825a999dfbde661160">TwoHandVisualizer.TEN_EIGHTY_P_WIDTH</a>, <a class="el" href="class_two_hand_visualizer.html#ac97eba8959f5552fb99b0089041629df">TwoHandVisualizer.TEN_EIGHTY_P_HEIGHT</a>)</td>
         </tr>
       </table>
   </td>
@@ -349,6 +353,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Live webcam texture device capturing frames from the selected camera. </p>
 
 </div>
 </div>

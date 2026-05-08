@@ -16,7 +16,7 @@ public class WebCamInput : MonoBehaviour
     /// <summary>The device name of the webcam to open. Leave empty to use the system default.</summary>
     [SerializeField] string webCamName;
     /// <summary>The resolution the webcam will be requested to capture at. Actual resolution may differ by device.</summary>
-    [SerializeField] Vector2 webCamResolution = new Vector2(1920, 1080);
+    [SerializeField] Vector2 webCamResolution = new Vector2(TwoHandVisualizer.TEN_EIGHTY_P_WIDTH, TwoHandVisualizer.TEN_EIGHTY_P_HEIGHT);
     /// <summary>Optional static texture used instead of a live webcam feed. Assign in the Inspector for offline testing.</summary>
     [SerializeField] Texture staticInput;
 
@@ -34,7 +34,9 @@ public class WebCamInput : MonoBehaviour
         }
     }
 
+    /// <summary>Live webcam texture device capturing frames from the selected camera.</summary>
     WebCamTexture webCamTexture;
+    /// <summary>Output render texture corrected for aspect ratio and vertical mirroring.</summary>
     RenderTexture inputRT;
 
     /// <summary>
