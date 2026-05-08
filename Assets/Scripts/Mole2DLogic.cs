@@ -101,7 +101,7 @@ public class Mole2DLogic : MonoBehaviour
     /// </summary>
     void Start()
     {
-        state = 0;
+        stateenum = State.MoleUpdateGameManagerMoleCount;
         counter = 0;
         waittimer = Random.Range(MIN_WAIT_TIMER, MAX_WAIT_TIMER);
         leftring = GameObject.Find("LeftRing");
@@ -134,9 +134,9 @@ public class Mole2DLogic : MonoBehaviour
 
         switch (state)
         {
-            case 0:
+            case State.MoleUpdateGameManagerMoleCount:
                 GetComponentInParent<GameManagerLogic>().UpdateCount(true);
-                state = 1;
+                stateenum = State.MolePopUpFromGround;
                 break;
 
             case 1:
@@ -147,7 +147,7 @@ public class Mole2DLogic : MonoBehaviour
                     transform.position = new Vector3(transform.position.x, transform.position.y - (RISE_MOVE_SPEED * delta), transform.position.z);
                 if (counter > RISE_END_COUNTER)
                 {
-                    state = 2;
+                    stateenum = State.MoleWaitToGetWhackedOrForWaitTimerToExpire;
                     counter = 0;
                 }
                 break;
@@ -169,7 +169,7 @@ public class Mole2DLogic : MonoBehaviour
                         < HIT_DETECTION_RADIUS)
                     {
                         counter = 0;
-                        state = 5;
+                        stateenum = State.MoleWhackedAndShowExplosion;
                         GetComponentInParent<GameManagerLogic>().UpdateHits();
                         GetComponentInParent<GameManagerLogic>().UpdateCount(false);
                         break;
@@ -184,7 +184,7 @@ public class Mole2DLogic : MonoBehaviour
                         < HIT_DETECTION_RADIUS)
                     {
                         counter = 0;
-                        state = 5;
+                        stateenum = State.MoleWhackedAndShowExplosion;
                         GetComponentInParent<GameManagerLogic>().UpdateHits();
                         GetComponentInParent<GameManagerLogic>().UpdateCount(false);
                         break;
@@ -194,7 +194,7 @@ public class Mole2DLogic : MonoBehaviour
                 if (counter > waittimer || !GetComponentInParent<GameManagerLogic>().stilltime)
                 {
                     counter = 0;
-                    state = 4;
+                    stateenum = State.MoleDigIntoGroundAndLeave;
                     GetComponentInParent<GameManagerLogic>().UpdateCount(false);
                 }
                 break;
@@ -214,7 +214,7 @@ public class Mole2DLogic : MonoBehaviour
                 if (counter > WHACK_FLASH_DURATION)
                 {
                     counter = 0;
-                    state = 6;
+                    stateenum = State.MoleWhackedAndSquishDown;
                 }
                 break;
 
@@ -225,7 +225,7 @@ public class Mole2DLogic : MonoBehaviour
                 if (counter > WHACK_SHRINK_DURATION)
                 {
                     counter = 0;
-                    state = 7;
+                    stateenum = State.MoleWhackedAndSquishUp;
                 }
                 break;
 
@@ -235,7 +235,8 @@ public class Mole2DLogic : MonoBehaviour
                 if (counter > WHACK_GROW_DURATION)
                 {
                     counter = 0;
-                    state = 8;
+                    transform.localScale = new Vector3(-0.012f, 0.012f, 1);
+                    stateenum = State.MoleWhackedAndFallIntoGround;
                 }
                 break;
 
